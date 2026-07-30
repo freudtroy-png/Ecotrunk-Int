@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Development & Management - Ecotrunk International Ltd</title>
+  <meta name="description" content="Ecotrunk manages every stage of renewable energy project development: site identification, feasibility, permitting, design, land securing, and financing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .step-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      padding: 56px 0;
+      border-bottom: 1px solid var(--neutral-200);
+    }
+    .step-card:last-child { border-bottom: none; }
+    .step-card.reverse { direction: rtl; }
+    .step-card.reverse > * { direction: ltr; }
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--green-200);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .step-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--neutral-800);
+    }
+    .step-card p {
+      color: var(--neutral-500);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .step-card p:last-child { margin-bottom: 0; }
+    .step-image {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      height: 340px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .step-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .step-image:hover img { transform: scale(1.04); }
+    @media (max-width: 768px) {
+      .step-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 36px 0;
+      }
+      .step-card.reverse { direction: ltr; }
+      .step-image { height: 220px; }
+      .step-number { font-size: 3rem; }
+    }
+    .further-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .further-item {
+      background: var(--neutral-50);
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--neutral-700);
+      transition: all 0.3s ease;
+    }
+    .further-item:hover {
+      border-color: var(--green-400);
+      background: var(--green-50);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .further-item i {
+      display: block;
+      font-size: 1.75rem;
+      color: var(--green-500);
+      margin-bottom: 12px;
+    }
+    @media (max-width: 768px) {
+      .further-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo" aria-label="Ecotrunk Home">
+        <div class="header-logo-icon">
+          <img src="assets/logo.png" alt="Ecotrunk International Ltd">
+        </div>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="technology.html" class="nav-link">Technologies</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="index.html#contact" class="nav-cta">Get in Touch</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+    <a href="technology.html" class="nav-link">Technologies</a>
+    <a href="blog.html" class="nav-link">Blog</a>
+    <a href="index.html#services" class="nav-link">Services</a>
+    <a href="index.html#gallery" class="nav-link">Gallery</a>
+    <a href="index.html#contact" class="nav-link">Contact</a>
+    <a href="index.html#contact" class="nav-cta">Get in Touch</a>
+  </nav>
+
+  <section class="section" id="projectDevpt" style="padding-top: 140px;">
+    <div class="container">
+      <div data-reveal>
+        <span class="section-label">Our Service</span>
+        <h2 class="section-title">Project Development &amp; Management</h2>
+        <p class="section-subtitle" style="max-width: 800px;">
+          Ecotrunk's dedicated in-house team manages every stage of project development - from evaluating site potential and securing prime locations to initiating construction after obtaining all necessary permits and authorizations. With over a decade of experience across East Africa, we deliver bankable renewable energy projects on time and on budget.
+        </p>
+      </div>
+
+      <div style="margin-top: 64px;">
+
+        <div class="step-card" data-reveal>
+          <div>
+            <div class="step-number">01</div>
+            <h3>Site Identification &amp; Feasibility Studies</h3>
+            <p>We carefully select the best locations for power generation by conducting comprehensive resource assessments using advanced wind and solar data campaigns. Our team deploys meteorological stations and satellite-derived datasets to model long-term energy production potential with high statistical confidence.</p>
+            <p>During this phase, we evaluate production capacity against multiple turbine and PV configurations, assess environmental and social sensitivities through preliminary screening, analyse land suitability using GIS-based multi-criteria decision analysis, and conduct a preliminary grid connection assessment to identify nearby substation capacity and line routes.</p>
+          </div>
+          <div class="step-image">
+            <img src="assets/img/Site_Identification.jpg" alt="Site survey team conducting feasibility study" loading="lazy">
+          </div>
+        </div>
+
+        <div class="step-card reverse" data-reveal>
+          <div>
+            <div class="step-number">02</div>
+            <h3>Environmental &amp; Social Studies</h3>
+            <p>Ecotrunk rigorously evaluates every project site to understand the full scope of potential impacts on the natural environment and local communities. We commission specialised studies covering flora, fauna, hydrology, archaeology, and socio-economic baseline conditions, all aligned with National Environment Management Authority (NEMA) requirements.</p>
+            <p>Our team develops robust mitigation measures to minimise ecological disturbance while fostering sustainable local development. We conduct comprehensive community engagement planning, stakeholder mapping exercises, and design benefit-sharing frameworks that ensure host communities are active partners throughout the project lifecycle.</p>
+          </div>
+          <div class="step-image">
+            <img src="assets/img/Environmental.jpeg" alt="Environmental impact assessment fieldwork" loading="lazy">
+          </div>
+        </div>
+
+        <div class="step-card" data-reveal>
+          <div>
+            <div class="step-number">03</div>
+            <h3>Grid Connection Studies</h3>
+            <p>A reliable grid connection is fundamental to any successful renewable energy project. Ecotrunk performs detailed assessments of the existing power infrastructure at the substations where plants will interconnect, evaluating transformer capacity, switchgear condition, protection schemes, and available fault levels.</p>
+            <p>Our power systems engineers conduct load-flow and dynamic stability studies to determine the network's ability to absorb the new generation. We design the interconnection layout, specify required upgrades, and plan power evacuation routes that comply with Kenya Power and Lighting Company standards as well as the Energy and Petroleum Regulatory Authority (EPRA) Grid Code.</p>
+          </div>
+          <div class="step-image">
+            <img src="assets/img/Grid%20Connection%20Studies.webp" alt="High voltage grid infrastructure" loading="lazy">
+          </div>
+        </div>
+
+        <div class="step-card reverse" data-reveal>
+          <div>
+            <div class="step-number">04</div>
+            <h3>Project Design</h3>
+            <p>Our engineering team develops optimised plant designs that balance energy yield, capital cost, and site-specific constraints. We perform detailed technology selection - comparing wind turbine classes, PV module efficiencies, inverter configurations, and mounting structures - to identify the configuration that maximises returns under local resource and grid conditions.</p>
+            <p>Layout planning optimises micro-siting to minimise wake losses and shading while respecting environmental exclusion zones. We produce comprehensive energy yield assessments using industry-standard software (PVsyst, WindPRO, WaSP), develop construction methodologies aligned with local labour and logistics realities, and create phased implementation plans that enable early generation while maintaining flexibility for future expansion.</p>
+          </div>
+          <div class="step-image">
+            <img src="assets/img/eng.jpg" alt="Engineering design and planning" loading="lazy">
+          </div>
+        </div>
+
+        <div class="step-card" data-reveal>
+          <div>
+            <div class="step-number">05</div>
+            <h3>Land Securing</h3>
+            <p>Land tenure is one of the most critical components of renewable energy project development in Kenya. Ecotrunk collaborates closely with landowners - whether private individuals, community trusts, or government entities - to establish mutually beneficial arrangements. Our team navigates the complexities of land administration, including title verification, encumbrance searches, and family or clan succession matters.</p>
+            <p>We engage extensively with local communities to build public acceptance through transparent communication, public barazas, and benefit-sharing agreements. Our negotiators structure lease payments, easement rights, access wayleaves, and surface rent agreements that fairly compensate landholders while maintaining long-term project bankability. Every agreement is documented with full due diligence and registered as required under Kenyan law.</p>
+          </div>
+          <div class="step-image">
+            <img src="assets/img/land_securing.jpg" alt="Land survey and community engagement" loading="lazy">
+          </div>
+        </div>
+
+        <div class="step-card reverse" data-reveal>
+          <div>
+            <div class="step-number">06</div>
+            <h3>Permitting &amp; Approvals</h3>
+            <p>Regulatory compliance is paramount to project success. Ecotrunk secures all licences, permits, and authorisations from the relevant Kenyan bodies early in the project lifecycle to prevent costly delays. Our permitting scope includes generation licences from EPRA, Environmental Impact Assessment licences from NEMA, county government approvals for building and planning, and permits from the Water Resources Authority for any water abstraction or diversion.</p>
+            <p>We also obtain construction permits from the relevant county governments, negotiate community development agreements that satisfy both regulatory requirements and local expectations, and secure wayleave approvals for transmission lines. Our regulatory team tracks every submission through to issuance, maintaining a detailed permitting calendar that aligns with the overall project schedule and financing milestones.</p>
+          </div>
+          <div class="step-image">
+            <img src="assets/img/permit.jpg" alt="Permitting documentation and compliance" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+
+      <div data-reveal style="margin-top: 72px;">
+        <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; color: var(--neutral-800);">Further Steps</h3>
+        <p style="color: var(--neutral-500); margin-bottom: 8px; max-width: 600px;">Beyond the core development phases, Ecotrunk also manages the critical commercial and financial processes that transform a consented project into a construction-ready asset:</p>
+        <div class="further-list">
+          <div class="further-item">
+            <i class="fas fa-gavel" aria-hidden="true"></i>
+            Participation in Tenders &amp; Auctions
+          </div>
+          <div class="further-item">
+            <i class="fas fa-chart-line" aria-hidden="true"></i>
+            Project Financing &amp; Due Diligence
+          </div>
+          <div class="further-item">
+            <i class="fas fa-file-signature" aria-hidden="true"></i>
+            Offtaker Negotiations
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo" aria-label="Ecotrunk Home">
+            <div class="header-logo-icon">
+              <img src="assets/logo.png" alt="Ecotrunk International Ltd">
+            </div>
+          </a>
+          <p>Ecotrunk International Ltd (ETL) is a firm of Technologists, Consultants, and Managers delivering world-class renewable energy solutions across East Africa.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="about.html#values">Our Values</a>
+            <a href="technology.html">Technologies</a>
+            <a href="solar.html">Solar Energy</a>
+            <a href="wind.html">Wind Energy</a>
+            <a href="hydro.html">Hydropower</a>
+            <a href="blog.html">Blog</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="index.html#contact">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <div class="footer-links">
+            <a href="proj_dev.html">Project Development</a>
+            <a href="engineering_systems.html">Engineering Systems</a>
+            <a href="consultancy.html">Consultancy</a>
+            <a href="p&sem.html">Procurement &amp; Supply</a>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-heading">Stay Updated</h4>
+          <p>Subscribe to receive updates on our projects and the latest in Kenya's renewable energy sector.</p>
+          <form class="footer-newsletter-form" netlify name="newsletter-form">
+            <input type="email" name="email" placeholder="Your email address" aria-label="Email for newsletter" required>
+            <button type="submit" aria-label="Subscribe">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2024 Ecotrunk International Ltd. All rights reserved.</span>
+        <span>Committed to a sustainable Kenya</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <p>We use cookies to enhance your browsing experience and analyse site traffic. By continuing to use this site, you consent to our use of cookies. <a href="about.html">Learn more</a></p>
+    <div class="cookie-banner-actions">
+      <button class="cookie-btn cookie-btn-decline">Decline</button>
+      <button class="cookie-btn cookie-btn-accept">Accept</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

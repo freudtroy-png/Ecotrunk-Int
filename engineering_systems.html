@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Systems Development - Ecotrunk International Ltd</title>
+  <meta name="description" content="Ecotrunk International Ltd delivers comprehensive engineering systems development: system review, analysis, energy technology implementation, and service systems optimisation for renewable energy projects across Kenya and East Africa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .hero-banner {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      margin-top: 40px;
+    }
+    .hero-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(5,150,105,0.85) 0%, rgba(2,44,34,0.92) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px;
+    }
+    .hero-banner-overlay h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: white;
+      max-width: 640px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .hero-banner-overlay p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.05rem;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .approach-card {
+      background: white;
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    .approach-card:hover {
+      border-color: var(--green-200);
+      box-shadow: 0 8px 32px rgba(5,150,105,0.08);
+      transform: translateY(-4px);
+    }
+    .approach-card-icon {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: var(--green-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green-600);
+      font-size: 1.5rem;
+      margin: 0 auto 20px;
+    }
+    .approach-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .approach-card p {
+      font-size: 0.9rem;
+      color: var(--neutral-500);
+      line-height: 1.7;
+    }
+    .intro-text {
+      font-size: 1.1rem;
+      color: var(--neutral-500);
+      max-width: 780px;
+      line-height: 1.8;
+    }
+    @media (max-width: 768px) {
+      .hero-banner { height: 280px; }
+      .hero-banner-overlay { padding: 32px; }
+      .approach-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo" aria-label="Ecotrunk Home">
+        <div class="header-logo-icon">
+          <img src="assets/logo.png" alt="Ecotrunk International Ltd">
+        </div>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="technology.html" class="nav-link">Technologies</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="index.html#contact" class="nav-cta">Get in Touch</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+    <a href="technology.html" class="nav-link">Technologies</a>
+    <a href="blog.html" class="nav-link">Blog</a>
+    <a href="index.html#services" class="nav-link">Services</a>
+    <a href="index.html#gallery" class="nav-link">Gallery</a>
+    <a href="index.html#contact" class="nav-link">Contact</a>
+    <a href="index.html#contact" class="nav-cta">Get in Touch</a>
+  </nav>
+
+  <section class="section" id="engineeringSystems" style="padding-top: 140px;">
+    <div class="container">
+      <div data-reveal>
+        <span class="section-label">Engineering Systems</span>
+        <h2 class="section-title">Engineering Systems Development</h2>
+        <p class="intro-text">
+          Ecotrunk International Ltd brings deep technical expertise to every phase of engineering systems development. From initial system review and complex analysis through to energy technology deployment and service system refinement, our team delivers robust, efficient, and future-ready solutions tailored to the renewable energy sector across Kenya and East Africa.
+        </p>
+      </div>
+
+      <div class="hero-banner" data-reveal data-reveal-delay="100">
+        <img src="assets/img/eng.jpg" alt="Engineering team reviewing technical drawings and system schematics" loading="lazy">
+        <div class="hero-banner-overlay">
+          <h2>Integrated Engineering for a Sustainable Energy Future</h2>
+          <p>Our multidisciplinary team combines systems thinking with hands-on renewable energy expertise to deliver solutions that perform.</p>
+        </div>
+      </div>
+
+      <div class="services-grid" data-reveal data-reveal-delay="200">
+        <div class="service-card">
+          <div class="service-card-icon"><i class="fas fa-search" aria-hidden="true"></i></div>
+          <h3>Engineering Systems Review</h3>
+          <p>We conduct in-depth evaluations of existing engineering systems to assess efficiency, reliability, and compatibility with modern renewable energy technologies. Our review methodology includes performance benchmarking against industry standards, identification of optimisation opportunities across electrical, mechanical, and control subsystems, and comprehensive lifecycle cost analysis. Each review delivers a prioritised roadmap of interventions that maximise return on investment while minimising operational downtime. Our engineers inspect every layer - from generation and transmission infrastructure to downstream utilisation - ensuring that no efficiency gap goes unnoticed.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon"><i class="fas fa-chart-pie" aria-hidden="true"></i></div>
+          <h3>Systems Analysis</h3>
+          <p>Our systems analysis practice tackles complex engineering challenges by applying structured methodologies to identify functional and structural requirements. We begin with thorough requirements gathering, engaging stakeholders to capture technical, regulatory, and operational constraints. From there we develop detailed technical specifications and conduct feasibility assessments that account for site conditions, grid integration parameters, environmental factors, and budget realities. The result is a consumer-centric solution design that balances technical performance with practical deployability. Our analysis has supported projects ranging from mini-grid electrification schemes to utility-scale renewable energy plants.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+          <h3>Energy Technology Implementation</h3>
+          <p>We project-manage the full deployment lifecycle of renewable energy technologies - solar photovoltaic, wind turbines, and hydroelectric systems - from technology selection and procurement through to installation, commissioning, and handover. Our implementation approach emphasizes meticulous planning: site surveys, civil works coordination, electrical integration, and performance monitoring setup are all managed under a unified quality framework. Post-commissioning, we provide operations support and maintenance planning to ensure sustained energy production. Every installation is accompanied by comprehensive documentation, training, and a clear performance baseline.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon"><i class="fas fa-concierge-bell" aria-hidden="true"></i></div>
+          <h3>Service Systems Development</h3>
+          <p>Beyond individual projects, we design and refine the operational systems that underpin long-term energy service delivery. This includes developing maintenance management protocols, performance dashboards, customer engagement mechanisms, and operational workflows that enhance efficiency, reliability, and customer satisfaction. Our service systems work is grounded in a deep understanding of the Kenyan energy landscape - from rural off-grid contexts to urban industrial applications - and is always aligned with our clients' strategic goals. We treat service systems as living frameworks that evolve alongside technology and market conditions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: white;">
+    <div class="container">
+      <div data-reveal>
+        <span class="section-label">Our Approach</span>
+        <h2 class="section-title">Our Engineering Approach</h2>
+        <p class="intro-text">
+          Every engineering engagement at Ecotrunk is underpinned by three core pillars that ensure technical excellence, enduring value, and strong client relationships.
+        </p>
+      </div>
+
+      <div class="approach-grid" data-reveal data-reveal-delay="100">
+        <div class="approach-card">
+          <div class="approach-card-icon"><i class="fas fa-clipboard-check" aria-hidden="true"></i></div>
+          <h3>Technical Rigour</h3>
+          <p>We adhere to recognised engineering standards and codes of practice across all our work. Every deliverable undergoes internal quality assurance review, and our project teams follow documented procedures for design verification, risk assessment, and compliance checking. This rigour ensures that our systems are safe, reliable, and built to last in Kenya's diverse operating environments - from the highlands to the coast.</p>
+        </div>
+        <div class="approach-card">
+          <div class="approach-card-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
+          <h3>Innovation</h3>
+          <p>We actively monitor emerging technologies and evolving best practices in the renewable energy and engineering sectors. Our team evaluates new tools - from advanced modelling software to novel energy storage configurations - and adopts those that offer genuine improvements in performance, cost, or sustainability. This culture of continuous improvement means our clients benefit from solutions that are not only current but forward-looking.</p>
+        </div>
+        <div class="approach-card">
+          <div class="approach-card-icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
+          <h3>Collaboration</h3>
+          <p>We believe the best engineering outcomes emerge from close partnership with our clients and stakeholders. Throughout every engagement we maintain open communication channels, provide regular progress updates, and actively seek input from end users, regulators, and community representatives. This collaborative model ensures that our solutions are technically sound, socially accepted, and fully aligned with the unique goals of each client.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo" aria-label="Ecotrunk Home">
+            <div class="header-logo-icon">
+              <img src="assets/logo.png" alt="Ecotrunk International Ltd">
+            </div>
+          </a>
+          <p>Ecotrunk International Ltd (ETL) is a firm of Technologists, Consultants, and Managers delivering world-class renewable energy solutions across East Africa.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="about.html#values">Our Values</a>
+            <a href="technology.html">Technologies</a>
+            <a href="solar.html">Solar Energy</a>
+            <a href="wind.html">Wind Energy</a>
+            <a href="hydro.html">Hydropower</a>
+            <a href="blog.html">Blog</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="index.html#contact">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <div class="footer-links">
+            <a href="proj_dev.html">Project Development</a>
+            <a href="engineering_systems.html">Engineering Systems</a>
+            <a href="consultancy.html">Consultancy</a>
+            <a href="p&sem.html">Procurement &amp; Supply</a>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-heading">Stay Updated</h4>
+          <p>Subscribe to receive updates on our projects and the latest in Kenya's renewable energy sector.</p>
+          <form class="footer-newsletter-form" netlify name="newsletter-form">
+            <input type="email" name="email" placeholder="Your email address" aria-label="Email for newsletter" required>
+            <button type="submit" aria-label="Subscribe">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2024 Ecotrunk International Ltd. All rights reserved.</span>
+        <span>Committed to a sustainable Kenya</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <p>We use cookies to enhance your browsing experience and analyse site traffic. By continuing to use this site, you consent to our use of cookies. <a href="about.html">Learn more</a></p>
+    <div class="cookie-banner-actions">
+      <button class="cookie-btn cookie-btn-decline">Decline</button>
+      <button class="cookie-btn cookie-btn-accept">Accept</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
