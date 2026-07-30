@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Renewable Energy Technologies - Ecotrunk International Ltd</title>
-  <meta name="description" content="Ecotrunk International Ltd specialises in solar PV & CSP, onshore and offshore wind, and hydropower technologies across Kenya and East Africa.">
+  <meta name="description" content="Ecotrunk International Ltd specialises in solar PV, onshore wind, and hydropower technologies. We deliver renewable energy solutions across Kenya and East Africa - from feasibility to commissioning.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
@@ -26,7 +26,15 @@
         <a href="about.html#values" class="nav-link">Values</a>
         <a href="technology.html" class="nav-link" aria-current="page">Technologies</a>
         <a href="blog.html" class="nav-link">Blog</a>
-        <a href="index.html#services" class="nav-link">Services</a>
+        <div class="nav-dropdown">
+          <a class="nav-link nav-dropdown-trigger">Services <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="proj_dev.html" class="nav-dropdown-link">Project Development</a>
+            <a href="engineering_systems.html" class="nav-dropdown-link">Engineering Systems</a>
+            <a href="consultancy.html" class="nav-dropdown-link">Consultancy</a>
+            <a href="p&sem.html" class="nav-dropdown-link">Procurement &amp; Supply</a>
+          </div>
+        </div>
         <a href="index.html#contact" class="nav-link">Contact</a>
         <a href="index.html#contact" class="nav-cta">Get in Touch</a>
       </nav>
@@ -38,54 +46,123 @@
 
   <nav class="mobile-menu" role="navigation" aria-label="Mobile navigation">
     <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
+    <a href="about.html" class="nav-link">About</a>
     <a href="about.html#values" class="nav-link">Values</a>
     <a href="technology.html" class="nav-link">Technologies</a>
     <a href="blog.html" class="nav-link">Blog</a>
-    <a href="index.html#services" class="nav-link">Services</a>
+    <div class="mobile-submenu">
+      <div class="mobile-submenu-header">
+        <span class="nav-link">Services</span>
+        <span class="mobile-submenu-toggle"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
+      </div>
+      <div class="mobile-submenu-links">
+        <a href="proj_dev.html" class="nav-link">Project Development</a>
+        <a href="engineering_systems.html" class="nav-link">Engineering Systems</a>
+        <a href="consultancy.html" class="nav-link">Consultancy</a>
+        <a href="p&sem.html" class="nav-link">Procurement &amp; Supply</a>
+      </div>
+    </div>
     <a href="index.html#gallery" class="nav-link">Gallery</a>
     <a href="index.html#contact" class="nav-link">Contact</a>
     <a href="index.html#contact" class="nav-cta">Get in Touch</a>
   </nav>
 
-  <section class="section" style="padding-top: 140px;">
+  <section class="tech-page-hero">
+    <div class="tech-page-hero-bg">
+      <img src="assets/img/solar-pic.jpg" alt="Renewable energy technologies" loading="eager">
+    </div>
+    <div class="tech-page-hero-content" data-reveal>
+      <span class="tech-page-hero-badge"><i class="fas fa-bolt" aria-hidden="true"></i> Our Technologies</span>
+      <h1 class="tech-page-hero-title">Renewable Energy <span style="background: linear-gradient(135deg, var(--green-400), var(--sun-400)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Technologies</span></h1>
+      <p class="tech-page-hero-subtitle">Kenya's energy transition demands a portfolio approach. We combine deep technical expertise with local knowledge to select, design, and deliver the right technology mix for every project - from solar and wind to hydropower.</p>
+      <div class="tech-page-hero-stats">
+        <div class="tech-page-hero-stat">
+          <div class="tech-page-hero-stat-number">10+</div>
+          <div class="tech-page-hero-stat-label">Years Experience</div>
+        </div>
+        <div class="tech-page-hero-stat">
+          <div class="tech-page-hero-stat-number">3</div>
+          <div class="tech-page-hero-stat-label">Core Technologies</div>
+        </div>
+        <div class="tech-page-hero-stat">
+          <div class="tech-page-hero-stat-number">90%</div>
+          <div class="tech-page-hero-stat-label">Kenya Renewable Share</div>
+        </div>
+        <div class="tech-page-hero-stat">
+          <div class="tech-page-hero-stat-number">50+</div>
+          <div class="tech-page-hero-stat-label">Projects Delivered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="container">
-      <div style="max-width: 800px;">
-        <span class="section-label" data-reveal>Technologies</span>
-        <h1 class="section-title" data-reveal data-reveal-delay="50" style="font-size: 2.8rem;">Renewable Energy Technologies</h1>
-        <p class="section-subtitle" data-reveal data-reveal-delay="100" style="font-size: 1.1rem; line-height: 1.8;">
-          At Ecotrunk International Ltd, we believe that no single technology holds all the answers. Kenya's energy transition demands a portfolio approach - selecting the right combination of solar, wind, and hydropower solutions tailored to site-specific conditions, grid infrastructure, community needs, and investment profiles. Below we examine each technology in depth, exploring how they work, where they excel in the Kenyan context, and how our team delivers them from concept to commissioning.
-        </p>
+      <div style="text-align: center;">
+        <span class="section-label" data-reveal>Our Approach</span>
+        <h2 class="section-title" data-reveal data-reveal-delay="50" style="max-width: 600px; margin: 0 auto 20px;">Selecting the Right Technology for Every Context</h2>
+        <p class="section-subtitle" data-reveal data-reveal-delay="100" style="margin: 0 auto; text-align: center;">At Ecotrunk, we believe no single technology holds all the answers. Every site, community, and investment profile demands a tailored solution. Our team combines rigorous technical analysis with deep local knowledge to recommend, design, and deliver the optimal technology pathway - whether solar, wind, hydropower, or a hybrid combination.</p>
+      </div>
+
+      <div class="tech-overview-grid">
+        <div class="tech-overview-card" data-reveal id="solar">
+          <div class="tech-overview-icon" style="background: var(--sun-400); color: white;">
+            <i class="fas fa-sun" aria-hidden="true"></i>
+          </div>
+          <h3>Solar Energy</h3>
+          <p>Photovoltaic systems converting Kenya's exceptional insolation into electricity - from commercial rooftops to utility-scale farms, with battery storage integration for firm, dispatchable power.</p>
+          <a href="solar.html" class="tech-card-link">Explore Solar <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="tech-overview-card" data-reveal data-reveal-delay="100" id="wind">
+          <div class="tech-overview-icon" style="background: #2563eb; color: white;">
+            <i class="fas fa-wind" aria-hidden="true"></i>
+          </div>
+          <h3>Wind Energy</h3>
+          <p>Capturing the power of Kenya's world-class wind corridors in Turkana, Ngong Hills, and beyond. Full lifecycle services from resource assessment to turbine selection and grid integration.</p>
+          <a href="wind.html" class="tech-card-link">Explore Wind <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="tech-overview-card" data-reveal data-reveal-delay="200" id="hydro">
+          <div class="tech-overview-icon" style="background: #065fd4; color: white;">
+            <i class="fas fa-water" aria-hidden="true"></i>
+          </div>
+          <h3>Hydropower</h3>
+          <p>Leveraging Kenya's rivers for clean, dispatchable baseload power. Run-of-river schemes, small hydro for rural electrification, and climate-resilient dam rehabilitation projects.</p>
+          <a href="hydro.html" class="tech-card-link">Explore Hydropower <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: white;">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-label" data-reveal>In Depth</span>
+        <h2 class="section-title" data-reveal data-reveal-delay="50" style="max-width: 500px; margin: 0 auto 20px;">Technology Deep Dives</h2>
+        <p class="section-subtitle" data-reveal data-reveal-delay="100" style="margin: 0 auto;">Explore each technology in detail below, with insights into how they work, where they excel in Kenya, and how our team delivers them from concept to commissioning.</p>
       </div>
     </div>
   </section>
 
   <section class="section" style="padding-top: 0;">
     <div class="container">
-      <div class="tech-feature" id="solar">
+      <div class="tech-feature" id="solar-deep">
         <div class="tech-feature-image" data-reveal>
-          <img src="assets/img/solar.jpg" alt="Large solar photovoltaic installation with rows of panels under a clear sky" loading="lazy" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+          <img src="assets/img/solar.jpg" alt="Large solar photovoltaic installation" loading="lazy">
         </div>
         <div class="tech-feature-content">
-          <span class="tech-feature-badge">Solar Energy</span>
-          <h2 style="font-size: 2.2rem; margin: 12px 0 24px; color: var(--neutral-900);">Harnessing Kenya's Abundant Sunshine</h2>
-
-          <p data-reveal data-reveal-delay="50">Solar energy technology encompasses two primary pathways for converting sunlight into usable power. Photovoltaic (PV) systems use semiconductor cells to directly transform solar irradiance into electricity - a silent, scalable technology that works from a single rooftop panel to sprawling utility-scale arrays covering hundreds of acres. Concentrating Solar Power (CSP), by contrast, uses mirrors or lenses to focus sunlight onto a receiver, generating heat that drives a turbine. While CSP remains less common in East Africa due to its capital intensity and water requirements, PV has become the dominant solar technology across Kenya, with installed capacity growing more than fivefold since 2018. Our team at Ecotrunk has designed and supervised PV installations ranging from 10 kW commercial rooftops in Nairobi to multi-megawatt ground-mounted farms in the Rift Valley.</p>
-
-          <p data-reveal data-reveal-delay="100">Kenya possesses some of the finest solar resources on the planet. The Great Rift Valley region, stretching from Lake Turkana in the north to Lake Magadi in the south, receives insolation levels of 5.5 to 6.5 kWh per square metre per day - among the highest in the world. This solar dividend creates compelling economics: at current module prices below USD 0.15 per watt, unsubsidised solar electricity in Kenya frequently undercuts diesel generation by 60 to 80 percent. Commercial and industrial users in Nairobi, Mombasa, and Kisumu are increasingly turning to rooftop solar not as an environmental gesture but as a hard-nosed financial decision, with simple payback periods of three to five years. On the utility side, large-scale solar farms are beginning to feed power into the national grid, supported by Kenya's feed-in tariff policy and the growing appetite of international climate financiers.</p>
-
-          <p data-reveal data-reveal-delay="150">The integration of battery energy storage systems is transforming what solar can deliver. Early solar installations in Kenya were constrained by the sun's intermittency - power was only available during daylight hours, and grid instability meant that solar systems often had to shut down during frequency excursions. Modern lithium-ion and flow battery solutions have changed this calculus. By pairing PV arrays with battery storage, our projects can now deliver firm, dispatchable power that operates through the evening peak, stabilises voltage fluctuations, and provides backup during grid outages. The cost of battery storage has fallen by more than 80 percent over the past decade, and Ecotrunk is actively deploying hybrid solar-plus-storage systems for commercial clients who demand 24-hour energy availability. We expect this trend to accelerate as Kenya's grid evolves toward higher renewable penetration and as battery costs continue their downward trajectory.</p>
-
-          <ul class="tech-feature-list" data-reveal data-reveal-delay="200">
-            <li><strong>Commercial &amp; Industrial Rooftop PV</strong> - Reducing operational energy costs for businesses, factories, and office complexes across Kenya's urban centres</li>
-            <li><strong>Utility-Scale Solar Farms</strong> - Developing ground-mounted PV installations from 1 MW to 50 MW connected to the national grid via power purchase agreements</li>
-            <li><strong>Mini-Grid &amp; Off-Grid Systems</strong> - Deploying decentralised solar solutions for rural communities, schools, and health facilities not reached by grid extension</li>
-            <li><strong>Solar-Plus-Storage Hybrids</strong> - Integrating lithium-ion and advanced lead-carbon battery banks to provide firm capacity and grid support services</li>
-            <li><strong>Solar Water Pumping &amp; Agricultural Applications</strong> - Powering irrigation schemes, livestock watering, and crop drying for Kenya's agricultural sector</li>
+          <span class="tech-feature-badge" style="background: rgba(245, 158, 11, 0.12); color: #d97706;">Solar Energy</span>
+          <h2>Harnessing Kenya's Abundant Sunshine</h2>
+          <p>Solar energy technology encompasses two primary pathways for converting sunlight into usable power. Photovoltaic (PV) systems use semiconductor cells to directly transform solar irradiance into electricity - a silent, scalable technology that works from a single rooftop panel to sprawling utility-scale arrays covering hundreds of acres. Our team at Ecotrunk has designed and supervised PV installations ranging from 10 kW commercial rooftops in Nairobi to multi-megawatt ground-mounted farms in the Rift Valley.</p>
+          <p>Kenya possesses some of the finest solar resources on the planet. The Great Rift Valley region receives insolation levels of 5.5 to 6.5 kWh per square metre per day - among the highest in the world. At current module prices below USD 0.15 per watt, unsubsidised solar electricity in Kenya frequently undercuts diesel generation by 60 to 80 percent, with simple payback periods of three to five years for commercial and industrial users.</p>
+          <p>The integration of battery energy storage systems is transforming what solar can deliver. By pairing PV arrays with battery storage, our projects can now deliver firm, dispatchable power that operates through the evening peak, stabilises voltage fluctuations, and provides backup during grid outages. Ecotrunk is actively deploying hybrid solar-plus-storage systems for commercial clients who demand 24-hour energy availability.</p>
+          <ul class="tech-feature-list">
+            <li><strong>Commercial &amp; Industrial Rooftop PV</strong> - Reducing operational energy costs for businesses across Kenya's urban centres</li>
+            <li><strong>Utility-Scale Solar Farms</strong> - Ground-mounted PV installations from 1 MW to 50 MW with PPA financing</li>
+            <li><strong>Mini-Grid &amp; Off-Grid Systems</strong> - Decentralised solar for rural communities beyond grid reach</li>
+            <li><strong>Solar-Plus-Storage Hybrids</strong> - Lithium-ion battery integration for firm capacity and grid support</li>
+            <li><strong>Solar Water Pumping</strong> - Powering irrigation and agricultural applications across arid regions</li>
           </ul>
-          <a href="solar.html" class="btn btn-primary" style="margin-top: 24px; align-self: flex-start;" data-reveal data-reveal-delay="300">
-            Explore Solar Page <i class="fas fa-arrow-right" aria-hidden="true"></i>
-          </a>
+          <a href="solar.html" class="btn btn-primary" data-reveal>Explore Solar Page <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
@@ -93,30 +170,24 @@
 
   <section class="section" style="padding-top: 0; background: var(--neutral-50);">
     <div class="container">
-      <div class="tech-feature" id="wind">
+      <div class="tech-feature" id="wind-deep">
         <div class="tech-feature-image" data-reveal>
-          <img src="assets/img/windmill.jpg" alt="Modern wind turbines standing tall in a green landscape under a dramatic sky" loading="lazy" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+          <img src="assets/img/windmill.jpg" alt="Wind turbines in a green landscape" loading="lazy">
         </div>
         <div class="tech-feature-content">
           <span class="tech-feature-badge" style="background: rgba(59, 130, 246, 0.12); color: #2563eb;">Wind Energy</span>
-          <h2 style="font-size: 2.2rem; margin: 12px 0 24px; color: var(--neutral-900);;">Capturing the Power of Kenya's Wind Corridors</h2>
-
-          <p data-reveal data-reveal-delay="50">Wind energy technology converts the kinetic energy of moving air into electricity using turbine generators mounted on tall towers. The fundamental principle is elegantly simple: wind passing over the turbine blades creates lift, causing the rotor to spin a shaft connected to a generator. Modern onshore turbines typically range from 1.5 MW to 6 MW in rated capacity, with hub heights of 80 to 140 metres and rotor diameters exceeding 150 metres. Offshore wind turbines, while less relevant to Kenya's current market, are built to withstand marine environments and can reach even larger capacities. The technological trajectory has been relentless - taller towers access stronger, more consistent wind speeds, while advanced blade aerodynamics, direct-drive permanent magnet generators, and sophisticated power electronics have pushed capacity factors from 25 percent two decades ago to over 45 percent in prime locations today.</p>
-
-          <p data-reveal data-reveal-delay="100">Kenya is blessed with some of Africa's most promising wind resources. The Turkana Corridor in northern Kenya experiences powerful channeled winds that average 11 to 13 metres per second during the peak season - among the strongest measured anywhere on the continent. The Lake Turkana Wind Power project, with 365 turbines producing 310 MW, stands as Africa's largest wind farm and a testament to what is possible when technology meets political will. The Ngong Hills, overlooking Nairobi, have hosted wind turbines since the 1990s and continue to demonstrate the viability of ridge-top installations near major load centres. Our wind resource assessment work at Ecotrunk involves deploying meteorological masts and SODAR units to collect at least twelve months of site-specific data before committing to turbine selection and layout design. We have conducted pre-feasibility studies for wind projects in Marsabit, Laikipia, Kajiado, and along the coastal escarpments - each location offering a distinct wind profile that demands careful matching of turbine type to site conditions.</p>
-
-          <p data-reveal data-reveal-delay="150">Wind power integration into Kenya's grid presents both technical challenges and substantial opportunities. The national grid, operated by Kenya Power and Kenya Electricity Transmission Company, was originally designed around predictable hydropower and geothermal baseload. Wind's inherent variability - ramping up and down with changing weather patterns - requires sophisticated forecasting, dispatch scheduling, and sometimes curtailment protocols. Ecotrunk's engineering teams work closely with system operators to develop wind farm control systems that comply with Kenya's grid code, providing reactive power capability, frequency response, and fault ride-through. Beyond the technical, wind energy delivers profound benefits to host communities. Project revenues fund local infrastructure, education scholarships, and healthcare programmes through community development agreements. In Turkana, the wind farm has brought all-weather roads, reliable mobile phone coverage, and employment opportunities to one of Kenya's most marginalised regions. We see community engagement not as a regulatory box to tick but as a foundation for project success and long-term social license.</p>
-
-          <ul class="tech-feature-list" data-reveal data-reveal-delay="200">
-            <li><strong>Onshore Wind Farm Development</strong> - End-to-end project delivery from wind resource assessment and turbine selection to construction and grid connection</li>
-            <li><strong>Repowering &amp; Retrofit Solutions</strong> - Upgrading existing wind farms with modern, higher-capacity turbines and improved control systems</li>
-            <li><strong>Hybrid Wind-Solar Systems</strong> - Combining complementary wind and solar profiles to smooth overall generation and improve capacity factors</li>
-            <li><strong>Community Wind Projects</strong> - Developing smaller-scale turbines for rural electrification, water pumping, and productive uses in off-grid areas</li>
-            <li><strong>Wind Measurement &amp; Feasibility Studies</strong> - Deploying meteorological monitoring campaigns, data analysis, and financial modelling to de-risk investment decisions</li>
+          <h2>Capturing the Power of Kenya's Wind Corridors</h2>
+          <p>Wind energy technology converts the kinetic energy of moving air into electricity using turbine generators mounted on tall towers. Modern onshore turbines typically range from 1.5 MW to 6 MW in rated capacity, with hub heights reaching 140 metres and rotor diameters exceeding 150 metres. The technological trajectory has been relentless - taller towers access stronger, more consistent wind speeds, while advanced blade aerodynamics and direct-drive generators have pushed capacity factors from 25 percent to over 45 percent in prime locations.</p>
+          <p>Kenya is blessed with some of Africa's most promising wind resources. The Turkana Corridor experiences powerful channeled winds averaging 11 to 13 metres per second during peak season - among the strongest measured on the continent. The Lake Turkana Wind Power project, with 365 turbines producing 310 MW, stands as Africa's largest wind farm. Our wind resource assessment work involves deploying meteorological masts and SODAR units to collect at least twelve months of site-specific data before committing to turbine selection and layout design.</p>
+          <p>Wind power integration into Kenya's grid presents both challenges and opportunities. The national grid was designed around predictable hydropower and geothermal baseload, so wind's variability requires sophisticated forecasting and dispatch scheduling. Beyond the technical, wind energy delivers profound community benefits. In Turkana, the wind farm has brought all-weather roads, mobile coverage, and employment to one of Kenya's most marginalised regions - demonstrating that community engagement is the foundation of long-term project success.</p>
+          <ul class="tech-feature-list">
+            <li><strong>Onshore Wind Farm Development</strong> - End-to-end delivery from resource assessment to grid connection</li>
+            <li><strong>Repowering &amp; Retrofit Solutions</strong> - Upgrading existing farms with modern, higher-capacity turbines</li>
+            <li><strong>Hybrid Wind-Solar Systems</strong> - Combining complementary profiles to smooth overall generation</li>
+            <li><strong>Community Wind Projects</strong> - Smaller-scale turbines for rural electrification and productive uses</li>
+            <li><strong>Wind Measurement &amp; Feasibility Studies</strong> - Meteorological monitoring and financial modelling to de-risk investment</li>
           </ul>
-          <a href="wind.html" class="btn btn-primary" style="margin-top: 24px; align-self: flex-start;" data-reveal data-reveal-delay="300">
-            Explore Wind Page <i class="fas fa-arrow-right" aria-hidden="true"></i>
-          </a>
+          <a href="wind.html" class="btn btn-primary" data-reveal>Explore Wind Page <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
@@ -124,49 +195,69 @@
 
   <section class="section" style="padding-top: 0;">
     <div class="container">
-      <div class="tech-feature" id="hydro">
+      <div class="tech-feature" id="hydro-deep">
         <div class="tech-feature-image" data-reveal>
-          <img src="assets/img/hydro.jpg" alt="Hydropower facility with water cascading through a concrete structure surrounded by green hills" loading="lazy" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+          <img src="assets/img/hydro.jpg" alt="Hydropower facility" loading="lazy">
         </div>
         <div class="tech-feature-content">
           <span class="tech-feature-badge" style="background: rgba(6, 95, 212, 0.12); color: #065fd4;">Hydropower</span>
-          <h2 style="font-size: 2.2rem; margin: 12px 0 24px; color: var(--neutral-900);;">Leveraging Kenya's Rivers for Clean Baseload Power</h2>
-
-          <p data-reveal data-reveal-delay="50">Hydropower captures the energy of water moving from higher to lower elevations, converting gravitational potential energy into electricity through turbines coupled to generators. The technology encompasses a broad spectrum of project types. Large dam projects with reservoirs store vast quantities of water, providing multi-season storage that can dispatch power on demand - these are the workhorses of many national grids, capable of supplying hundreds of megawatts of firm capacity. Run-of-river projects, by contrast, divert a portion of a river's flow through a turbine without significant impoundment, offering lower environmental impact but greater sensitivity to seasonal flow variations. In-stream and small-scale hydro installations extend the technology to smaller rivers and community-level applications. Each configuration carries distinct trade-offs among capacity, cost, environmental footprint, and operational flexibility. At Ecotrunk, our hydropower practice spans the full range, from pre-feasibility desk studies to detailed design and construction supervision.</p>
-
-          <p data-reveal data-reveal-delay="100">Kenya's hydropower potential is concentrated along the Tana River basin, the Athi River system, and the numerous rivers draining the Aberdare Range and Mount Kenya. The Seven Forks cascade on the Tana River - comprising Masinga, Kamburu, Gitaru, Kindaruma, and Kiambere - has been the backbone of Kenya's electricity system since the 1970s, with a combined installed capacity exceeding 500 MW. More recently, run-of-river projects on the Sondu Miriu and Turkwel rivers have added capacity while demonstrating lower reservoir footprints. Our involvement in Kenya's hydro sector includes hydrological assessments for new run-of-river schemes in Nandi and Murang'a counties, feasibility studies for small hydro projects capable of powering tea factories and agro-processing hubs, and technical audits of existing plants to identify performance improvement opportunities. The strategic value of hydropower lies in its dispatchability - unlike solar and wind, hydro can be called upon when needed, providing crucial grid stabilisation services as Kenya adds more variable renewable generation.</p>
-
-          <p data-reveal data-reveal-delay="150">Environmental and climate considerations are central to responsible hydropower development. Large reservoirs can alter river ecology, displace communities, and emit methane from decomposing vegetation - concerns that must be rigorously addressed through environmental and social impact assessments. Run-of-river and small-scale hydro projects typically carry a lighter environmental footprint, making them attractive options for rural electrification in Kenya's highland regions where perennial rivers flow with reliable gradients. Ecotrunk advocates for climate-resilient hydropower design: incorporating sediment management strategies to extend reservoir life, designing spillways for extreme flood events under changing rainfall patterns, and maintaining environmental flow releases to support downstream ecosystems. For remote communities beyond the grid, small hydro plants of 10 kW to 500 kW can provide reliable 24-hour electricity that transforms livelihoods - powering schools, clinics, small enterprises, and homes. We have developed a toolkit for community-scale hydro that combines technical standardisation with local capacity building, ensuring that projects remain operable and maintainable long after commissioning.</p>
-
-          <ul class="tech-feature-list" data-reveal data-reveal-delay="200">
-            <li><strong>Run-of-River Hydro Schemes</strong> - Environmentally-sensitive projects that harness river flows without large reservoirs, ideal for Kenya's highland catchments</li>
-            <li><strong>Reservoir Hydro &amp; Multi-Purpose Dams</strong> - Large-scale projects combining electricity generation with irrigation, water supply, and flood management benefits</li>
-            <li><strong>Small &amp; Mini Hydro for Rural Electrification</strong> - Community-scale plants from 10 kW to 1 MW serving off-grid populations and productive enterprises</li>
-            <li><strong>Hydro Rehabilitation &amp; Modernisation</strong> - Upgrading ageing turbines, control systems, and civil infrastructure to improve efficiency, capacity, and safety</li>
-            <li><strong>Climate Resilience &amp; Sediment Management</strong> - Designing for extreme hydrology, sediment bypass, and environmental flow compliance in a changing climate</li>
+          <h2>Leveraging Kenya's Rivers for Clean Baseload Power</h2>
+          <p>Hydropower captures the energy of water moving from higher to lower elevations, converting gravitational potential energy into electricity through turbines coupled to generators. Run-of-river projects divert a portion of a river's flow without significant impoundment, offering lower environmental impact. Large reservoir projects provide multi-season water storage for dispatchable power on demand. Each configuration carries distinct trade-offs among capacity, cost, and environmental footprint. Our hydropower practice spans the full range, from pre-feasibility studies to detailed design and construction supervision.</p>
+          <p>Kenya's hydropower potential is concentrated along the Tana River basin, the Athi River system, and rivers draining the Aberdare Range and Mount Kenya. The Seven Forks cascade on the Tana River - comprising Masinga, Kamburu, Gitaru, Kindaruma, and Kiambere - has been the backbone of Kenya's electricity system since the 1970s, with a combined capacity exceeding 500 MW. Our work includes hydrological assessments for new run-of-river schemes in Nandi and Murang'a counties, and technical audits of existing plants to identify performance improvements. The strategic value of hydropower lies in its dispatchability - providing crucial grid stabilisation as Kenya adds more variable renewable generation.</p>
+          <p>Environmental and climate considerations are central to responsible hydropower development. Run-of-river and small-scale projects carry a lighter environmental footprint, making them attractive for rural electrification in Kenya's highland regions. Ecotrunk advocates for climate-resilient design: sediment management strategies, spillways designed for extreme flood events, and environmental flow releases to support downstream ecosystems. For remote communities, small hydro plants of 10 kW to 500 kW provide reliable 24-hour electricity - powering schools, clinics, and small enterprises long after commissioning.</p>
+          <ul class="tech-feature-list">
+            <li><strong>Run-of-River Hydro Schemes</strong> - Environmentally-sensitive projects for Kenya's highland catchments</li>
+            <li><strong>Reservoir Hydro &amp; Multi-Purpose Dams</strong> - Large projects combining generation with irrigation and water supply</li>
+            <li><strong>Small &amp; Mini Hydro for Rural Electrification</strong> - Community-scale plants from 10 kW to 1 MW</li>
+            <li><strong>Hydro Rehabilitation &amp; Modernisation</strong> - Upgrading ageing turbines and control systems</li>
+            <li><strong>Climate Resilience &amp; Sediment Management</strong> - Designing for extreme hydrology and environmental compliance</li>
           </ul>
-          <a href="hydro.html" class="btn btn-primary" style="margin-top: 24px; align-self: flex-start;" data-reveal data-reveal-delay="300">
-            Explore Hydropower Page <i class="fas fa-arrow-right" aria-hidden="true"></i>
-          </a>
+          <a href="hydro.html" class="btn btn-primary" data-reveal>Explore Hydropower Page <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" style="background: linear-gradient(135deg, var(--green-800), var(--green-900)); color: white;">
+  <section class="section impact-section">
     <div class="container">
-      <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-        <h2 style="font-size: 2.2rem; margin: 0 0 20px;" data-reveal>Why Technology Selection Matters</h2>
-        <p style="font-size: 1.05rem; line-height: 1.8; opacity: 0.9; margin-bottom: 16px;" data-reveal data-reveal-delay="50">
-          Choosing the wrong renewable energy technology for a given site can mean years of underperformance, unexpected costs, and missed opportunities. A solar farm sited in a cloudy microclimate, a wind turbine placed in turbulent terrain, or a hydro plant designed around outdated hydrology data - each represents a failure of the feasibility process that Ecotrunk is specifically structured to prevent.
+      <div style="text-align: center;">
+        <span class="section-label" style="color: var(--green-400);" data-reveal>Why Technology Selection Matters</span>
+        <h2 class="section-title" style="color: white;" data-reveal data-reveal-delay="50">Choosing the Right Path</h2>
+        <p class="section-subtitle" style="color: var(--neutral-400); margin: 0 auto;" data-reveal data-reveal-delay="100">The wrong technology choice can mean years of underperformance. Our systematic approach ensures every recommendation is defensible, financeable, and built to deliver.</p>
+      </div>
+      <div class="impact-grid">
+        <div class="impact-card" data-reveal>
+          <div class="impact-card-icon"><i class="fas fa-compass" aria-hidden="true"></i></div>
+          <div class="impact-card-number">100%</div>
+          <div class="impact-card-label">Site-specific feasibility before technology recommendation</div>
+        </div>
+        <div class="impact-card" data-reveal data-reveal-delay="100">
+          <div class="impact-card-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+          <div class="impact-card-number">12+</div>
+          <div class="impact-card-label">Months of site data collected before final design</div>
+        </div>
+        <div class="impact-card" data-reveal data-reveal-delay="200">
+          <div class="impact-card-icon"><i class="fas fa-leaf" aria-hidden="true"></i></div>
+          <div class="impact-card-number">90%</div>
+          <div class="impact-card-label">Kenya electricity from renewable sources</div>
+        </div>
+        <div class="impact-card" data-reveal data-reveal-delay="300">
+          <div class="impact-card-icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
+          <div class="impact-card-number">100%</div>
+          <div class="impact-card-label">Community engagement on every project</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tech-cta-section">
+    <div class="container">
+      <div style="max-width: 700px; margin: 0 auto;">
+        <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); font-family: var(--font-display); font-weight: 800; margin-bottom: 20px; line-height: 1.15;" data-reveal>Let's Find the Right Technology for Your Project</h2>
+        <p style="font-size: 1.05rem; line-height: 1.8; opacity: 0.9; margin-bottom: 32px;" data-reveal data-reveal-delay="50">
+          Whether you are a developer exploring a new site, an investor conducting due diligence, or a business owner seeking to reduce energy costs - our team is ready to help you navigate the technology landscape and find the solution that fits your objectives, your site, and your community.
         </p>
-        <p style="font-size: 1.05rem; line-height: 1.8; opacity: 0.9; margin-bottom: 16px;" data-reveal data-reveal-delay="100">
-          Our approach combines rigorous technical analysis with deep local knowledge. We invest in site-specific data collection - meteorological monitoring, hydrological surveys, geotechnical investigations, and grid impact studies - before recommending a technology pathway. We model multiple scenarios, test sensitivities against fuel price volatility and policy changes, and engage communities early to understand land-use priorities and social dynamics. The result is a technology selection that is defensible, financeable, and built to deliver returns over decades of operation.
-        </p>
-        <p style="font-size: 1.05rem; line-height: 1.8; opacity: 0.9; margin-bottom: 32px;" data-reveal data-reveal-delay="150">
-          Whether you are a developer exploring a new site, an investor conducting due diligence, or a business owner seeking to reduce energy costs, we invite you to engage with our team. Let us help you navigate the technology landscape and find the solution that fits your objectives, your site, and your community.
-        </p>
-        <a href="index.html#contact" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 40px;" data-reveal data-reveal-delay="200">
+        <a href="index.html#contact" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 40px;" data-reveal data-reveal-delay="100">
           Start Your Technology Assessment <i class="fas fa-arrow-right" aria-hidden="true"></i>
         </a>
       </div>
@@ -201,7 +292,6 @@
             <a href="hydro.html">Hydropower</a>
             <a href="blog.html">Blog</a>
             <a href="index.html#services">Services</a>
-            <a href="index.html#gallery">Gallery</a>
             <a href="index.html#contact">Contact</a>
           </div>
         </div>

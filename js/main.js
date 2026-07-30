@@ -211,6 +211,12 @@
     });
   });
 
+  document.querySelectorAll('.mobile-submenu-header').forEach(function (header) {
+    header.addEventListener('click', function () {
+      this.parentElement.classList.toggle('open');
+    });
+  });
+
   function initCookieBanner() {
     var banner = document.getElementById('cookie-banner');
     if (!banner) return;

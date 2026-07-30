@@ -26,7 +26,15 @@
         <a href="about.html#values" class="nav-link">Values</a>
         <a href="technology.html" class="nav-link">Technologies</a>
         <a href="blog.html" class="nav-link" aria-current="page">Blog</a>
-        <a href="index.html#services" class="nav-link">Services</a>
+        <div class="nav-dropdown">
+          <a class="nav-link nav-dropdown-trigger">Services <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="proj_dev.html" class="nav-dropdown-link">Project Development</a>
+            <a href="engineering_systems.html" class="nav-dropdown-link">Engineering Systems</a>
+            <a href="consultancy.html" class="nav-dropdown-link">Consultancy</a>
+            <a href="p&sem.html" class="nav-dropdown-link">Procurement &amp; Supply</a>
+          </div>
+        </div>
         <a href="index.html#contact" class="nav-link">Contact</a>
         <a href="index.html#contact" class="nav-cta">Get in Touch</a>
       </nav>
@@ -42,7 +50,18 @@
     <a href="about.html#values" class="nav-link">Values</a>
     <a href="technology.html" class="nav-link">Technologies</a>
     <a href="blog.html" class="nav-link">Blog</a>
-    <a href="index.html#services" class="nav-link">Services</a>
+    <div class="mobile-submenu">
+      <div class="mobile-submenu-header">
+        <span class="nav-link">Services</span>
+        <span class="mobile-submenu-toggle"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
+      </div>
+      <div class="mobile-submenu-links">
+        <a href="proj_dev.html" class="nav-link">Project Development</a>
+        <a href="engineering_systems.html" class="nav-link">Engineering Systems</a>
+        <a href="consultancy.html" class="nav-link">Consultancy</a>
+        <a href="p&sem.html" class="nav-link">Procurement &amp; Supply</a>
+      </div>
+    </div>
     <a href="index.html#gallery" class="nav-link">Gallery</a>
     <a href="index.html#contact" class="nav-link">Contact</a>
     <a href="index.html#contact" class="nav-cta">Get in Touch</a>
@@ -68,7 +87,7 @@
             <div class="blog-card-date">June 2026</div>
             <h3>Kenya's Solar Revolution: Five Trends Shaping 2026</h3>
             <p>From falling module prices to the rise of commercial and industrial rooftop solar, Kenya's solar market is evolving rapidly. We examine the key trends driving adoption and what they mean for businesses and developers.</p>
-            <a href="#article-solar-trends" class="blog-card-link">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="blog/solar-trends.html" class="blog-card-link">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
           </div>
         </article>
 
@@ -80,7 +99,7 @@
             <div class="blog-card-date">May 2026</div>
             <h3>Lessons from Lake Turkana: Building Africa's Largest Wind Farm</h3>
             <p>The 310 MW Lake Turkana Wind Power project demonstrated that large-scale wind energy is viable in Kenya. We explore the engineering, logistical, and community engagement lessons that inform our approach today.</p>
-            <a href="#article-turkana" class="blog-card-link">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="blog/turkana-wind.html" class="blog-card-link">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
           </div>
         </article>
 
@@ -92,7 +111,7 @@
             <div class="blog-card-date">April 2026</div>
             <h3>The Role of Small Hydro in Kenya's Rural Electrification</h3>
             <p>For communities beyond the national grid, small and mini hydro plants offer reliable 24-hour power. We look at the technology, economics, and implementation models that make community-scale hydro a compelling solution.</p>
-            <a href="#article-small-hydro" class="blog-card-link">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="blog/small-hydro.html" class="blog-card-link">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
           </div>
         </article>
 
@@ -104,7 +123,7 @@
             <div class="blog-card-date">March 2026</div>
             <h3>Solar-Plus-Storage: The New Standard for Commercial Energy</h3>
             <p>With battery costs down 80 percent in a decade, solar-plus-storage systems are now economically viable for Kenyan businesses. We break down the technology options, economics, and project considerations.</p>
-            <a href="#article-solar-storage" class="blog-card-link">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="blog/solar-storage.html" class="blog-card-link">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
           </div>
         </article>
 
@@ -116,7 +135,7 @@
             <div class="blog-card-date">February 2026</div>
             <h3>Navigating Kenya's Renewable Energy Regulatory Landscape</h3>
             <p>EPRA, NEMA, REREC, KPLC, KETRACO - the regulatory environment for renewable energy projects in Kenya can be complex. We provide a practical guide to the approvals, permits, and compliance requirements.</p>
-            <a href="#article-regulatory" class="blog-card-link">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="blog/regulatory.html" class="blog-card-link">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
           </div>
         </article>
 
@@ -128,7 +147,7 @@
             <div class="blog-card-date">January 2026</div>
             <h3>Why Kenya Must Diversify Its Renewable Energy Portfolio</h3>
             <p>Kenya already generates over 90 percent of its electricity from renewables. But over-reliance on any single technology creates risk. We make the case for a balanced portfolio of solar, wind, hydro, and geothermal.</p>
-            <a href="#article-diversify" class="blog-card-link">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="blog/diversify.html" class="blog-card-link">Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
           </div>
         </article>
 
@@ -136,110 +155,7 @@
     </div>
   </section>
 
-  <section class="section" style="background: var(--neutral-50);">
-    <div class="container">
-
-      <article id="article-solar-trends" class="blog-article">
-        <a href="blog.html" class="blog-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to all articles</a>
-        <div class="blog-card-date">June 2026</div>
-        <h1>Kenya's Solar Revolution: Five Trends Shaping 2026</h1>
-        <p class="meta">By Ecotrunk Research Team | 6 min read</p>
-        <img src="assets/img/solar-pic.jpg" alt="Solar panels in Kenya" class="featured-image" loading="lazy">
-        <p>Kenya's solar energy market has reached an inflection point. With module prices below USD 0.15 per watt and commercial electricity tariffs among the highest in Africa, the economics of solar have never been more compelling. Here are five trends we believe will define the market in 2026.</p>
-        <h2>1. Commercial and Industrial Rooftop Solar Dominates</h2>
-        <p>Businesses in Nairobi, Mombasa, and Kisumu are increasingly turning to rooftop solar not as an environmental gesture but as a financial imperative. With payback periods of three to five years and system lifespans exceeding 25 years, the return on investment is clear. We are seeing particular growth in the manufacturing, hospitality, and agro-processing sectors where energy costs represent a significant portion of operating expenses.</p>
-        <h2>2. Solar-Plus-Storage Becomes Mainstream</h2>
-        <p>The dramatic decline in battery storage costs has transformed what solar can deliver. Modern lithium-ion systems enable businesses to store excess daytime generation for use during evening peaks, reducing grid dependence by up to 80 percent. For facilities that require 24-hour power reliability, solar-plus-storage is now the default recommendation.</p>
-        <h2>3. Utility-Scale Solar Attracts International Capital</h2>
-        <p>Kenya's feed-in tariff policy and the growing appetite of international climate financiers are driving a pipeline of large-scale solar projects. Several multi-megawatt solar farms are in development across the Rift Valley, taking advantage of the region's exceptional insolation levels of 5.5 to 6.5 kWh per square metre per day.</p>
-        <h2>4. Mini-Grids Bridge the Access Gap</h2>
-        <p>For the estimated 25 percent of Kenyans without grid access, solar mini-grids offer a faster, more cost-effective path to electrification than grid extension. Advances in smart metering, remote monitoring, and mobile payment integration are making mini-grids commercially sustainable at smaller scales than ever before.</p>
-        <h2>5. Agricultural Solar Applications Expand</h2>
-        <p>Solar water pumping for irrigation is transforming farming in arid and semi-arid regions. With diesel pump operating costs eliminated and maintenance requirements minimal, farmers are adopting solar pumping at accelerating rates. We expect this trend to accelerate as climate adaptation funding targets agricultural resilience.</p>
-      </article>
-
-      <article id="article-turkana" class="blog-article">
-        <a href="blog.html" class="blog-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to all articles</a>
-        <div class="blog-card-date">May 2026</div>
-        <h1>Lessons from Lake Turkana: Building Africa's Largest Wind Farm</h1>
-        <p class="meta">By Ecotrunk Engineering Team | 8 min read</p>
-        <img src="assets/img/windmill.jpg" alt="Wind turbines in Turkana" class="featured-image" loading="lazy">
-        <p>The Lake Turkana Wind Power project stands as Africa's largest wind farm, with 365 turbines producing 310 MW of clean electricity. Located in one of Kenya's most remote and challenging environments, the project offers invaluable lessons for renewable energy development across the continent.</p>
-        <h2>Engineering in Extreme Conditions</h2>
-        <p>The Turkana Corridor experiences some of the strongest and most consistent winds on the continent, with peak speeds of 11 to 13 metres per second. However, the remote location demanded innovative logistics: all 365 turbines, each weighing hundreds of tonnes, were transported over 1,200 kilometres from Mombasa port through rough terrain. This required upgrading roads, building temporary bridges, and coordinating convoys across multiple counties. The lesson for future projects is clear: logistics planning must begin during feasibility, not after financial close.</p>
-        <h2>Community Engagement as a Foundation</h2>
-        <p>The project brought all-weather roads, reliable mobile phone coverage, and employment to one of Kenya's most marginalised regions. Community development agreements funded schools, clinics, and local infrastructure. Ecotrunk's approach mirrors this model: we view community engagement not as a regulatory box to tick but as a foundation for project success and long-term social license to operate.</p>
-        <h2>Grid Integration Challenges</h2>
-        <p>Integrating 310 MW of variable wind power into a grid designed around predictable hydropower and geothermal baseload required sophisticated forecasting, dispatch scheduling, and curtailment protocols. The project invested in a dedicated control centre and worked closely with Kenya Power and KETRACO to ensure grid stability. These integration lessons are directly applicable to Kenya's expanding renewable energy portfolio.</p>
-      </article>
-
-      <article id="article-small-hydro" class="blog-article">
-        <a href="blog.html" class="blog-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to all articles</a>
-        <div class="blog-card-date">April 2026</div>
-        <h1>The Role of Small Hydro in Kenya's Rural Electrification</h1>
-        <p class="meta">By Ecotrunk Hydropower Team | 6 min read</p>
-        <img src="assets/img/hydro.jpg" alt="Hydropower facility" class="featured-image" loading="lazy">
-        <p>While much of the attention in Kenya's renewable energy sector focuses on large-scale solar and wind projects, small and mini hydropower plants are quietly transforming lives in rural communities beyond the national grid. These plants, typically ranging from 10 kW to 1 MW, harness the energy of perennial rivers in Kenya's highland regions to provide reliable, 24-hour electricity.</p>
-        <h2>Why Small Hydro Matters</h2>
-        <p>For communities in Kenya's highland regions where perennial rivers flow with reliable gradients, small hydro offers unique advantages. Unlike solar, which stops generating at night, and wind, which varies with weather patterns, hydro can provide consistent baseload power around the clock. A well-designed small hydro plant can operate for 50 years or more with proper maintenance, creating intergenerational value for the communities it serves.</p>
-        <h2>Applications in Rural Development</h2>
-        <p>The impact of reliable electricity on rural communities is transformative. Small hydro plants power schools after dark, enabling adult education programmes. They run grain mills and coffee pulpers, adding value to agricultural produce. They operate cold storage for vaccines at rural health clinics and provide lighting for small businesses to operate beyond daylight hours. In Murang'a and Nandi counties, we have seen small hydro projects catalyse local economic development far beyond electricity generation.</p>
-        <h2>Environmental Considerations</h2>
-        <p>Run-of-river hydro designs, which divert a portion of a river's flow without significant impoundment, offer a low environmental footprint compared to large dam projects. Proper environmental flow management ensures that downstream ecosystems remain healthy, while fish-friendly turbine designs minimise ecological disruption. At Ecotrunk, we advocate for climate-resilient hydropower design that incorporates sediment management and environmental flow releases.</p>
-      </article>
-
-      <article id="article-solar-storage" class="blog-article">
-        <a href="blog.html" class="blog-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to all articles</a>
-        <div class="blog-card-date">March 2026</div>
-        <h1>Solar-Plus-Storage: The New Standard for Commercial Energy</h1>
-        <p class="meta">By Ecotrunk Energy Storage Team | 7 min read</p>
-        <img src="assets/img/solar-power-6860359_1280.jpg" alt="Solar-plus-storage system" class="featured-image" loading="lazy">
-        <p>The convergence of falling solar module prices and dramatic battery cost reductions has created a tipping point for commercial energy in Kenya. Solar-plus-storage systems can now deliver firm, dispatchable power at a lower cost than grid electricity or diesel generation for many commercial and industrial users.</p>
-        <h2>The Battery Cost Revolution</h2>
-        <p>Lithium-ion battery pack prices have fallen by more than 80 percent over the past decade, from over USD 1,000 per kWh in 2015 to under USD 150 per kWh today. At these price levels, adding storage to a solar installation typically increases the system cost by 30 to 50 percent but doubles the useful energy output by capturing generation that would otherwise be curtailed during low-demand periods. The business case is strongest for facilities with evening peak loads or unreliable grid supply.</p>
-        <h2>Technology Options</h2>
-        <p>For commercial applications, lithium-ion batteries remain the dominant technology due to their high energy density, efficiency, and declining cost. Lithium iron phosphate (LFP) chemistry has emerged as the preferred choice for stationary storage due to its safety profile, long cycle life, and lower environmental impact compared to nickel-based chemistries. For larger-scale applications, flow batteries offer advantages in duration and cycle life but at higher upfront cost.</p>
-        <h2>Grid Support Services</h2>
-        <p>Beyond backup power, solar-plus-storage systems can provide valuable grid support services including voltage regulation, frequency response, and peak shaving. As Kenya's grid integrates more variable renewable generation, these services will become increasingly valuable. Forward-thinking commercial clients are positioning themselves to participate in emerging ancillary services markets.</p>
-      </article>
-
-      <article id="article-regulatory" class="blog-article">
-        <a href="blog.html" class="blog-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to all articles</a>
-        <div class="blog-card-date">February 2026</div>
-        <h1>Navigating Kenya's Renewable Energy Regulatory Landscape</h1>
-        <p class="meta">By Ecotrunk Regulatory Team | 8 min read</p>
-        <img src="assets/img/eng.jpg" alt="Engineering team" class="featured-image" loading="lazy">
-        <p>Developing a renewable energy project in Kenya requires navigating a complex regulatory environment involving multiple agencies, permits, and compliance requirements. Understanding this landscape early in project development is essential to avoiding delays and cost overruns.</p>
-        <h2>Key Regulatory Bodies</h2>
-        <ul>
-          <li><strong>EPRA</strong> (Energy and Petroleum Regulatory Authority): Issues generation licenses, approves power purchase agreements, and sets tariff structures. All projects above 1 MW require a generation license.</li>
-          <li><strong>NEMA</strong> (National Environment Management Authority): Mandates Environmental and Social Impact Assessment (ESIA) for all energy projects. The ESIA process includes public participation and can take 6 to 12 months.</li>
-          <li><strong>REREC</strong> (Rural Electrification and Renewable Energy Corporation): Manages the feed-in tariff programme and supports renewable energy development in rural areas.</li>
-          <li><strong>KPLC</strong> (Kenya Power): The off-taker for grid-connected projects. Grid interconnection studies and connection agreements must be negotiated early.</li>
-          <li><strong>KETRACO</strong> (Kenya Electricity Transmission Company): Manages the high-voltage transmission grid. Projects connecting to the transmission network require KETRACO approval.</li>
-          <li><strong>County Governments</strong>: Increasingly important for land use approvals, business permits, and community engagement protocols.</li>
-        </ul>
-        <h2>Practical Tips for Developers</h2>
-        <p>Start regulatory engagement early. Identify required permits during the feasibility phase and begin the ESIA process as soon as a project site is confirmed. Build relationships with regulatory staff and seek pre-application guidance where available. Budget for regulatory timelines of 12 to 18 months from project inception to all permits in hand.</p>
-      </article>
-
-      <article id="article-diversify" class="blog-article">
-        <a href="blog.html" class="blog-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to all articles</a>
-        <div class="blog-card-date">January 2026</div>
-        <h1>Why Kenya Must Diversify Its Renewable Energy Portfolio</h1>
-        <p class="meta">By Ecotrunk Strategy Team | 6 min read</p>
-        <img src="assets/img/solar.jpg" alt="Solar PV installation" class="featured-image" loading="lazy">
-        <p>Kenya is already a global leader in renewable energy, with over 90 percent of electricity generated from clean sources. However, the composition of this generation mix presents both opportunities and vulnerabilities that demand strategic attention.</p>
-        <h2>The Current Mix</h2>
-        <p>Geothermal provides approximately 45 percent of Kenya's electricity, hydropower around 35 percent, wind approximately 12 percent, and solar a growing but still modest share. While the high renewable share is commendable, the concentration risk is significant. Drought periods can reduce hydropower output by 40 percent or more, forcing reliance on expensive emergency diesel generation. Geothermal plants, while providing excellent baseload, require significant upfront capital and long development timelines.</p>
-        <h2>The Case for Balance</h2>
-        <p>A balanced renewable energy portfolio distributes risk across multiple technologies with complementary profiles. Solar generates during daylight hours when demand peaks. Wind often blows strongest at night and during cloudy periods, complementing solar. Hydropower with reservoir storage provides dispatchable capacity that can be called upon when needed. Geothermal provides stable baseload regardless of weather conditions. By developing all four technologies in a coordinated manner, Kenya can minimise the impact of any single technology's variability or disruption.</p>
-        <h2>Our Recommendation</h2>
-        <p>Ecotrunk advocates for a deliberate diversification strategy that sets minimum and maximum shares for each technology in the national generation mix. This approach would guide investment decisions, grid planning, and tariff policy towards an optimally balanced portfolio that maximises reliability, minimises cost, and reduces climate risk.</p>
-      </article>
-
-    </div>
-  </section>
+  <!-- Articles moved to separate pages: blog/solar-trends.html, blog/turkana-wind.html, blog/small-hydro.html, blog/solar-storage.html, blog/regulatory.html, blog/diversify.html -->
 
   <section class="section tech-cta-section">
     <div class="container">
