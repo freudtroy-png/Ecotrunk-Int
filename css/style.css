@@ -1554,6 +1554,202 @@ ul { list-style: none; }
   flex: 1;
 }
 
+.tech-section-block {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--neutral-200);
+  margin-top: 40px;
+}
+
+.tech-section-block-header {
+  padding: 40px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.tech-section-block-header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.tech-section-block-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.tech-section-block-header-left h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+}
+
+.tech-section-block-header-left h3 span {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+.tech-section-block-stats {
+  display: flex;
+  gap: 24px;
+}
+
+.tech-section-block-stat {
+  text-align: center;
+  padding: 8px 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.tech-section-block-stat-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.1;
+}
+
+.tech-section-block-stat-label {
+  display: block;
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 2px;
+}
+
+.tech-section-block-body {
+  padding: 48px;
+}
+
+.tech-section-block-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.tech-section-block-card {
+  background: var(--neutral-50);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  transition: all 0.3s ease;
+}
+
+.tech-section-block-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+  border-color: var(--green-200);
+}
+
+.tech-section-block-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.tech-section-block-card h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--neutral-900);
+  margin-bottom: 8px;
+}
+
+.tech-section-block-card p {
+  font-size: 0.88rem;
+  color: var(--neutral-600);
+  line-height: 1.7;
+}
+
+.tech-section-block-apps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.tech-section-block-app {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 20px;
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+}
+
+.tech-section-block-app:hover {
+  border-color: var(--green-200);
+  background: var(--green-50);
+}
+
+.tech-section-block-app-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.tech-section-block-app h5 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--neutral-900);
+  margin-bottom: 4px;
+}
+
+.tech-section-block-app p {
+  font-size: 0.82rem;
+  color: var(--neutral-500);
+  line-height: 1.5;
+}
+
+.tech-section-block-cta {
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .tech-section-block-header { padding: 32px 28px; flex-direction: column; align-items: flex-start; }
+  .tech-section-block-body { padding: 28px; }
+  .tech-section-block-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .tech-section-block-header { padding: 24px 20px; }
+  .tech-section-block-body { padding: 20px; }
+  .tech-section-block-grid { grid-template-columns: 1fr; }
+  .tech-section-block-apps { grid-template-columns: 1fr; }
+  .tech-section-block-stats { flex-wrap: wrap; gap: 12px; }
+}
+
 .tech-feature {
   display: grid;
   grid-template-columns: 1fr 1fr;
