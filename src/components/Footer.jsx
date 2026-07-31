@@ -5,15 +5,14 @@ const FORM_ENDPOINT = '';
 
 const QUICK_LINKS = [
   { to: '/about', label: 'About Us' },
-  { to: '/about#values', label: 'Our Values' },
   { to: '/technology', label: 'Technologies' },
+  { to: '/services', label: 'Services' },
   { to: '/blog', label: 'Blog & News' },
   { to: '/investors', label: 'Investors' },
   { to: '/#contact', label: 'Contact' },
 ];
 
 const SERVICE_LINKS = [
-  { to: '/services', label: 'All Services' },
   { to: '/services/project-development', label: 'Project Development' },
   { to: '/services/engineering-systems', label: 'Engineering Systems' },
   { to: '/services/consultancy', label: 'Consultancy' },
@@ -30,6 +29,13 @@ const TECHNOLOGY_LINKS = [
   { to: '/solar', label: 'Solar Energy' },
   { to: '/wind', label: 'Wind Energy' },
   { to: '/hydro', label: 'Hydropower' },
+];
+
+const FOOTER_STATS = [
+  { value: '11+', label: 'Years Delivering' },
+  { value: '50+', label: 'Projects Completed' },
+  { value: '4', label: 'Technologies' },
+  { value: '3', label: 'East African Countries' },
 ];
 
 export default function Footer() {
@@ -66,7 +72,35 @@ export default function Footer() {
 
   return (
     <footer className="footer" role="contentinfo">
-      <div className="footer-top">
+      <div className="footer-map-bg" aria-hidden="true"></div>
+
+      <div className="footer-cta container">
+        <div className="footer-cta-inner">
+          <div>
+            <span className="footer-cta-eyebrow">Powering East Africa</span>
+            <h2 className="footer-cta-title">
+              Let&rsquo;s build a <span className="footer-cta-accent">sustainable</span> Kenya, together.
+            </h2>
+          </div>
+          <div className="footer-cta-actions">
+            <Link to="/#contact" className="btn btn-primary footer-cta-btn">Start a Project</Link>
+            <Link to="/#contact" className="btn btn-outline-transparent footer-cta-btn">Get in Touch</Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="footer-stats">
+        <div className="container footer-stats-grid">
+          {FOOTER_STATS.map((s) => (
+            <div className="footer-stat" key={s.label}>
+              <span className="footer-stat-value">{s.value}</span>
+              <span className="footer-stat-label">{s.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="footer-main">
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
@@ -87,7 +121,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="footer-col" id="footer-links">
+            <div className="footer-col">
               <h4 className="footer-heading">Company</h4>
               {renderLinks(QUICK_LINKS)}
             </div>
