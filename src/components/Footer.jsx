@@ -3,6 +3,35 @@ import { Link } from 'react-router-dom';
 
 const FORM_ENDPOINT = '';
 
+const QUICK_LINKS = [
+  { to: '/about', label: 'About Us' },
+  { to: '/about#values', label: 'Our Values' },
+  { to: '/technology', label: 'Technologies' },
+  { to: '/blog', label: 'Blog & News' },
+  { to: '/investors', label: 'Investors' },
+  { to: '/#contact', label: 'Contact' },
+];
+
+const SERVICE_LINKS = [
+  { to: '/services', label: 'All Services' },
+  { to: '/services/project-development', label: 'Project Development' },
+  { to: '/services/engineering-systems', label: 'Engineering Systems' },
+  { to: '/services/consultancy', label: 'Consultancy' },
+  { to: '/services/procurement', label: 'Procurement & Supply' },
+];
+
+const INVESTOR_LINKS = [
+  { to: '/investors', label: 'Investor Relations' },
+  { to: '/investors/governance', label: 'Governance' },
+  { to: '/investors/reports', label: 'Reports & Publications' },
+];
+
+const TECHNOLOGY_LINKS = [
+  { to: '/solar', label: 'Solar Energy' },
+  { to: '/wind', label: 'Wind Energy' },
+  { to: '/hydro', label: 'Hydropower' },
+];
+
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('');
@@ -25,90 +54,117 @@ export default function Footer() {
     setTimeout(() => setStatus(''), 6000);
   };
 
+  const renderLinks = (links) => (
+    <div className="footer-links">
+      {links.map((l) => (
+        <Link key={l.to + l.label} to={l.to}>
+          {l.label}
+        </Link>
+      ))}
+    </div>
+  );
+
   return (
     <footer className="footer" role="contentinfo">
-      <div className="container">
-        <div className="footer-grid">
-          <div className="footer-brand">
-            <Link to="/" className="header-logo" aria-label="Ecotrunk Home">
-              <div className="header-logo-icon">
-                <img src="/assets/logo.png" alt="Ecotrunk International Ltd" />
-              </div>
-            </Link>
-            <p>Ecotrunk International Ltd (ETL) is a firm of Technologists, Consultants, and Managers delivering world-class renewable energy solutions across East Africa.</p>
-            <div className="footer-social">
-              <a href="#" aria-label="LinkedIn" onClick={(e) => e.preventDefault()}><i className="fab fa-linkedin-in" aria-hidden="true"></i></a>
-              <a href="#" aria-label="Twitter" onClick={(e) => e.preventDefault()}><i className="fab fa-twitter" aria-hidden="true"></i></a>
-              <a href="#" aria-label="Facebook" onClick={(e) => e.preventDefault()}><i className="fab fa-facebook-f" aria-hidden="true"></i></a>
-              <a href="#" aria-label="YouTube" onClick={(e) => e.preventDefault()}><i className="fab fa-youtube" aria-hidden="true"></i></a>
-            </div>
-          </div>
-          <div>
-            <h4 className="footer-heading">Quick Links</h4>
-            <div className="footer-links">
-              <Link to="/about">About Us</Link>
-              <Link to="/about#values">Our Values</Link>
-              <Link to="/technology">Technologies</Link>
-              <Link to="/solar">Solar Energy</Link>
-              <Link to="/wind">Wind Energy</Link>
-              <Link to="/hydro">Hydropower</Link>
-              <Link to="/blog">Blog</Link>
-              <Link to="/#services">Services</Link>
-              <Link to="/#contact">Contact</Link>
-            </div>
-          </div>
-          <div>
-            <h4 className="footer-heading">Services</h4>
-            <div className="footer-links">
-              <Link to="/services">All Services</Link>
-              <Link to="/services/project-development">Project Development</Link>
-              <Link to="/services/engineering-systems">Engineering Systems</Link>
-              <Link to="/services/consultancy">Consultancy</Link>
-              <Link to="/services/procurement">Procurement &amp; Supply</Link>
-            </div>
-          </div>
-          <div>
-            <h4 className="footer-heading">Investors</h4>
-            <div className="footer-links">
-              <Link to="/investors">Investor Relations</Link>
-              <Link to="/investors/governance">Governance</Link>
-              <Link to="/investors/reports">Reports &amp; Publications</Link>
-            </div>
-          </div>
-          <div className="footer-contact">
-            <h4 className="footer-heading">Contact</h4>
-            <ul className="footer-contact-list">
-              <li><i className="fas fa-map-marker-alt" aria-hidden="true"></i> Professional Centre, Ngong Road, P.O. Box 7252-00200, Nairobi, Kenya</li>
-              <li><i className="fas fa-phone-alt" aria-hidden="true"></i> <a href="tel:+254728367885">+254 728 367 885</a></li>
-              <li><i className="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@ecotrunk.co.ke">info@ecotrunk.co.ke</a></li>
-              <li><i className="fas fa-clock" aria-hidden="true"></i> Mon – Fri, 8:00 AM – 5:00 PM (EAT)</li>
-            </ul>
-          </div>
-          <div className="footer-newsletter">
-            <h4 className="footer-heading">Stay Updated</h4>
-            <p>Subscribe to receive updates on our projects and the latest in Kenya's renewable energy sector.</p>
-            <form className="footer-newsletter-form" onSubmit={handleSubmit}>
-              <input
-                type="email"
-                name="email"
-                placeholder="Your email address"
-                aria-label="Email for newsletter"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <button type="submit" aria-label="Subscribe">Subscribe</button>
-            </form>
-            {status && (
-              <p className={`form-status ${status}`}>
-                {status === 'success' ? 'Subscribed! Thank you.' : 'Something went wrong. Please try again.'}
+      <div className="footer-top">
+        <div className="container">
+          <div className="footer-grid">
+            <div className="footer-brand">
+              <Link to="/" className="header-logo" aria-label="Ecotrunk Home">
+                <div className="header-logo-icon">
+                  <img src="/assets/logo.png" alt="Ecotrunk International Ltd" />
+                </div>
+              </Link>
+              <p>
+                Ecotrunk International Ltd (ETL) is a firm of Technologists, Consultants, and
+                Managers delivering renewable energy solutions across East Africa since 2014.
               </p>
-            )}
+              <div className="footer-social">
+                <a href="#" aria-label="LinkedIn" onClick={(e) => e.preventDefault()}><i className="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter" onClick={(e) => e.preventDefault()}><i className="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Facebook" onClick={(e) => e.preventDefault()}><i className="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="YouTube" onClick={(e) => e.preventDefault()}><i className="fab fa-youtube" aria-hidden="true"></i></a>
+              </div>
+            </div>
+
+            <div className="footer-col" id="footer-links">
+              <h4 className="footer-heading">Company</h4>
+              {renderLinks(QUICK_LINKS)}
+            </div>
+
+            <div className="footer-col">
+              <h4 className="footer-heading">Services</h4>
+              {renderLinks(SERVICE_LINKS)}
+            </div>
+
+            <div className="footer-col">
+              <h4 className="footer-heading">Technologies</h4>
+              {renderLinks(TECHNOLOGY_LINKS)}
+            </div>
+
+            <div className="footer-col">
+              <h4 className="footer-heading">Investors</h4>
+              {renderLinks(INVESTOR_LINKS)}
+            </div>
+
+            <div className="footer-col footer-col-wide">
+              <h4 className="footer-heading">Contact</h4>
+              <ul className="footer-contact-list">
+                <li>
+                  <i className="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <span>Professional Centre, Ngong Road,<br />P.O. Box 7252-00200, Nairobi, Kenya</span>
+                </li>
+                <li>
+                  <i className="fas fa-phone-alt" aria-hidden="true"></i>
+                  <a href="tel:+254728367885">+254 728 367 885</a>
+                </li>
+                <li>
+                  <i className="fas fa-envelope" aria-hidden="true"></i>
+                  <span>
+                    <a href="mailto:info@ecotrunk.co.ke">info@ecotrunk.co.ke</a>
+                  </span>
+                </li>
+                <li>
+                  <i className="fas fa-clock" aria-hidden="true"></i>
+                  <span>Mon – Fri, 8:00 AM – 5:00 PM (EAT)</span>
+                </li>
+              </ul>
+
+              <h4 className="footer-heading footer-heading-newsletter">Stay Updated</h4>
+              <p className="footer-newsletter-text">
+                Subscribe for updates on our projects and Kenya's renewable energy sector.
+              </p>
+              <form className="footer-newsletter-form" onSubmit={handleSubmit}>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your email address"
+                  aria-label="Email for newsletter"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <button type="submit" aria-label="Subscribe">Subscribe</button>
+              </form>
+              {status && (
+                <p className={`form-status ${status}`}>
+                  {status === 'success' ? 'Subscribed! Thank you.' : 'Something went wrong. Please try again.'}
+                </p>
+              )}
+            </div>
           </div>
         </div>
-        <div className="footer-bottom">
+      </div>
+
+      <div className="footer-bottom">
+        <div className="container footer-bottom-inner">
           <span>&copy; 2026 Ecotrunk International Ltd. All rights reserved.</span>
-          <span>Committed to a sustainable Kenya</span>
+          <div className="footer-legal">
+            <Link to="/about">Privacy</Link>
+            <Link to="/about#values">Terms</Link>
+            <Link to="/sitemap.xml">Sitemap</Link>
+          </div>
+          <span className="footer-tagline">Committed to a sustainable Kenya</span>
         </div>
       </div>
     </footer>
