@@ -1,15 +1,10 @@
-import PageHero from '../components/PageHero';
+﻿import PageHero from '../components/PageHero';
 import TechExplorer from '../components/TechExplorer';
 import Reveal from '../components/Reveal';
 import { Link } from 'react-router-dom';
 import { technologies } from '../data/technologies';
 
-const gradient = {
-  background: 'linear-gradient(135deg, var(--green-300), var(--green-500))',
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
-  backgroundClip: 'text',
-};
+const accent = { color: 'var(--volt-teal-light)' };
 
 const OVERVIEWS = [
   {
@@ -49,7 +44,7 @@ export default function Technology() {
         badge={{ icon: 'bolt', label: 'Our Technologies' }}
         title={
           <>
-            Renewable Energy <span style={gradient}>Technologies</span>
+            Renewable Energy <span style={accent}>Technologies</span>
           </>
         }
         subtitle="Kenya's energy transition demands a portfolio approach. We combine deep technical expertise with local knowledge to select, design, and deliver the right technology mix for every project - from solar and wind to hydropower."

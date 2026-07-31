@@ -1,49 +1,8 @@
-import PageHero from '../components/PageHero';
+﻿import PageHero from '../components/PageHero';
 import TechCta from '../components/TechCta';
 import Reveal from '../components/Reveal';
 
-const gradient = {
-  background: 'linear-gradient(135deg, var(--green-300), var(--green-500))',
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
-  backgroundClip: 'text',
-};
-
-const cardStyle = {
-  background: 'white',
-  border: '1px solid var(--neutral-200)',
-  borderRadius: 'var(--radius-lg)',
-  padding: '36px 28px',
-  transition: 'all 0.3s ease',
-};
-
-const iconStyle = {
-  width: 48,
-  height: 48,
-  borderRadius: 'var(--radius-sm)',
-  background: 'var(--green-50)',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: 'var(--green-600)',
-  fontSize: '1.25rem',
-  marginBottom: 16,
-};
-
-const h3Style = {
-  fontFamily: 'var(--font-display)',
-  fontSize: '1.15rem',
-  fontWeight: 700,
-  marginBottom: 12,
-  color: 'var(--neutral-900)',
-};
-
-const pStyle = {
-  fontSize: '0.9rem',
-  color: 'var(--neutral-600)',
-  lineHeight: 1.7,
-  marginBottom: 12,
-};
+const accent = { color: 'var(--volt-teal-light)' };
 
 const OFFERINGS = [
   {
@@ -124,7 +83,7 @@ export default function Consultancy() {
         title={
           <>
             Strategic Advisory for{' '}
-            <span style={gradient}>Renewable Energy Success</span>
+            <span style={accent}>Renewable Energy Success</span>
           </>
         }
         subtitle="Decades of combined expertise across the full spectrum of renewable energy and infrastructure development in East Africa. We empower clients to make informed decisions, navigate complex regulations, and optimise project outcomes."
@@ -143,10 +102,10 @@ export default function Consultancy() {
             <h2 className="section-title">Expert Guidance at Every Stage</h2>
           </div>
           <div className="two-col">
-            <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--neutral-600)' }}>
+            <p>
               Ecotrunk International Ltd delivers expert consultancy services that empower clients to make informed decisions, navigate complex regulatory environments, and optimise project outcomes. Our multidisciplinary team brings decades of combined experience across the full spectrum of renewable energy and infrastructure development in East Africa. From feasibility studies that establish project viability to technical assessments that ensure engineering integrity, our consultancy practice is built on rigour, independence, and deep local knowledge. We work alongside developers, investors, government agencies, and communities to provide the analytical foundation that turns energy concepts into bankable, sustainable projects.
             </p>
-            <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--neutral-600)' }}>
+            <p>
               Our value lies not only in what we know but in how we apply it. Every consultancy engagement begins with a thorough understanding of your objectives, constraints, and operating context. We then deploy the right blend of technical analysis, financial modelling, regulatory insight, and stakeholder engagement to deliver recommendations that are both rigorous and practical. Whether you need a rapid technical review to support a funding application or a comprehensive multi-year environmental monitoring programme, our team scales to match the challenge. We pride ourselves on delivering clear, actionable advice that stands up to scrutiny from lenders, regulators, and partners.
             </p>
           </div>
@@ -155,25 +114,23 @@ export default function Consultancy() {
 
       <section className="section" style={{ background: 'var(--neutral-50)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center' }}>
+          <div className="sec-head" style={{ textAlign: 'center', margin: '0 auto' }}>
             <span className="section-label">Services</span>
-            <h2 className="section-title" style={{ maxWidth: 600, margin: '0 auto 20px' }}>
-              Our Consultancy Offerings
-            </h2>
+            <h2 className="section-title">Our Consultancy Offerings</h2>
             <p className="section-subtitle" style={{ margin: '0 auto' }}>
               Tailored advisory solutions across the entire project lifecycle from concept through commissioning and beyond.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginTop: 60 }}>
+          <div className="offer-grid">
             {OFFERINGS.map((item, i) => (
-              <Reveal key={item.title} delay={i * 100} style={cardStyle}>
-                <div style={iconStyle}>
+              <Reveal key={item.title} delay={i * 100} className="offer-card">
+                <div className="offer-card-icon">
                   <i className={`fas fa-${item.icon}`} aria-hidden="true"></i>
                 </div>
-                <h3 style={h3Style}>{item.title}</h3>
+                <h3>{item.title}</h3>
                 {item.paras.map((para) => (
-                  <p style={pStyle} key={para.slice(0, 24)}>
+                  <p key={para.slice(0, 24)}>
                     {para}
                   </p>
                 ))}
@@ -185,25 +142,29 @@ export default function Consultancy() {
 
       <section className="section">
         <div className="container">
-          <div style={{ maxWidth: 900 }}>
+          <div className="sec-head">
             <span className="section-label">Our Approach</span>
             <h2 className="section-title">Consultancy Process</h2>
-            <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--neutral-600)', marginTop: 12 }}>
+            <p className="section-subtitle">
               Every engagement begins with listening. We take time to understand your objectives, constraints, and context before defining scope and success criteria. Only then do we deploy our analytical rigour.
             </p>
           </div>
-          <div style={{ maxWidth: 700, marginTop: 40 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
-              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--neutral-600)' }}>
-                Our team gathers primary and secondary data through site surveys, resource assessments, and technical evaluations. We build a robust evidence base before generating recommendations supported by financial models, risk assessments, and implementation roadmaps tailored to your specific context.
-              </p>
-              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--neutral-600)' }}>
-                We deliver comprehensive reports and presentations, then stay engaged to support implementation, answer questions, and adapt recommendations as conditions evolve. A consultancy report that sits on a shelf has failed. Ours are designed to be acted on.
-              </p>
-            </div>
-            <div style={{ marginTop: 32, padding: '24px 28px', background: 'white', borderLeft: '3px solid var(--green-500)' }}>
-              <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--neutral-600)', fontStyle: 'italic' }}>
-                &quot;Good consultancy is not about delivering a report. It is about delivering clarity. Our clients make better decisions because they understand the trade-offs, the risks, and the opportunities.&quot;
+          <div className="approach-cols">
+            <p>
+              Our team gathers primary and secondary data through site surveys, resource assessments, and technical evaluations. We build a robust evidence base before generating recommendations supported by financial models, risk assessments, and implementation roadmaps tailored to your specific context.
+            </p>
+            <p>
+              We deliver comprehensive reports and presentations, then stay engaged to support implementation, answer questions, and adapt recommendations as conditions evolve. A consultancy report that sits on a shelf has failed. Ours are designed to be acted on.
+            </p>
+          </div>
+          <div className="volt-callout">
+            <div className="volt-callout-icon"><i className="fas fa-lightbulb" aria-hidden="true"></i></div>
+            <div>
+              <h4>Clarity over volume</h4>
+              <p>
+                A consultancy report that sits on a shelf has failed. We design ours to be acted
+                on â€” clear recommendations, explicit trade-offs, and an implementation roadmap
+                your lenders and partners can scrutinise.
               </p>
             </div>
           </div>
@@ -212,17 +173,15 @@ export default function Consultancy() {
 
       <section className="section" style={{ background: 'white' }}>
         <div className="container">
-          <div style={{ maxWidth: 900 }}>
+          <div className="sec-head">
             <span className="section-label">Why Ecotrunk</span>
             <h2 className="section-title">Why Work With Us</h2>
           </div>
-          <div style={{ marginTop: 40, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px 48px' }}>
+          <div className="benefit-grid">
             {REASONS.map((reason, i) => (
-              <Reveal key={reason.title} delay={i * 50}>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--neutral-900)', marginBottom: 8 }}>
-                  {reason.title}
-                </h3>
-                <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--neutral-600)' }}>{reason.text}</p>
+              <Reveal key={reason.title} delay={i * 50} className="benefit-item">
+                <h3>{reason.title}</h3>
+                <p>{reason.text}</p>
               </Reveal>
             ))}
           </div>

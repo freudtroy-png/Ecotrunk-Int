@@ -61,16 +61,36 @@ export default function Home() {
 
   return (
     <>
-      {/* ===== Hero: full-screen video/image with mission ===== */}
+      {/* ===== Hero: full-screen video with mission ===== */}
       <section className="volt-jumbotron">
         <div className="volt-jumbotron-bg">
-          <img src="/assets/img/solar-pic.jpg" alt="Renewable energy landscape with solar panels and wind turbines" loading="eager" />
+          <video
+            src="/assets/video/hero-wind-solar.mp4"
+            poster="/assets/img/hero-poster.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            aria-label="Aerial footage of wind turbines and solar panels"
+          >
+            <source src="/assets/video/hero-wind-solar.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="volt-jumbotron-caption">
+          <h1>Clean energy for Kenya&apos;s tomorrow</h1>
+          <p>
+            We develop, engineer, and deliver renewable energy projects that improve the global
+            environment and foster local development.
+          </p>
+          <Link to="/about" className="btn">
+            About Us
+          </Link>
         </div>
       </section>
 
       {/* ===== Our mission ===== */}
-      <section className="py-md-3 bg-white">
-        <div className="container text-center">
+      <section className="bg-white">
+        <div className="container">
           <Reveal className="quote-container">
             <h2 className="volt-mission-title">Our mission</h2>
             <h4 className="volt-mission-line">Improve <span className="text-b">global environment</span></h4>
@@ -81,7 +101,7 @@ export default function Home() {
       </section>
 
       {/* ===== What we do ===== */}
-      <section className="bg-white">
+      <section className="bg-white" id="services">
         <div className="container-fluid">
           <Reveal>
             <h2 className="text-a text-center volt-block-title">What we do</h2>
@@ -115,7 +135,7 @@ export default function Home() {
                     </p>
                     <p><span className="btn btn-outline-transparent volt-read-more">Learn more</span></p>
                   </div>
-                  <div className="hover-inner-content"><span>DEVELOPER</span></div>
+                  <div className="hover-inner-content"><span>PROJECT DEVELOPMENT</span></div>
                 </div>
               </Link>
             </Reveal>

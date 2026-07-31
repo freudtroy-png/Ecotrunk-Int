@@ -1,13 +1,8 @@
-import PageHero from '../components/PageHero';
+﻿import PageHero from '../components/PageHero';
 import TechCta from '../components/TechCta';
 import Reveal from '../components/Reveal';
 
-const gradient = {
-  background: 'linear-gradient(135deg, var(--green-300), var(--green-500))',
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
-  backgroundClip: 'text',
-};
+const accent = { color: 'var(--volt-teal-light)' };
 
 const BENEFITS = [
   {
@@ -44,15 +39,6 @@ const IMPACTS = [
   { number: '10-500', text: 'kW range for community-scale hydro plants' },
 ];
 
-const cellPad = (i, total) => {
-  const lastRow = i >= total - 2;
-  return {
-    padding: `${lastRow ? '32px 32px 0 0' : '32px 32px 32px 0'}`,
-    borderBottom: lastRow ? 'none' : '1px solid var(--neutral-200)',
-    borderRight: '1px solid var(--neutral-200)',
-  };
-};
-
 export default function Hydro() {
   return (
     <>
@@ -62,7 +48,7 @@ export default function Hydro() {
         title={
           <>
             Leveraging Kenya&apos;s Rivers for{' '}
-            <span style={gradient}>Clean Baseload Power</span>
+            <span style={accent}>Clean Baseload Power</span>
           </>
         }
         subtitle="From the Seven Forks cascade to community-scale run-of-river schemes, hydropower remains the backbone of Kenya's electricity system - delivering reliable, dispatchable renewable energy around the clock."
@@ -76,15 +62,15 @@ export default function Hydro() {
 
       <section className="section">
         <div className="container">
-          <div style={{ maxWidth: 900 }}>
+          <div className="sec-head">
             <span className="section-label">Overview</span>
             <h2 className="section-title">Why Hydropower in Kenya</h2>
           </div>
           <div className="two-col">
-            <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--neutral-600)' }}>
+            <p>
               Hydropower captures the energy of water moving from higher to lower elevations, converting gravitational potential energy into electricity through turbines coupled to generators. The technology encompasses a broad spectrum of project types. Large dam projects with reservoirs store vast quantities of water, providing multi-season storage that can dispatch power on demand - these are the workhorses of many national grids, capable of supplying hundreds of megawatts of firm capacity. Run-of-river projects, by contrast, divert a portion of a river&apos;s flow through a turbine without significant impoundment, offering lower environmental impact but greater sensitivity to seasonal flow variations. Each configuration carries distinct trade-offs among capacity, cost, environmental footprint, and operational flexibility.
             </p>
-            <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--neutral-600)' }}>
+            <p>
               Kenya&apos;s hydropower potential is concentrated along the Tana River basin, the Athi River system, and the numerous rivers draining the Aberdare Range and Mount Kenya. The Seven Forks cascade on the Tana River - comprising Masinga, Kamburu, Gitaru, Kindaruma, and Kiambere - has been the backbone of Kenya&apos;s electricity system since the 1970s, with a combined installed capacity exceeding 500 MW. More recently, run-of-river projects on the Sondu Miriu and Turkwel rivers have added capacity while demonstrating lower reservoir footprints. Our involvement in Kenya&apos;s hydro sector includes hydrological assessments for new run-of-river schemes in Nandi and Murang&apos;a counties, feasibility studies for small hydro projects capable of powering tea factories and agro-processing hubs, and technical audits of existing plants.
             </p>
           </div>
@@ -93,17 +79,15 @@ export default function Hydro() {
 
       <section className="section" style={{ background: 'white' }}>
         <div className="container">
-          <div style={{ maxWidth: 900 }}>
+          <div className="sec-head">
             <span className="section-label">Key Benefits</span>
             <h2 className="section-title">Why Choose Hydropower</h2>
           </div>
-          <div style={{ marginTop: 40, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px 48px' }}>
+          <div className="benefit-grid">
             {BENEFITS.map((benefit, i) => (
-              <Reveal key={benefit.title} delay={i * 50}>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--neutral-900)', marginBottom: 8 }}>
-                  {benefit.title}
-                </h3>
-                <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--neutral-600)' }}>{benefit.text}</p>
+              <Reveal key={benefit.title} delay={i * 50} className="benefit-item">
+                <h3>{benefit.title}</h3>
+                <p>{benefit.text}</p>
               </Reveal>
             ))}
           </div>
@@ -112,18 +96,18 @@ export default function Hydro() {
 
       <section className="section">
         <div className="container">
-          <div style={{ maxWidth: 900 }}>
+          <div className="sec-head">
             <span className="section-label">Applications</span>
             <h2 className="section-title">Hydro Solutions We Deliver</h2>
-            <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--neutral-600)', marginTop: 12 }}>
+            <p className="section-subtitle">
               Our hydropower practice spans the full spectrum, from large multi-purpose dams to community-scale installations that transform rural livelihoods.
             </p>
           </div>
-          <div style={{ marginTop: 40, display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
-            {APPLICATIONS.map((app, i) => (
-              <div style={cellPad(i, APPLICATIONS.length)} key={app.title}>
-                <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--neutral-900)', marginBottom: 4 }}>{app.title}</h4>
-                <p style={{ fontSize: '0.88rem', lineHeight: 1.6, color: 'var(--neutral-500)' }}>{app.text}</p>
+          <div className="app-grid">
+            {APPLICATIONS.map((app) => (
+              <div className="app-cell" key={app.title}>
+                <h4>{app.title}</h4>
+                <p>{app.text}</p>
               </div>
             ))}
           </div>
@@ -132,44 +116,46 @@ export default function Hydro() {
 
       <section className="section" style={{ background: 'var(--neutral-50)' }}>
         <div className="container">
-          <div style={{ maxWidth: 900 }}>
+          <div className="sec-head">
             <span className="section-label">Our Approach</span>
             <h2 className="section-title">How We Deliver Hydro</h2>
-            <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--neutral-600)', marginTop: 12 }}>
+            <p className="section-subtitle">
               Responsible hydropower starts with understanding the catchment. We analyse river flow records spanning at least 20 years, study rainfall patterns, and model climate projections before selecting a turbine type - Pelton, Francis, Kaplan, or cross-flow - matched precisely to the site&apos;s head and flow characteristics.
             </p>
           </div>
-          <div style={{ maxWidth: 700, marginTop: 40 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
-              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--neutral-600)' }}>
-                Environmental stewardship is built into every design decision, not added as an afterthought. We conduct rigorous environmental and social impact assessments addressing river ecology, sediment management, fish passage, water quality, and downstream flows. Our civil works are optimised for local geology, seismic conditions, and constructability in Kenya&apos;s often remote terrain.
-              </p>
-              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--neutral-600)' }}>
-                Early engagement with riparian communities shapes every project. We structure transparent resettlement frameworks where needed, create local employment and training programmes, and establish benefit-sharing mechanisms that make host communities genuine partners. A hydro project that respects both the river and the people who depend on it will operate successfully for generations.
-              </p>
-            </div>
-            <div style={{ marginTop: 32, padding: '24px 28px', background: 'white', borderLeft: '3px solid var(--green-500)' }}>
-              <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--neutral-600)', fontStyle: 'italic' }}>
-                &quot;You cannot design a hydro project from a desk. You have to walk the catchment, talk to the communities, and understand the river through every season. That is the only way to build something that lasts.&quot;
+          <div className="approach-cols">
+            <p>
+              Environmental stewardship is built into every design decision, not added as an afterthought. We conduct rigorous environmental and social impact assessments addressing river ecology, sediment management, fish passage, water quality, and downstream flows. Our civil works are optimised for local geology, seismic conditions, and constructability in Kenya&apos;s often remote terrain.
+            </p>
+            <p>
+              Early engagement with riparian communities shapes every project. We structure transparent resettlement frameworks where needed, create local employment and training programmes, and establish benefit-sharing mechanisms that make host communities genuine partners. A hydro project that respects both the river and the people who depend on it will operate successfully for generations.
+            </p>
+          </div>
+          <div className="volt-callout">
+            <div className="volt-callout-icon"><i className="fas fa-water" aria-hidden="true"></i></div>
+            <div>
+              <h4>Walk the catchment first</h4>
+              <p>
+                Responsible hydro design begins on the ground â€” walking the catchment, gauging
+                flows across seasons, and engaging riparian communities before a single turbine is
+                specified. Hydrology, not templates, drives our design.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section" style={{ background: 'var(--neutral-950)' }}>
+      <section className="section bg-a">
         <div className="container">
-          <div style={{ maxWidth: 900 }}>
-            <span className="section-label" style={{ color: 'var(--green-400)' }}>Impact</span>
+          <div className="sec-head">
+            <span className="section-label" style={{ color: 'var(--volt-teal-light)' }}>Impact</span>
             <h2 className="section-title" style={{ color: 'white' }}>Hydropower by the Numbers</h2>
           </div>
-          <div style={{ marginTop: 40, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px 48px' }}>
+          <div className="impact-grid">
             {IMPACTS.map((impact, i) => (
               <Reveal key={impact.number} delay={i * 50}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '3.5rem', fontWeight: 800, color: 'var(--green-400)', lineHeight: 1 }}>
-                  {impact.number}
-                </div>
-                <div style={{ fontSize: '1rem', color: 'var(--neutral-400)', marginTop: 4 }}>{impact.text}</div>
+                <div className="impact-num">{impact.number}</div>
+                <div className="impact-text">{impact.text}</div>
               </Reveal>
             ))}
           </div>

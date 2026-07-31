@@ -1,13 +1,8 @@
-import PageHero from '../components/PageHero';
+﻿import PageHero from '../components/PageHero';
 import TechCta from '../components/TechCta';
 import Reveal from '../components/Reveal';
 
-const gradient = {
-  background: 'linear-gradient(135deg, var(--green-300), var(--green-500))',
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
-  backgroundClip: 'text',
-};
+const accent = { color: 'var(--volt-teal-light)' };
 
 const MATERIALS = [
   {
@@ -69,7 +64,7 @@ export default function Procurement() {
         title={
           <>
             Quality Materials for{' '}
-            <span style={gradient}>Kenya&apos;s Energy Future</span>
+            <span style={accent}>Kenya&apos;s Energy Future</span>
           </>
         }
         subtitle="From solar PV modules to structural steel, we source, verify, and deliver high-quality engineering materials that meet the technical and regulatory demands of your renewable energy and infrastructure projects."
@@ -83,15 +78,15 @@ export default function Procurement() {
 
       <section className="section">
         <div className="container">
-          <div style={{ maxWidth: 900 }}>
+          <div className="sec-head">
             <span className="section-label">Overview</span>
             <h2 className="section-title">End-to-End Procurement for Your Projects</h2>
           </div>
           <div className="two-col">
-            <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--neutral-600)' }}>
+            <p>
               Ecotrunk International Ltd specialises in the procurement and supply of high-quality engineering materials tailored to Kenya&apos;s renewable energy, construction, and infrastructure sectors. Our team leverages deep industry relationships, rigorous quality standards, and local market knowledge to deliver the right materials on time and to specification. Whether sourcing solar PV modules from leading global manufacturers or procuring structural steel from trusted regional mills, we ensure every component meets the technical and regulatory demands of your project. From initial needs assessment through logistics coordination to final delivery, our end-to-end procurement service reduces risk, optimises cost, and keeps your project moving forward.
             </p>
-            <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--neutral-600)' }}>
+            <p>
               What sets Ecotrunk apart is our technical understanding of the materials we supply. Our procurement team includes engineers who understand the specifications, performance requirements, and quality standards that matter in renewable energy and infrastructure projects. We do not simply process purchase orders; we act as a technical partner, advising on material selection, verifying supplier credentials, inspecting shipments, and coordinating logistics across Kenya and the East African region. Our commitment to quality is backed by systematic testing and documentation procedures, ensuring full traceability and compliance from factory floor to project site.
             </p>
           </div>
@@ -100,25 +95,29 @@ export default function Procurement() {
 
       <section className="section" style={{ background: 'var(--neutral-50)' }}>
         <div className="container">
-          <div style={{ maxWidth: 900 }}>
+          <div className="sec-head">
             <span className="section-label">Process</span>
             <h2 className="section-title">Our Supply Process</h2>
-            <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--neutral-600)', marginTop: 12 }}>
+            <p className="section-subtitle">
               Procurement done right is about more than finding the lowest price. It is about matching the right materials to your project specifications, timelines, and quality standards.
             </p>
           </div>
-          <div style={{ maxWidth: 700, marginTop: 40 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
-              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--neutral-600)' }}>
-                We work closely with your engineering team to understand project specifications, quantities, and timelines before sourcing begins. Our procurement network evaluates suppliers on pricing, lead times, certifications, and track record to secure optimal value for every order.
-              </p>
-              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--neutral-600)' }}>
-                Every shipment undergoes inspection and documentation review to confirm compliance with specifications and Kenyan standards. We coordinate transport, customs clearance, and site delivery across the country, ensuring materials arrive safely and on schedule to avoid costly project delays.
-              </p>
-            </div>
-            <div style={{ marginTop: 32, padding: '24px 28px', background: 'white', borderLeft: '3px solid var(--green-500)' }}>
-              <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--neutral-600)', fontStyle: 'italic' }}>
-                &quot;In our experience, the cheapest component is rarely the most cost-effective over a project&apos;s lifetime. We source for performance, durability, and value - not just upfront price.&quot;
+          <div className="approach-cols">
+            <p>
+              We work closely with your engineering team to understand project specifications, quantities, and timelines before sourcing begins. Our procurement network evaluates suppliers on pricing, lead times, certifications, and track record to secure optimal value for every order.
+            </p>
+            <p>
+              Every shipment undergoes inspection and documentation review to confirm compliance with specifications and Kenyan standards. We coordinate transport, customs clearance, and site delivery across the country, ensuring materials arrive safely and on schedule to avoid costly project delays.
+            </p>
+          </div>
+          <div className="volt-callout">
+            <div className="volt-callout-icon"><i className="fas fa-shield-alt" aria-hidden="true"></i></div>
+            <div>
+              <h4>Total cost of ownership, not ticket price</h4>
+              <p>
+                We evaluate every component on performance, durability, and certification â€” not
+                upfront price alone. Factory test certificates, batch traceability, and
+                third-party inspection back every order we place.
               </p>
             </div>
           </div>
@@ -127,17 +126,15 @@ export default function Procurement() {
 
       <section className="section" style={{ background: 'white' }}>
         <div className="container">
-          <div style={{ textAlign: 'center' }}>
+          <div className="sec-head" style={{ textAlign: 'center', margin: '0 auto' }}>
             <span className="section-label">Categories</span>
-            <h2 className="section-title" style={{ maxWidth: 600, margin: '0 auto 20px' }}>
-              Materials We Supply
-            </h2>
+            <h2 className="section-title">Materials We Supply</h2>
             <p className="section-subtitle" style={{ margin: '0 auto' }}>
               A comprehensive range of engineering materials sourced from certified manufacturers with proven performance in African conditions.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginTop: 60 }}>
+          <div className="mat-grid">
             {MATERIALS.map((item, i) => (
               <Reveal key={item.title} delay={i * 100} className="mat-card">
                 <div className="mat-card-image">

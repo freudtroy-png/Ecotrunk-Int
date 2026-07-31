@@ -1,13 +1,8 @@
-import PageHero from '../components/PageHero';
+﻿import PageHero from '../components/PageHero';
 import TechCta from '../components/TechCta';
 import Reveal from '../components/Reveal';
 
-const gradient = {
-  background: 'linear-gradient(135deg, var(--green-300), var(--green-500))',
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
-  backgroundClip: 'text',
-};
+const accent = { color: 'var(--volt-teal-light)' };
 
 const BENEFITS = [
   {
@@ -20,7 +15,7 @@ const BENEFITS = [
   },
   {
     title: 'Environmental Impact',
-    text: 'Every megawatt-hour of solar electricity displaces approximately 0.8 tonnes of CO₂ that would otherwise come from fossil fuels. Solar projects enhance corporate sustainability credentials, qualify for carbon credits, and demonstrate tangible commitment to Kenya\'s national climate targets under the Paris Agreement.',
+    text: 'Every megawatt-hour of solar electricity displaces approximately 0.8 tonnes of COâ‚‚ that would otherwise come from fossil fuels. Solar projects enhance corporate sustainability credentials, qualify for carbon credits, and demonstrate tangible commitment to Kenya\'s national climate targets under the Paris Agreement.',
   },
   {
     title: 'Quick Deployment',
@@ -44,15 +39,6 @@ const IMPACTS = [
   { number: '25+', text: 'year system lifespan with proper maintenance' },
 ];
 
-const cellPad = (i, total) => {
-  const lastRow = i >= total - 2;
-  return {
-    padding: `${lastRow ? '32px 32px 0 0' : '32px 32px 32px 0'}`,
-    borderBottom: lastRow ? 'none' : '1px solid var(--neutral-200)',
-    borderRight: '1px solid var(--neutral-200)',
-  };
-};
-
 export default function Solar() {
   return (
     <>
@@ -61,7 +47,7 @@ export default function Solar() {
         badge={{ icon: 'sun', label: 'Solar Energy' }}
         title={
           <>
-            Harnessing Kenya&apos;s <span style={gradient}>Abundant Sunshine</span>
+            Harnessing Kenya&apos;s <span style={accent}>Abundant Sunshine</span>
           </>
         }
         subtitle="From commercial rooftops to utility-scale farms, we deliver end-to-end solar energy solutions across East Africa - reducing costs, enhancing energy security, and driving the clean energy transition."
@@ -75,15 +61,15 @@ export default function Solar() {
 
       <section className="section">
         <div className="container">
-          <div style={{ maxWidth: 900 }}>
+          <div className="sec-head">
             <span className="section-label">Overview</span>
             <h2 className="section-title">Why Solar in Kenya</h2>
           </div>
           <div className="two-col">
-            <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--neutral-600)' }}>
+            <p>
               Solar energy technology encompasses two primary pathways for converting sunlight into usable power. Photovoltaic (PV) systems use semiconductor cells to directly transform solar irradiance into electricity - a silent, scalable technology that works from a single rooftop panel to sprawling utility-scale arrays covering hundreds of acres. Concentrating Solar Power (CSP), by contrast, uses mirrors or lenses to focus sunlight onto a receiver, generating heat that drives a turbine. While CSP remains less common in East Africa due to its capital intensity and water requirements, PV has become the dominant solar technology across Kenya, with installed capacity growing more than fivefold since 2018. Our team at Ecotrunk has designed and supervised PV installations ranging from 10 kW commercial rooftops in Nairobi to multi-megawatt ground-mounted farms in the Rift Valley.
             </p>
-            <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--neutral-600)' }}>
+            <p>
               Kenya possesses some of the finest solar resources on the planet. The Great Rift Valley region, stretching from Lake Turkana in the north to Lake Magadi in the south, receives insolation levels of 5.5 to 6.5 kWh per square metre per day - among the highest in the world. At current module prices below USD 0.15 per watt, unsubsidised solar electricity in Kenya frequently undercuts diesel generation by 60 to 80 percent. Commercial and industrial users in Nairobi, Mombasa, and Kisumu are increasingly turning to rooftop solar not as an environmental gesture but as a hard-nosed financial decision, with simple payback periods of three to five years. Large-scale solar farms are beginning to feed power into the national grid, supported by Kenya&apos;s feed-in tariff policy and the growing appetite of international climate financiers.
             </p>
           </div>
@@ -92,17 +78,15 @@ export default function Solar() {
 
       <section className="section" style={{ background: 'white' }}>
         <div className="container">
-          <div style={{ maxWidth: 900 }}>
+          <div className="sec-head">
             <span className="section-label">Key Benefits</span>
             <h2 className="section-title">Why Choose Solar</h2>
           </div>
-          <div style={{ marginTop: 40, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px 48px' }}>
+          <div className="benefit-grid">
             {BENEFITS.map((benefit, i) => (
-              <Reveal key={benefit.title} delay={i * 50}>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--neutral-900)', marginBottom: 8 }}>
-                  {benefit.title}
-                </h3>
-                <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--neutral-600)' }}>{benefit.text}</p>
+              <Reveal key={benefit.title} delay={i * 50} className="benefit-item">
+                <h3>{benefit.title}</h3>
+                <p>{benefit.text}</p>
               </Reveal>
             ))}
           </div>
@@ -111,18 +95,18 @@ export default function Solar() {
 
       <section className="section">
         <div className="container">
-          <div style={{ maxWidth: 900 }}>
+          <div className="sec-head">
             <span className="section-label">Applications</span>
             <h2 className="section-title">Solar Solutions We Deliver</h2>
-            <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--neutral-600)', marginTop: 12 }}>
+            <p className="section-subtitle">
               Our solar practice spans the full spectrum of applications, from small-scale off-grid systems to multi-megawatt utility installations.
             </p>
           </div>
-          <div style={{ marginTop: 40, display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+          <div className="app-grid">
             {APPLICATIONS.map((app, i) => (
-              <div style={cellPad(i, APPLICATIONS.length)} key={app.title}>
-                <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--neutral-900)', marginBottom: 4 }}>{app.title}</h4>
-                <p style={{ fontSize: '0.88rem', lineHeight: 1.6, color: 'var(--neutral-500)' }}>{app.text}</p>
+              <div className="app-cell" key={app.title}>
+                <h4>{app.title}</h4>
+                <p>{app.text}</p>
               </div>
             ))}
           </div>
@@ -131,44 +115,48 @@ export default function Solar() {
 
       <section className="section" style={{ background: 'var(--neutral-50)' }}>
         <div className="container">
-          <div style={{ maxWidth: 900 }}>
+          <div className="sec-head">
             <span className="section-label">Our Approach</span>
             <h2 className="section-title">How We Deliver Solar</h2>
-            <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--neutral-600)', marginTop: 12 }}>
+            <p className="section-subtitle">
               Every solar project starts with the ground truth. We deploy pyranometers and satellite data to measure actual site irradiance, run structural analysis on rooftops, and build 3D shading models before specifying a single panel. This data feeds into a system design that balances inverter selection, string sizing, and battery dimensioning for maximum yield at minimum cost.
             </p>
           </div>
-          <div style={{ maxWidth: 700, marginTop: 40 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
-              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--neutral-600)' }}>
+          <div className="approach-cols">
+            <div>
+              <p>
                 Installation is carried out by certified technicians following strict quality protocols. Every subsystem - modules, inverters, wiring, switchgear, and battery banks - is tested individually and as an integrated system. Grid interconnection complies with Kenya Power&apos;s technical standards, and commissioning includes a full performance benchmark against the design model.
               </p>
-              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--neutral-600)' }}>
+              <p>
                 Once operational, each system is monitored in real time through a cloud platform that tracks generation, consumption, and battery status. We schedule proactive maintenance, conduct annual system audits, and provide responsive support to keep production optimal over the full 25+ year design life. Our approach is systematic, but every project is tailored to its site, client, and commercial context.
               </p>
             </div>
-            <div style={{ marginTop: 32, padding: '24px 28px', background: 'white', borderLeft: '3px solid var(--green-500)' }}>
-              <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--neutral-600)', fontStyle: 'italic' }}>
-                &quot;We do not believe in one-size-fits-all solar design. Every site, client, and commercial context is different. Our job is to understand those differences and engineer a system that performs optimally within them.&quot;
+          </div>
+          <div className="volt-callout">
+            <div className="volt-callout-icon"><i className="fas fa-bullseye" aria-hidden="true"></i></div>
+            <div>
+              <h4>One system, designed for its site</h4>
+              <p>
+                No two rooftops or terrain profiles are alike. We measure actual irradiance, run
+                3D shading models, and dimension every component around your load profile â€” then
+                benchmark commissioning output against the design model.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section" style={{ background: 'var(--neutral-950)' }}>
+      <section className="section bg-a" style={{ padding: '72px 0' }}>
         <div className="container">
-          <div style={{ maxWidth: 900 }}>
-            <span className="section-label" style={{ color: 'var(--green-400)' }}>Impact</span>
+          <div className="sec-head">
+            <span className="section-label" style={{ color: 'var(--volt-teal-light)' }}>Impact</span>
             <h2 className="section-title" style={{ color: 'white' }}>Solar Energy by the Numbers</h2>
           </div>
-          <div style={{ marginTop: 40, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px 48px' }}>
+          <div className="impact-grid">
             {IMPACTS.map((impact, i) => (
               <Reveal key={impact.number} delay={i * 50}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '3.5rem', fontWeight: 800, color: 'var(--green-400)', lineHeight: 1 }}>
-                  {impact.number}
-                </div>
-                <div style={{ fontSize: '1rem', color: 'var(--neutral-400)', marginTop: 4 }}>{impact.text}</div>
+                <div className="impact-num">{impact.number}</div>
+                <div className="impact-text">{impact.text}</div>
               </Reveal>
             ))}
           </div>
