@@ -217,7 +217,7 @@ export default function About() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32, marginTop: 48 }}>
             {DISTINCTS.map((item, i) => (
               <Reveal key={item.title} delay={i * 100} style={{ textAlign: 'center', padding: '32px 24px' }}>
-                <div style={{ width: 64, height: 64, borderRadius: '50%', background: 'var(--green-50)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', fontSize: '1.5rem', color: 'var(--green-600)' }}>
+                <div style={{ width: 64, height: 64, borderRadius: 0, background: 'var(--green-50)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', fontSize: '1.5rem', color: 'var(--green-600)' }}>
                   <i className={`fas fa-${item.icon}`} aria-hidden="true"></i>
                 </div>
                 <h3 style={h3Style}>{item.title}</h3>

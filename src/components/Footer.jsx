@@ -98,7 +98,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>&copy; 2024 Ecotrunk International Ltd. All rights reserved.</span>
+          <span>&copy; 2026 Ecotrunk International Ltd. All rights reserved.</span>
           <span>Committed to a sustainable Kenya</span>
         </div>
       </div>

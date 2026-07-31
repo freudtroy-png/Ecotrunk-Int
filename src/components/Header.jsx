@@ -1,55 +1,70 @@
 import { useEffect, useState } from 'react';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 
-const SERVICES = [
-  { to: '/services/project-development', label: 'Project Development' },
-  { to: '/services/engineering-systems', label: 'Engineering Systems' },
-  { to: '/services/consultancy', label: 'Consultancy' },
-  { to: '/services/procurement', label: 'Procurement & Supply' },
+const NAV = [
+  {
+    label: 'About',
+    to: '/about',
+    children: [
+      { to: '/about', label: 'About us' },
+      { to: '/about#values', label: 'Our values' },
+      { to: '/about#journey', label: 'Our history' },
+    ],
+  },
+  {
+    label: 'Technologies',
+    to: '/technology',
+    children: [
+      { to: '/technology', label: 'Overview' },
+      { to: '/solar', label: 'Solar' },
+      { to: '/wind', label: 'Wind' },
+      { to: '/hydro', label: 'Hydropower' },
+    ],
+  },
+  {
+    label: 'Services',
+    to: '/services/project-development',
+    children: [
+      { to: '/services/project-development', label: 'Project Development' },
+      { to: '/services/engineering-systems', label: 'Engineering Systems' },
+      { to: '/services/consultancy', label: 'Consultancy' },
+      { to: '/services/procurement', label: 'Procurement & Supply' },
+    ],
+  },
+  {
+    label: 'Insights',
+    to: '/blog',
+    children: [{ to: '/blog', label: 'Blog & News' }],
+  },
 ];
 
 export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [submenuOpen, setSubmenuOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   useEffect(() => {
     setMenuOpen(false);
-    setSubmenuOpen(false);
   }, [location]);
 
   const path = location.pathname;
   const hash = location.hash;
 
-  const isActive = (match, exact = false) => {
-    if (exact) return path === match;
-    return path.startsWith(match);
-  };
-
-  const servicesActive = path.startsWith('/services');
+  const isActive = (match) => path === match || path.startsWith(`${match}/`);
 
   const handleNavClick = (e, to) => {
-    e.preventDefault();
-    if (menuOpen) setMenuOpen(false);
-    const [route, section] = to.split('#');
-    if (route && route !== path) {
-      navigate(route + (section ? `#${section}` : ''));
+    if (to.startsWith('#')) {
+      e.preventDefault();
+      scrollToSection(to.slice(1));
       return;
     }
-    if (section) {
+    if (!to.includes('#')) return;
+    e.preventDefault();
+    const [route, section] = to.split('#');
+    if (route && route !== path) {
+      navigate(`${route}#${section}`);
+    } else if (section) {
       scrollToSection(section);
-    } else {
-      navigate(route || '/');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -70,68 +85,48 @@ export default function Header() {
     }
   }, [path, hash]);
 
-  const navLinkClass = (active) => `nav-link${active ? ' active' : ''}`;
-
   return (
     <>
-      <header className={`header${scrolled ? ' scrolled' : ''}`} role="banner">
-        <div className="utility-bar">
-          <div className="container utility-bar-inner">
-            <div className="utility-bar-left">
-              <a href="mailto:info@ecotrunk.co.ke"><i className="fas fa-envelope" aria-hidden="true"></i> info@ecotrunk.co.ke</a>
-              <a href="tel:+254728367885"><i className="fas fa-phone-alt" aria-hidden="true"></i> +254 728 367 885</a>
-            </div>
-            <div className="utility-bar-right">
-              <span><i className="fas fa-map-marker-alt" aria-hidden="true"></i> Professional Centre, Ngong Road, Nairobi</span>
-            </div>
-          </div>
-        </div>
-        <div className="header-inner">
-          <Link to="/" className="header-logo" aria-label="Ecotrunk Home" onClick={(e) => handleNavClick(e, '/')}>
+      <header className="volt-header" role="banner">
+        <div className="container volt-header-inner">
+          <Link to="/" className="header-logo" aria-label="Ecotrunk Home">
             <div className="header-logo-icon">
               <img src="/assets/logo.png" alt="Ecotrunk International Ltd" />
             </div>
-            <span className="header-logo-text">
-              Ecotrunk<small>International Ltd</small>
-            </span>
           </Link>
-          <nav className="nav" role="navigation" aria-label="Main navigation">
-            <Link to="/" className={navLinkClass(path === '/')} onClick={(e) => handleNavClick(e, '/')}>
-              Home
-            </Link>
-            <Link to="/about" className={navLinkClass(path === '/about')} onClick={(e) => handleNavClick(e, '/about')}>
-              About
-            </Link>
-            <Link to="/about#values" className={navLinkClass(false)} onClick={(e) => handleNavClick(e, '/about#values')}>
-              Values
-            </Link>
-            <Link to="/technology" className={navLinkClass(isActive('/technology') || path === '/solar' || path === '/wind' || path === '/hydro')} onClick={(e) => handleNavClick(e, '/technology')}>
-              Technologies
-            </Link>
-            <Link to="/blog" className={navLinkClass(isActive('/blog'))} onClick={(e) => handleNavClick(e, '/blog')}>
-              Insights
-            </Link>
-            <div className="nav-dropdown">
-              <a className={`nav-link nav-dropdown-trigger${servicesActive ? ' active' : ''}`}>
-                Services <i className="fas fa-chevron-down" aria-hidden="true"></i>
-              </a>
-              <div className="nav-dropdown-menu">
-                {SERVICES.map((s) => (
-                  <Link key={s.to} to={s.to} className={`nav-dropdown-link${path === s.to ? ' active' : ''}`} onClick={(e) => handleNavClick(e, s.to)}>
-                    {s.label}
-                  </Link>
-                ))}
+
+          <nav className="volt-nav" role="navigation" aria-label="Main navigation">
+            {NAV.map((item) => (
+              <div className="volt-nav-item" key={item.label}>
+                <Link
+                  to={item.to}
+                  className={`volt-nav-link${item.children?.some((c) => isActive(c.to)) ? ' active' : ''}`}
+                >
+                  {item.label} {item.children && <i className="fas fa-chevron-down" aria-hidden="true"></i>}
+                </Link>
+                {item.children && (
+                  <div className="volt-dropdown">
+                    {item.children.map((c) => (
+                      <Link
+                        key={c.to}
+                        to={c.to}
+                        className={`volt-dropdown-link${isActive(c.to) ? ' active' : ''}`}
+                        onClick={(e) => handleNavClick(e, c.to)}
+                      >
+                        {c.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
-            </div>
-            <a href="#contact" className={navLinkClass(false)} onClick={(e) => handleNavClick(e, '/#contact')}>
-              Contact
+            ))}
+            <a href="/#contact" className="btn btn-primary volt-nav-cta" onClick={(e) => handleNavClick(e, '/#contact')}>
+              Contact Us
             </a>
-            <Link to="/#contact" className="nav-cta" onClick={(e) => handleNavClick(e, '/#contact')}>
-              Get in Touch
-            </Link>
           </nav>
+
           <button
-            className={`mobile-toggle${menuOpen ? ' active' : ''}`}
+            className={`volt-toggle${menuOpen ? ' active' : ''}`}
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
@@ -141,28 +136,31 @@ export default function Header() {
         </div>
       </header>
 
-      <nav className={`mobile-menu${menuOpen ? ' open' : ''}`} role="navigation" aria-label="Mobile navigation">
-        <Link to="/" className={navLinkClass(path === '/')} onClick={(e) => handleNavClick(e, '/')}>Home</Link>
-        <Link to="/about" className={navLinkClass(path === '/about')} onClick={(e) => handleNavClick(e, '/about')}>About</Link>
-        <Link to="/about#values" className={navLinkClass(false)} onClick={(e) => handleNavClick(e, '/about#values')}>Values</Link>
-        <Link to="/technology" className={navLinkClass(isActive('/technology') || path === '/solar' || path === '/wind' || path === '/hydro')} onClick={(e) => handleNavClick(e, '/technology')}>Technologies</Link>
-        <Link to="/blog" className={navLinkClass(isActive('/blog'))} onClick={(e) => handleNavClick(e, '/blog')}>Blog</Link>
-        <div className={`mobile-submenu${submenuOpen ? ' open' : ''}`}>
-          <div className="mobile-submenu-header" onClick={() => setSubmenuOpen((v) => !v)}>
-            <span className={`nav-link${servicesActive ? ' active' : ''}`}>Services</span>
-            <span className="mobile-submenu-toggle"><i className="fas fa-chevron-down" aria-hidden="true"></i></span>
+      <nav className={`volt-mobile${menuOpen ? ' open' : ''}`} role="navigation" aria-label="Mobile navigation">
+        {NAV.map((item) => (
+          <div className="volt-mobile-group" key={item.label}>
+            <Link to={item.to} className="volt-mobile-link" onClick={() => setMenuOpen(false)}>
+              {item.label}
+            </Link>
+            {item.children && (
+              <div className="volt-mobile-links">
+                {item.children.map((c) => (
+                  <Link
+                    key={c.to}
+                    to={c.to}
+                    className="volt-mobile-sub"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {c.label}
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
-          <div className="mobile-submenu-links">
-            {SERVICES.map((s) => (
-              <Link key={s.to} to={s.to} className={`nav-link${path === s.to ? ' active' : ''}`} onClick={(e) => handleNavClick(e, s.to)}>
-                {s.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-        <a href="#gallery" className="nav-link" onClick={(e) => handleNavClick(e, '/#gallery')}>Gallery</a>
-        <a href="#contact" className={navLinkClass(false)} onClick={(e) => handleNavClick(e, '/#contact')}>Contact</a>
-        <Link to="/#contact" className="nav-cta" onClick={(e) => handleNavClick(e, '/#contact')}>Get in Touch</Link>
+        ))}
+        <Link to="/#contact" className="btn btn-primary" onClick={() => setMenuOpen(false)} style={{ marginTop: 16 }}>
+          Contact Us
+        </Link>
       </nav>
     </>
   );

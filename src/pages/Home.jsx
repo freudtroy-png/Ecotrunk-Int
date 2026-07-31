@@ -1,93 +1,39 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Reveal from '../components/Reveal';
-import CountUp from '../components/CountUp';
 
-const STATS = [
-  { icon: 'calendar-check', end: 10, suffix: '+', label: 'Years of Experience' },
-  { icon: 'solar-panel', end: 50, suffix: '+', label: 'Projects Delivered' },
-  { icon: 'users', end: 7, suffix: '', label: 'Counties Served' },
-  { icon: 'handshake', end: 25, suffix: '+', label: 'Partner Affiliations' },
+const KEY_FIGURES = [
+  { icon: 'calendar-check', number: '10+', label: 'years of experience' },
+  { icon: 'solar-panel', number: '50+', label: 'projects delivered' },
+  { icon: 'map-marked-alt', number: '7', label: 'counties served' },
+  { icon: 'handshake', number: '25+', label: 'partner affiliations' },
 ];
 
-const TECH_CARDS = [
+const TECHNOLOGIES = [
   {
-    tag: 'Solar',
+    id: 'overview',
+    image: '/assets/img/solar-pic.jpg',
+    label: 'OVERVIEW',
+    to: '/technology',
+  },
+  {
+    id: 'solar',
     image: '/assets/img/solar.jpg',
-    title: 'Solar Energy',
-    text: 'Solar energy technology harnesses solar irradiance to generate electricity via photovoltaics (PV) and concentrating solar power (CSP). We design and manage installations ranging from small commercial rooftops to utility-scale solar farms across Kenya.',
+    label: 'SOLAR',
     to: '/solar',
-    cta: 'Explore Solar',
   },
   {
-    tag: 'Wind',
+    id: 'wind',
     image: '/assets/img/windmill.jpg',
-    title: 'Wind Energy',
-    text: 'Wind energy harnesses the kinetic energy of moving air using advanced turbine technology. Our expertise covers both onshore and offshore installations, including site assessment, turbine selection, grid integration, and farm management.',
+    label: 'WIND',
     to: '/wind',
-    cta: 'Explore Wind',
   },
   {
-    tag: 'Hydro',
+    id: 'hydro',
     image: '/assets/img/hydro.jpg',
-    title: 'Hydropower',
-    text: 'Hydropower harnesses the energy of water moving from higher to lower elevations. Our project portfolio includes dam projects with reservoirs, run-of-river systems, and small-scale hydro solutions tailored to Kenya\'s diverse topography.',
+    label: 'HYDRO',
     to: '/hydro',
-    cta: 'Explore Hydro',
   },
-];
-
-const SERVICES = [
-  {
-    icon: 'diagram-project',
-    title: 'Project Development & Management',
-    text: 'From site identification and feasibility studies through permitting, financing, and construction - we manage every phase of the project lifecycle. Our team coordinates with regulators, communities, and contractors to deliver on time and on budget.',
-    to: '/services/project-development',
-    cta: 'View Process',
-  },
-  {
-    icon: 'cogs',
-    title: 'Engineering Systems Development',
-    text: 'We analyse complex engineering challenges and design robust, consumer-centric solutions. Our systems expertise covers energy technology implementation, infrastructure review, and service system optimisation for maximum efficiency.',
-    to: '/services/engineering-systems',
-    cta: 'Learn More',
-  },
-  {
-    icon: 'chart-line',
-    title: 'Project Consultancy',
-    text: 'Strategic advisory across feasibility, environmental management, technical assessment, monitoring, and capacity building. We help clients navigate regulatory frameworks, assess risk, and make informed investment decisions.',
-    to: '/services/consultancy',
-    cta: 'Learn More',
-  },
-  {
-    icon: 'truck-loading',
-    title: 'Procurement & Supply',
-    text: 'We source and supply high-quality engineering materials - from solar panels and wind turbine components to electrical equipment and construction materials - with rigorous quality assurance and sustainable sourcing practices.',
-    to: '/services/procurement',
-    cta: 'Learn More',
-  },
-];
-
-const CLIMATE_STATS = [
-  { end: 73, suffix: '%', label: 'of global GHG from energy' },
-  { end: 90, suffix: '%', label: 'Kenya\'s grid is already green' },
-  { end: 2050, suffix: '', label: 'Net-zero emissions target' },
-  { end: 100, suffix: '%', label: 'Kenya\'s clean energy target by 2030' },
-];
-
-const GALLERY_ITEMS = [
-  { src: '/assets/img/solar-pic.jpg', alt: 'Solar PV installation', label: 'Solar PV Installation, Rift Valley', category: 'solar' },
-  { src: '/assets/img/solar.jpg', alt: 'Commercial solar array', label: 'Commercial Solar Array, Nairobi', category: 'solar' },
-  { src: '/assets/img/windmill.jpg', alt: 'Wind turbine project', label: 'Wind Farm Development', category: 'wind' },
-  { src: '/assets/img/hydro.jpg', alt: 'Hydroelectric facility', label: 'Hydropower Station', category: 'hydro' },
-  { src: '/assets/img/solar-pic.jpg', alt: 'Utility solar farm', label: 'Utility Solar Farm, Eastern Kenya', category: 'solar' },
-];
-
-const FILTERS = [
-  { value: 'all', label: 'All' },
-  { value: 'solar', label: 'Solar' },
-  { value: 'wind', label: 'Wind' },
-  { value: 'hydro', label: 'Hydro' },
 ];
 
 const AFFILIATIONS = [
@@ -102,11 +48,8 @@ const AFFILIATIONS = [
 ];
 
 export default function Home() {
-  const [filter, setFilter] = useState('all');
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
   const [status, setStatus] = useState({ type: '', message: '' });
-
-  const visibleGallery = GALLERY_ITEMS.filter((item) => filter === 'all' || item.category === filter);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -118,242 +61,225 @@ export default function Home() {
 
   return (
     <>
-      <section className="hero" id="home">
-        <div className="hero-image">
-          <img src="/assets/img/solar-pic.jpg" alt="Renewable energy landscape with solar panels and wind turbines at sunset" loading="eager" />
-        </div>
-        <div className="hero-content">
-          <div className="hero-badge">Renewable Energy Experts - Nairobi, Kenya</div>
-          <h1 className="hero-title">
-            Powering Kenya&apos;s<br />
-            <span className="hero-title-accent">Sustainable Future</span>
-          </h1>
-          <p className="hero-description">
-            Ecotrunk International Ltd delivers project development, engineering systems, and consultancy services across East Africa&apos;s renewable energy sector. From solar and wind to hydropower, we build the infrastructure for a cleaner tomorrow.
-          </p>
-          <div className="hero-actions">
-            <Link to="/about" className="btn btn-primary">
-              Learn About Us <i className="fas fa-arrow-right" aria-hidden="true"></i>
-            </Link>
-            <a href="#contact" className="btn btn-outline" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>
-              Start a Project <i className="fas fa-chevron-right" aria-hidden="true"></i>
-            </a>
-          </div>
+      {/* ===== Hero: full-screen video/image with mission ===== */}
+      <section className="volt-jumbotron">
+        <div className="volt-jumbotron-bg">
+          <img src="/assets/img/solar-pic.jpg" alt="Renewable energy landscape with solar panels and wind turbines" loading="eager" />
         </div>
       </section>
 
-      <section className="section" id="about">
-        <div className="container">
-          <div className="about-grid">
-            <div className="about-text">
-              <Reveal>
-                <span className="section-label">About ETL</span>
-                <h2 className="section-title">Engineering a Greener Tomorrow</h2>
-                <p className="section-subtitle">
-                  <strong>Ecotrunk International Ltd (ETL)</strong> is a firm of Technologists, Consultants, and Managers incorporated in the Republic of Kenya. The firm has broad experience in Project Development &amp; Management, Engineering Systems Development and Consultancy in the renewable energy industry.
-                </p>
-                <p className="section-subtitle">
-                  Since 2014, Ecotrunk has been deeply dedicated to enhancing the global environment while promoting local development across Kenya. Our teams of qualified engineers and project managers work closely with communities, regulators, and investors to deliver energy projects that are technically sound, financially viable, and socially responsible.
-                </p>
-                <p className="section-subtitle">
-                  We believe that renewable energy is where human progress and climate protection converge. Every project we undertake reflects this conviction - from initial feasibility studies through to commissioning and operations.
-                </p>
-                <Link to="/about" className="btn btn-outline-dark" style={{ marginTop: 16 }}>
-                  Read More About ETL <i className="fas fa-arrow-right" aria-hidden="true"></i>
-                </Link>
-              </Reveal>
-            </div>
-            <div className="about-stats">
-              <Reveal delay={100}>
-                {STATS.map((stat) => (
-                  <div className="stat-card" key={stat.label}>
-                    <span className="stat-icon"><i className={`fas fa-${stat.icon}`} aria-hidden="true"></i></span>
-                    <div className="stat-number">
-                      <CountUp end={stat.end} suffix={stat.suffix} />
-                    </div>
-                    <div className="stat-label">{stat.label}</div>
+      {/* ===== Our mission ===== */}
+      <section className="py-md-3 bg-white">
+        <div className="container text-center">
+          <Reveal className="quote-container">
+            <h2 className="volt-mission-title">Our mission</h2>
+            <h4 className="volt-mission-line">Improve <span className="text-b">global environment</span></h4>
+            <h4 className="volt-mission-line mb-5">Fostering <span className="text-b">local development</span></h4>
+            <Link to="/about" className="btn btn-primary">About Us</Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ===== What we do ===== */}
+      <section className="bg-white">
+        <div className="container-fluid">
+          <Reveal>
+            <h2 className="text-a text-center volt-block-title">What we do</h2>
+          </Reveal>
+          <div className="row justify-content-center" id="cta-wwdo">
+            <Reveal className="volt-hover-card" delay={100}>
+              <Link to="/services/engineering-systems" className="divLink">
+                <div className="volt-hover-media">
+                  <img src="/assets/img/solar.jpg" alt="Engineering systems" loading="lazy" />
+                </div>
+                <div className="hovercontent gray">
+                  <div className="display-inner-content">
+                    <p className="text-white font-lg">
+                      Ecotrunk&apos;s engineering practice covers the entire life cycle of renewable energy plants - from systems design, technical review, and infrastructure optimisation to supervision, commissioning, and operations support.
+                    </p>
+                    <p><span className="btn btn-outline-transparent volt-read-more">Learn more</span></p>
                   </div>
-                ))}
-              </Reveal>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section mission-section">
-        <div className="container">
-          <div className="mission-grid">
-            <Reveal className="mission-card">
-              <div className="mission-card-icon"><i className="fas fa-bullseye" aria-hidden="true"></i></div>
-              <h3>Our Mission</h3>
-              <p>To provide the most competitive energy, engineering, and construction consulting services and tools in the respective industries, incorporating an advanced and sustainable approach that drives meaningful change for our clients and communities.</p>
+                  <div className="hover-inner-content"><span>ENGINEERING SYSTEMS</span></div>
+                </div>
+              </Link>
             </Reveal>
-            <Reveal delay={100} className="mission-card">
-              <div className="mission-card-icon"><i className="fas fa-eye" aria-hidden="true"></i></div>
-              <h3>Our Vision</h3>
-              <p>To be the leading renewable energy consultancy in East Africa, known for technical excellence, integrity, and a unwavering commitment to sustainable development that benefits both people and the planet.</p>
+            <Reveal className="volt-hover-card" delay={200}>
+              <Link to="/services/project-development" className="divLink">
+                <div className="volt-hover-media">
+                  <img src="/assets/img/windmill.jpg" alt="Project development" loading="lazy" />
+                </div>
+                <div className="hovercontent gray">
+                  <div className="display-inner-content">
+                    <p className="text-white font-lg">
+                      The development of renewable energy projects is central to Ecotrunk&apos;s strategy. Our teams manage every stage - from assessing potential and securing the best sites to construction and commissioning.
+                    </p>
+                    <p><span className="btn btn-outline-transparent volt-read-more">Learn more</span></p>
+                  </div>
+                  <div className="hover-inner-content"><span>DEVELOPER</span></div>
+                </div>
+              </Link>
             </Reveal>
           </div>
         </div>
       </section>
 
-      <section className="section" id="technologies">
-        <div className="container">
+      {/* ===== Business model ===== */}
+      <section className="bg-white">
+        <div className="container py-5">
           <Reveal>
-            <span className="section-label">Technologies</span>
-            <h2 className="section-title">Renewable Energy Technologies</h2>
-            <p className="section-subtitle">
-              Our consultancy and project development services span a diverse range of renewable energy technologies, each selected and deployed based on site-specific conditions and client objectives.
-            </p>
-          </Reveal>
-
-          <div className="tech-grid">
-            {TECH_CARDS.map((card, i) => (
-              <Reveal key={card.title} delay={i * 100} className="tech-card">
-                <div className="tech-card-image">
-                  <span className="tech-card-tag">{card.tag}</span>
-                  <img src={card.image} alt={card.title} loading="lazy" />
-                </div>
-                <div className="tech-card-body">
-                  <h3>{card.title}</h3>
-                  <p>{card.text}</p>
-                  <Link to={card.to} className="tech-card-link">
-                    {card.cta} <i className="fas fa-arrow-right" aria-hidden="true"></i>
-                  </Link>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section services-section" id="services">
-        <div className="container">
-          <Reveal>
-            <span className="section-label">Our Services</span>
-            <h2 className="section-title">What We Deliver</h2>
-            <p className="section-subtitle">
-              End-to-end expertise across the full lifecycle of renewable energy and engineering projects in Kenya and East Africa.
-            </p>
-          </Reveal>
-
-          <div className="services-grid">
-            {SERVICES.map((service, i) => (
-              <Reveal key={service.title} delay={i * 100} className="service-card">
-                <div className="service-card-icon"><i className={`fas fa-${service.icon}`} aria-hidden="true"></i></div>
-                <h3>{service.title}</h3>
-                <p>{service.text}</p>
-                <Link to={service.to} className="service-card-link">
-                  {service.cta} <i className="fas fa-arrow-right" aria-hidden="true"></i>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section climate-section">
-        <div className="climate-bg"></div>
-        <div className="container">
-          <div className="climate-content">
-            <div className="climate-text">
-              <Reveal>
-                <span className="section-label" style={{ color: 'var(--green-300)' }}>Why Green Energy</span>
-                <h2>The Urgency of Kenya&apos;s Energy Transition</h2>
-                <p>
-                  The energy supply sector is the largest contributor to global greenhouse gas emissions. In Kenya, rapid economic growth and increasing energy demand make the transition to renewable sources both an environmental imperative and an economic opportunity. Renewable energy solutions constitute the safe, reliable, and affordable pathway capable of meeting Kenya&apos;s nationally determined contributions under the Paris Agreement while powering sustainable development.
-                </p>
-              </Reveal>
-            </div>
-            <div className="climate-stats">
-              <Reveal delay={100}>
-                {CLIMATE_STATS.map((stat) => (
-                  <div className="climate-stat" key={stat.label}>
-                    <div className="climate-stat-number">
-                      <CountUp end={stat.end} suffix={stat.suffix} />
-                    </div>
-                    <div className="climate-stat-label">{stat.label}</div>
-                  </div>
-                ))}
-              </Reveal>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section impact-section">
-        <div className="container">
-          <Reveal className="impact-inner">
-            <span className="impact-mark"><i className="fas fa-quote-right" aria-hidden="true"></i></span>
-            <h2 className="impact-quote">
-              &ldquo;Renewable energy is where human progress and climate protection converge. Every project we deliver reflects that conviction&rdquo;
-            </h2>
-            <p className="impact-by">— The Ecotrunk Team, Nairobi</p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="section" id="gallery">
-        <div className="container">
-          <Reveal style={{ textAlign: 'center' }}>
-            <span className="section-label section-label-center">Gallery</span>
-            <h2 className="section-title">Our Projects in Action</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
-              A selection of renewable energy installations and engineering work delivered by the Ecotrunk team across Kenya.
-            </p>
-          </Reveal>
-
-          <div className="gallery-filters" style={{ justifyContent: 'center' }}>
-            {FILTERS.map((f) => (
-              <button
-                key={f.value}
-                className={`gallery-filter${filter === f.value ? ' active' : ''}`}
-                onClick={() => setFilter(f.value)}
-              >
-                {f.label}
-              </button>
-            ))}
-          </div>
-
-          <div className="gallery-grid">
-            {visibleGallery.map((item) => (
-              <div className="gallery-item" key={item.label}>
-                <img src={item.src} alt={item.alt} loading="lazy" />
-                <div className="gallery-item-overlay">
-                  <span className="gallery-item-label">{item.label}</span>
-                </div>
+            <h2 className="text-a text-center volt-block-title">Ecotrunk&apos;s model</h2>
+            <div className="volt-model-figure">
+              <div className="volt-model-step">
+                <div className="volt-model-icon"><i className="fas fa-map-marked-alt" aria-hidden="true"></i></div>
+                <h5>Identify</h5>
+                <p>Site identification, feasibility, and resource assessment.</p>
               </div>
+              <div className="volt-model-arrow"><i className="fas fa-arrow-right" aria-hidden="true"></i></div>
+              <div className="volt-model-step">
+                <div className="volt-model-icon"><i className="fas fa-drafting-compass" aria-hidden="true"></i></div>
+                <h5>Develop</h5>
+                <p>Design, permitting, engineering systems, and financing.</p>
+              </div>
+              <div className="volt-model-arrow"><i className="fas fa-arrow-right" aria-hidden="true"></i></div>
+              <div className="volt-model-step">
+                <div className="volt-model-icon"><i className="fas fa-hard-hat" aria-hidden="true"></i></div>
+                <h5>Build</h5>
+                <p>Procurement, construction, supervision, and commissioning.</p>
+              </div>
+              <div className="volt-model-arrow"><i className="fas fa-arrow-right" aria-hidden="true"></i></div>
+              <div className="volt-model-step">
+                <div className="volt-model-icon"><i className="fas fa-chart-line" aria-hidden="true"></i></div>
+                <h5>Operate</h5>
+                <p>Monitoring, maintenance, and performance optimisation.</p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ===== Key figures ===== */}
+      <section className="bg-l-gray pt-5">
+        <div className="container">
+          <Reveal>
+            <h2 className="text-a text-center volt-block-title">Key figures</h2>
+          </Reveal>
+          <div className="row justify-content-center volt-figures">
+            {KEY_FIGURES.map((kf) => (
+              <Reveal key={kf.label} delay={100} className="volt-figure">
+                <div className="volt-figure-icon"><i className={`fas fa-${kf.icon}`} aria-hidden="true"></i></div>
+                <h3 className="volt-figure-number">{kf.number}</h3>
+                <p className="small font-weight-bold">{kf.label}</p>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section affiliations-section">
+      {/* ===== Technologies tabs ===== */}
+      <section className="bg-a" id="Technologies">
         <div className="container">
-          <Reveal style={{ textAlign: 'center' }}>
-            <span className="section-label section-label-center">Affiliations</span>
-            <h2 className="section-title">Trusted Partners &amp; Accreditations</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
+          <div className="volt-tech-tabs">
+            {TECHNOLOGIES.map((t) => (
+              <Reveal key={t.id} delay={100} className="volt-tech-tab">
+                <Link to={t.to} className="volt-tech-tablink">
+                  <img src={t.image} alt={t.label} loading="lazy" />
+                  <div className="hovercontent gray">
+                    <div className="display-inner-content">
+                      <span className="read-intro">Read intro</span>
+                      <i className="fas fa-chevron-down" aria-hidden="true"></i>
+                    </div>
+                    <div className="hover-inner-content"><span>{t.label}</span></div>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Sustainability ===== */}
+      <section className="bg-white volt-split">
+        <div className="volt-split-media">
+          <img src="/assets/img/solar-pic.jpg" alt="Sustainability at Ecotrunk" loading="lazy" />
+        </div>
+        <div className="volt-split-body">
+          <h2 className="text-b">Sustainability</h2>
+          <p className="lead">
+            Since its incorporation in 2014, Ecotrunk has been fully committed to improving the global environment while fostering local development across Kenya. With the conviction that renewables are where human development and climate preservation meet, our teams deliver the most innovative and tailored solutions for a sustainable future.
+          </p>
+          <Link to="/about#values" className="btn btn-secondary">Learn More</Link>
+        </div>
+      </section>
+
+      {/* ===== Uncompromising ethics ===== */}
+      <section className="bg-l-gray volt-split volt-split-reverse">
+        <div className="volt-split-body">
+          <h2 className="text-b">Uncompromising ethics</h2>
+          <p className="lead">
+            Ecotrunk&apos;s mission to <strong>foster local development</strong> can only be fulfilled if each member of our team acts in the most <strong>ethical and responsible way</strong>.
+          </p>
+          <p className="lead">
+            In this regard, Ecotrunk intends to be exemplary and to pursue the growth of its activities while remaining faithful to one of its core values: <strong>integrity</strong>.
+          </p>
+          <Link to="/about#values" className="btn btn-secondary mt-3">Know more</Link>
+        </div>
+        <div className="volt-split-media">
+          <img src="/assets/img/hydro.jpg" alt="Ethics and responsible development" loading="lazy" />
+        </div>
+      </section>
+
+      {/* ===== Quality ===== */}
+      <section className="bg-white volt-split">
+        <div className="volt-split-media">
+          <img src="/assets/img/windmill.jpg" alt="Quality in delivery" loading="lazy" />
+        </div>
+        <div className="volt-split-body">
+          <h2 className="text-b">Quality</h2>
+          <p className="lead">
+            Ecotrunk covers the entire life cycle of renewable energy plants, from development to operation. A strong quality mindset is a key factor for our clients, suppliers, partners, employees, and ultimately for our overall success.
+          </p>
+          <Link to="/services/engineering-systems" className="btn btn-secondary">Learn More</Link>
+        </div>
+      </section>
+
+      {/* ===== Our Subsidiaries ===== */}
+      <section className="bg-l-gray volt-subsidiaries">
+        <div className="container">
+          <Reveal>
+            <h2 className="text-a text-center volt-block-title">Our Affiliations</h2>
+            <p className="text-center volt-subsidiaries-sub">
               Ecotrunk is proud to be affiliated with Kenya&apos;s leading energy, regulatory, and professional bodies.
             </p>
           </Reveal>
-
-          <div className="affiliations-grid">
-            {AFFILIATIONS.map((aff) => (
-              <div className="affiliation-item" key={aff.alt}>
+          <div className="volt-affiliations">
+            {AFFILIATIONS.map((aff, i) => (
+              <Reveal key={aff.alt} delay={i * 60} className="volt-affiliation">
                 <img src={aff.src} alt={aff.alt} loading="lazy" />
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section contact-section" id="contact">
+      {/* ===== Contact Us ===== */}
+      <section className="bg-a volt-contact-cta">
+        <div className="container text-center">
+          <Reveal>
+            <h2>Contact Us</h2>
+            <p>Please feel free to get in touch with our team if you need more information.</p>
+            <a href="#contact" className="btn btn-primary" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>
+              Reach Us
+            </a>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ===== Contact form ===== */}
+      <section className="section" id="contact">
         <div className="container">
           <Reveal>
-            <span className="section-label">Contact</span>
-            <h2 className="section-title">Get in Touch</h2>
-            <p className="section-subtitle">
+            <h2 className="section-title text-center">Get in Touch</h2>
+            <p className="section-subtitle" style={{ margin: '0 auto 48px', textAlign: 'center' }}>
               Ready to discuss your renewable energy project? Reach out to our team in Nairobi.
             </p>
           </Reveal>
@@ -428,7 +354,7 @@ export default function Home() {
                     <label htmlFor="message">Message</label>
                     <textarea id="message" name="message" placeholder="Tell us about your project, requirements, and timeline..." required value={form.message} onChange={update('message')}></textarea>
                   </div>
-                  <button type="submit" className="form-submit">
+                  <button type="submit" className="btn btn-primary form-submit">
                     Send Message <i className="fas fa-paper-plane" aria-hidden="true"></i>
                   </button>
                   {status.type && <div className={`form-status ${status.type}`}>{status.message}</div>}
