@@ -96,6 +96,31 @@
   }
   initCounters();
 
+  var techTabs = document.querySelectorAll('.tech-tab');
+  if (techTabs.length) {
+    techTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var target = this.getAttribute('data-target');
+        techTabs.forEach(function (t) {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        this.classList.add('active');
+        this.setAttribute('aria-selected', 'true');
+        document.querySelectorAll('.tech-panel').forEach(function (p) {
+          p.classList.remove('active');
+        });
+        var panel = document.getElementById(target);
+        if (panel) {
+          panel.classList.add('active');
+          panel.querySelectorAll('[data-reveal]').forEach(function (el) {
+            el.classList.add('revealed');
+          });
+        }
+      });
+    });
+  }
+
   const galleryItems = document.querySelectorAll('.gallery-item');
   const galleryFilters = document.querySelectorAll('.gallery-filter');
 

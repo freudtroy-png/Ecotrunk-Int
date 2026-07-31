@@ -134,188 +134,217 @@
   </section>
 
   <section class="section" style="background: white; padding-bottom: 0;">
-    <div class="container" style="max-width: 900px;">
-      <div style="text-align: center; margin-bottom: 20px;">
-        <span class="section-label" data-reveal>Deep Dive</span>
-        <h2 class="section-title" data-reveal data-reveal-delay="50" style="max-width: 500px; margin: 0 auto 20px;">Technology in Detail</h2>
-        <p class="section-subtitle" data-reveal data-reveal-delay="100" style="margin: 0 auto;">Each technology is selected, designed, and delivered through a rigorous process tailored to Kenya's unique conditions, resources, and regulatory environment.</p>
-      </div>
-
-      <div class="tech-essay" id="solar-deep" data-reveal>
-        <div class="tech-essay-header">
-          <h3>Solar Energy</h3>
-          <div class="tech-essay-sub">Harnessing Kenya's Abundant Sunshine</div>
-        </div>
-        <p>Module prices have fallen over 90 percent since 2010. Modern monocrystalline panels achieve 21-23% efficiency, up from 15% a decade ago. Bifacial modules capturing light on both sides boost yield by 5-15%. Microinverters and power optimisers maximise harvest from each panel, critical for partially shaded installations common in urban rooftop environments.</p>
-        <p>Battery costs have fallen by over 80 percent since 2015 to under USD 150 per kWh. LFP chemistry is now preferred for stationary storage with 6,000+ cycle life. Solar-plus-storage systems deliver firm, dispatchable power through evening peaks, stabilise voltage, and provide backup during Kenya's frequent grid outages.</p>
-        <p>C&amp;I users achieve 3-5 year paybacks at current module prices. The Rift Valley's 5.5-6.5 kWh/m2/day insolation is among the world's best. Feed-in tariffs and international climate finance are driving utility-scale pipeline growth. The off-grid market serves 25 percent of Kenyans through PAYG mini-grids.</p>
-
-        <div class="tech-essay-stat-row">
-          <div class="tech-essay-stat">
-            <span class="tech-essay-stat-num">6.5</span>
-            <span class="tech-essay-stat-label">kWh/m2/day Insolation</span>
-          </div>
-          <div class="tech-essay-stat">
-            <span class="tech-essay-stat-num">80%</span>
-            <span class="tech-essay-stat-label">Cost Reduction vs Diesel</span>
-          </div>
-          <div class="tech-essay-stat">
-            <span class="tech-essay-stat-num">5x</span>
-            <span class="tech-essay-stat-label">Market Growth Since 2018</span>
-          </div>
+    <div class="container">
+      <div class="tech-explorer">
+        <div class="tech-explorer-head" data-reveal>
+          <span class="section-label">Deep Dive</span>
+          <h2 class="section-title">Technology in Detail</h2>
+          <p class="section-subtitle">Each technology is selected, designed, and delivered through a rigorous process tailored to Kenya's unique conditions, resources, and regulatory environment.</p>
         </div>
 
-        <div class="tech-essay-apps">
-          <h4>Applications</h4>
-          <div class="tech-essay-app">
-            <div class="tech-essay-app-marker" style="background: #d97706;"></div>
-            <div>
-              <h5>Commercial &amp; Industrial Rooftop PV</h5>
-              <p>Reducing operational energy costs for businesses, factories, and office complexes across Kenya's urban centres with minimal land use.</p>
-            </div>
-          </div>
-          <div class="tech-essay-app">
-            <div class="tech-essay-app-marker" style="background: #d97706;"></div>
-            <div>
-              <h5>Utility-Scale Solar Farms</h5>
-              <p>Ground-mounted PV from 1 MW to 50 MW connected via PPAs, with full EPC and project financing support for developers.</p>
-            </div>
-          </div>
-          <div class="tech-essay-app">
-            <div class="tech-essay-app-marker" style="background: #d97706;"></div>
-            <div>
-              <h5>Mini-Grid &amp; Off-Grid Systems</h5>
-              <p>Decentralised solar for rural communities, schools, and health facilities beyond grid reach with smart metering and mobile payments.</p>
-            </div>
-          </div>
-          <div class="tech-essay-app">
-            <div class="tech-essay-app-marker" style="background: #d97706;"></div>
-            <div>
-              <h5>Agricultural Solar &amp; Water Pumping</h5>
-              <p>Powering irrigation, cold storage, and agro-processing across arid regions, replacing diesel pumps at 90 percent operating cost reduction.</p>
-            </div>
-          </div>
+        <div class="tech-tabs" role="tablist" aria-label="Technologies" data-reveal>
+          <button class="tech-tab active" id="tab-solar" role="tab" aria-selected="true" aria-controls="panel-solar" data-target="panel-solar">
+            <span class="tech-tab-num">01</span>
+            <span class="tech-tab-label">Solar Energy</span>
+          </button>
+          <button class="tech-tab" id="tab-wind" role="tab" aria-selected="false" aria-controls="panel-wind" data-target="panel-wind">
+            <span class="tech-tab-num">02</span>
+            <span class="tech-tab-label">Wind Energy</span>
+          </button>
+          <button class="tech-tab" id="tab-hydro" role="tab" aria-selected="false" aria-controls="panel-hydro" data-target="panel-hydro">
+            <span class="tech-tab-num">03</span>
+            <span class="tech-tab-label">Hydropower</span>
+          </button>
         </div>
 
-        <a href="solar.html" class="btn btn-primary">Explore Solar Energy <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-
-      <div class="tech-essay" id="wind-deep" data-reveal data-reveal-delay="100">
-        <div class="tech-essay-header">
-          <h3>Wind Energy</h3>
-          <div class="tech-essay-sub">Capturing the Power of Kenya's Wind Corridors</div>
-        </div>
-        <p>Modern onshore turbines range from 1.5 MW to 6 MW with hub heights of 80-140 metres and rotor diameters exceeding 150 metres. Direct-drive permanent magnet generators eliminate the gearbox - historically the most failure-prone component - improving reliability. Advanced blade aerodynamics with serrated trailing edges boost energy capture by 20-30 percent over earlier designs.</p>
-        <p>The Turkana Corridor's channeled winds average 11-13 m/s during peak season - among the world's strongest. The Ngong Hills demonstrate ridge-top viability near Nairobi. Our resource assessment uses meteorological masts and SODAR units collecting 12+ months of site data before turbine selection and micrositing.</p>
-        <p>Integrating variable wind into Kenya's hydro/geothermal grid requires sophisticated forecasting, dispatch scheduling, and curtailment protocols. Modern wind farms provide reactive power, frequency response, and fault ride-through compliant with Kenya's Grid Code. Community benefits include roads, schools, and employment through development agreements.</p>
-
-        <div class="tech-essay-stat-row">
-          <div class="tech-essay-stat">
-            <span class="tech-essay-stat-num">310</span>
-            <span class="tech-essay-stat-label">MW Turkana Wind Farm</span>
+        <div class="tech-panel active" id="panel-solar" role="tabpanel" aria-labelledby="tab-solar">
+          <div class="tech-panel-header" data-reveal>
+            <h3>Solar Energy</h3>
+            <div class="tech-panel-sub">Harnessing Kenya's Abundant Sunshine</div>
           </div>
-          <div class="tech-essay-stat">
-            <span class="tech-essay-stat-num">45%</span>
-            <span class="tech-essay-stat-label">Capacity Factor</span>
+          <div class="tech-panel-grid" data-reveal>
+            <p>The economics of solar have been transformed in a single decade. Module prices have fallen over 90 percent since 2010, and modern monocrystalline panels now achieve 21-23% efficiency - up from 15% a decade ago. Bifacial modules capturing light on both sides add 5-15% yield, while microinverters and power optimisers maximise harvest from each panel, critical for the partially shaded rooftops common in Kenyan cities.</p>
+            <p>Battery costs have fallen by over 80 percent since 2015 to under USD 150 per kWh. LFP chemistry is now preferred for stationary storage with 6,000+ cycle life. Solar-plus-storage systems deliver firm, dispatchable power through evening peaks, stabilise voltage, and provide backup during Kenya's frequent grid outages.</p>
+            <p>C&amp;I users achieve 3-5 year paybacks at current module prices. The Rift Valley's 5.5-6.5 kWh/m2/day insolation is among the world's best. Feed-in tariffs and international climate finance are driving utility-scale pipeline growth, while the off-grid market serves 25 percent of Kenyans through PAYG mini-grids.</p>
           </div>
-          <div class="tech-essay-stat">
-            <span class="tech-essay-stat-num">13</span>
-            <span class="tech-essay-stat-label">m/s Peak Wind Speed</span>
-          </div>
-        </div>
 
-        <div class="tech-essay-apps">
-          <h4>Applications</h4>
-          <div class="tech-essay-app">
-            <div class="tech-essay-app-marker" style="background: #2563eb;"></div>
-            <div>
-              <h5>Onshore Wind Farm Development</h5>
-              <p>End-to-end delivery from wind resource assessment and turbine selection through construction, commissioning, and grid connection.</p>
+          <div class="tech-essay-stat-row" data-reveal>
+            <div class="tech-essay-stat">
+              <span class="tech-essay-stat-num">6.5</span>
+              <span class="tech-essay-stat-label">kWh/m2/day Insolation</span>
+            </div>
+            <div class="tech-essay-stat">
+              <span class="tech-essay-stat-num">80%</span>
+              <span class="tech-essay-stat-label">Cost Reduction vs Diesel</span>
+            </div>
+            <div class="tech-essay-stat">
+              <span class="tech-essay-stat-num">5x</span>
+              <span class="tech-essay-stat-label">Market Growth Since 2018</span>
             </div>
           </div>
-          <div class="tech-essay-app">
-            <div class="tech-essay-app-marker" style="background: #2563eb;"></div>
-            <div>
-              <h5>Repowering &amp; Retrofit Solutions</h5>
-              <p>Upgrading existing wind farms with modern, higher-capacity turbines and advanced control systems to improve energy capture and extend operational life.</p>
+
+          <div class="tech-essay-apps" data-reveal>
+            <h4>Applications</h4>
+            <div class="tech-essay-apps-grid">
+              <div class="tech-essay-app">
+                <div class="tech-essay-app-marker" style="background: #d97706;"></div>
+                <div>
+                  <h5>Commercial &amp; Industrial Rooftop PV</h5>
+                  <p>Reducing operational energy costs for businesses, factories, and office complexes across Kenya's urban centres with minimal land use.</p>
+                </div>
+              </div>
+              <div class="tech-essay-app">
+                <div class="tech-essay-app-marker" style="background: #d97706;"></div>
+                <div>
+                  <h5>Utility-Scale Solar Farms</h5>
+                  <p>Ground-mounted PV from 1 MW to 50 MW connected via PPAs, with full EPC and project financing support for developers.</p>
+                </div>
+              </div>
+              <div class="tech-essay-app">
+                <div class="tech-essay-app-marker" style="background: #d97706;"></div>
+                <div>
+                  <h5>Mini-Grid &amp; Off-Grid Systems</h5>
+                  <p>Decentralised solar for rural communities, schools, and health facilities beyond grid reach with smart metering and mobile payments.</p>
+                </div>
+              </div>
+              <div class="tech-essay-app">
+                <div class="tech-essay-app-marker" style="background: #d97706;"></div>
+                <div>
+                  <h5>Agricultural Solar &amp; Water Pumping</h5>
+                  <p>Powering irrigation, cold storage, and agro-processing across arid regions, replacing diesel pumps at 90 percent operating cost reduction.</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="tech-essay-app">
-            <div class="tech-essay-app-marker" style="background: #2563eb;"></div>
-            <div>
-              <h5>Hybrid Wind-Solar Systems</h5>
-              <p>Combining complementary wind and solar profiles to smooth generation, improve capacity factors, and share grid connection infrastructure.</p>
-            </div>
-          </div>
-          <div class="tech-essay-app">
-            <div class="tech-essay-app-marker" style="background: #2563eb;"></div>
-            <div>
-              <h5>Wind Measurement &amp; Feasibility</h5>
-              <p>Comprehensive meteorological monitoring, energy yield assessment, and financial modelling to de-risk investment decisions before capital commitment.</p>
-            </div>
-          </div>
-        </div>
 
-        <a href="wind.html" class="btn btn-primary">Explore Wind Energy <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-
-      <div class="tech-essay" id="hydro-deep" data-reveal data-reveal-delay="200">
-        <div class="tech-essay-header">
-          <h3>Hydropower</h3>
-          <div class="tech-essay-sub">Leveraging Kenya's Rivers for Clean Baseload Power</div>
-        </div>
-        <p>Pelton turbines excel in high-head, low-flow mountain catchments at over 90 percent efficiency. Francis turbines handle medium head and flow ranges as the global standard. Kaplan's adjustable blades suit low-head, high-flow river applications. CFD modelling optimises turbine selection and intake design for each site's unique hydrology.</p>
-        <p>The Tana River's Seven Forks cascade delivers 500+ MW through five plants. The Athi system and rivers draining the Aberdares and Mt Kenya add significant capacity. Run-of-river projects on Sondu Miriu and Turkwel demonstrate low-footprint models. Our hydrological assessments span Nandi, Murang'a, and other highland catchments.</p>
-        <p>Run-of-river designs avoid large reservoirs, preserving river flow regimes and sediment transport. Fish-friendly turbines, minimum flow releases, and watershed reforestation programmes mitigate ecological impacts. Strategic environmental assessments are integrated from concept through operations, aligned with NEMA and international standards.</p>
-
-        <div class="tech-essay-stat-row">
-          <div class="tech-essay-stat">
-            <span class="tech-essay-stat-num">500+</span>
-            <span class="tech-essay-stat-label">MW Seven Forks Cascade</span>
-          </div>
-          <div class="tech-essay-stat">
-            <span class="tech-essay-stat-num">35%</span>
-            <span class="tech-essay-stat-label">Share of Kenya's Power Mix</span>
-          </div>
-          <div class="tech-essay-stat">
-            <span class="tech-essay-stat-num">50+</span>
-            <span class="tech-essay-stat-label">Year Design Life</span>
-          </div>
+          <a href="solar.html" class="btn btn-primary" data-reveal>Explore Solar Energy <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </div>
 
-        <div class="tech-essay-apps">
-          <h4>Applications</h4>
-          <div class="tech-essay-app">
-            <div class="tech-essay-app-marker" style="background: #0369a1;"></div>
-            <div>
-              <h5>Run-of-River Hydropower</h5>
-              <p>Low-impact projects diverting a portion of river flow through turbines without significant storage, preserving ecological continuity and community access.</p>
+        <div class="tech-panel" id="panel-wind" role="tabpanel" aria-labelledby="tab-wind">
+          <div class="tech-panel-header" data-reveal>
+            <h3>Wind Energy</h3>
+            <div class="tech-panel-sub">Capturing the Power of Kenya's Wind Corridors</div>
+          </div>
+          <div class="tech-panel-grid" data-reveal>
+            <p>Modern onshore turbines range from 1.5 MW to 6 MW with hub heights of 80-140 metres and rotor diameters exceeding 150 metres. Direct-drive permanent magnet generators eliminate the gearbox - historically the most failure-prone component - improving reliability. Advanced blade aerodynamics with serrated trailing edges boost energy capture by 20-30 percent over earlier designs.</p>
+            <p>The Turkana Corridor's channeled winds average 11-13 m/s during peak season - among the world's strongest. The Ngong Hills demonstrate ridge-top viability near Nairobi. Our resource assessment uses meteorological masts and SODAR units collecting 12+ months of site data before turbine selection and micrositing.</p>
+            <p>Integrating variable wind into Kenya's hydro/geothermal grid requires sophisticated forecasting, dispatch scheduling, and curtailment protocols. Modern wind farms provide reactive power, frequency response, and fault ride-through compliant with Kenya's Grid Code. Community benefits include roads, schools, and employment through development agreements.</p>
+          </div>
+
+          <div class="tech-essay-stat-row" data-reveal>
+            <div class="tech-essay-stat">
+              <span class="tech-essay-stat-num">310</span>
+              <span class="tech-essay-stat-label">MW Turkana Wind Farm</span>
+            </div>
+            <div class="tech-essay-stat">
+              <span class="tech-essay-stat-num">45%</span>
+              <span class="tech-essay-stat-label">Capacity Factor</span>
+            </div>
+            <div class="tech-essay-stat">
+              <span class="tech-essay-stat-num">13</span>
+              <span class="tech-essay-stat-label">m/s Peak Wind Speed</span>
             </div>
           </div>
-          <div class="tech-essay-app">
-            <div class="tech-essay-app-marker" style="background: #0369a1;"></div>
-            <div>
-              <h5>Small &amp; Mini Hydropower (SHP)</h5>
-              <p>Projects under 10 MW serving rural electrification, industrial off-take, or mini-grid anchor loads with standardised turbine packages for rapid deployment.</p>
+
+          <div class="tech-essay-apps" data-reveal>
+            <h4>Applications</h4>
+            <div class="tech-essay-apps-grid">
+              <div class="tech-essay-app">
+                <div class="tech-essay-app-marker" style="background: #2563eb;"></div>
+                <div>
+                  <h5>Onshore Wind Farm Development</h5>
+                  <p>End-to-end delivery from wind resource assessment and turbine selection through construction, commissioning, and grid connection.</p>
+                </div>
+              </div>
+              <div class="tech-essay-app">
+                <div class="tech-essay-app-marker" style="background: #2563eb;"></div>
+                <div>
+                  <h5>Repowering &amp; Retrofit Solutions</h5>
+                  <p>Upgrading existing wind farms with modern, higher-capacity turbines and advanced control systems to improve energy capture and extend operational life.</p>
+                </div>
+              </div>
+              <div class="tech-essay-app">
+                <div class="tech-essay-app-marker" style="background: #2563eb;"></div>
+                <div>
+                  <h5>Hybrid Wind-Solar Systems</h5>
+                  <p>Combining complementary wind and solar profiles to smooth generation, improve capacity factors, and share grid connection infrastructure.</p>
+                </div>
+              </div>
+              <div class="tech-essay-app">
+                <div class="tech-essay-app-marker" style="background: #2563eb;"></div>
+                <div>
+                  <h5>Wind Measurement &amp; Feasibility</h5>
+                  <p>Comprehensive meteorological monitoring, energy yield assessment, and financial modelling to de-risk investment decisions before capital commitment.</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="tech-essay-app">
-            <div class="tech-essay-app-marker" style="background: #0369a1;"></div>
-            <div>
-              <h5>Feasibility &amp; Hydrological Studies</h5>
-              <p>Catchment-scale assessments with flow gauging, rainfall analysis, climate scenario modelling, and preliminary design to bankable feasibility level.</p>
-            </div>
-          </div>
-          <div class="tech-essay-app">
-            <div class="tech-essay-app-marker" style="background: #0369a1;"></div>
-            <div>
-              <h5>Plant Refurbishment &amp; Modernisation</h5>
-              <p>Turbine runner replacement, control system upgrades, and electro-mechanical refurbishment to restore capacity and extend asset life by 20-30 years.</p>
-            </div>
-          </div>
+
+          <a href="wind.html" class="btn btn-primary" data-reveal>Explore Wind Energy <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </div>
 
-        <a href="hydro.html" class="btn btn-primary">Explore Hydropower <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        <div class="tech-panel" id="panel-hydro" role="tabpanel" aria-labelledby="tab-hydro">
+          <div class="tech-panel-header" data-reveal>
+            <h3>Hydropower</h3>
+            <div class="tech-panel-sub">Leveraging Kenya's Rivers for Clean Baseload Power</div>
+          </div>
+          <div class="tech-panel-grid" data-reveal>
+            <p>Pelton turbines excel in high-head, low-flow mountain catchments at over 90 percent efficiency. Francis turbines handle medium head and flow ranges as the global standard. Kaplan's adjustable blades suit low-head, high-flow river applications. CFD modelling optimises turbine selection and intake design for each site's unique hydrology.</p>
+            <p>The Tana River's Seven Forks cascade delivers 500+ MW through five plants. The Athi system and rivers draining the Aberdares and Mt Kenya add significant capacity. Run-of-river projects on Sondu Miriu and Turkwel demonstrate low-footprint models. Our hydrological assessments span Nandi, Murang'a, and other highland catchments.</p>
+            <p>Run-of-river designs avoid large reservoirs, preserving river flow regimes and sediment transport. Fish-friendly turbines, minimum flow releases, and watershed reforestation programmes mitigate ecological impacts. Strategic environmental assessments are integrated from concept through operations, aligned with NEMA and international standards.</p>
+          </div>
+
+          <div class="tech-essay-stat-row" data-reveal>
+            <div class="tech-essay-stat">
+              <span class="tech-essay-stat-num">500+</span>
+              <span class="tech-essay-stat-label">MW Seven Forks Cascade</span>
+            </div>
+            <div class="tech-essay-stat">
+              <span class="tech-essay-stat-num">35%</span>
+              <span class="tech-essay-stat-label">Share of Kenya's Power Mix</span>
+            </div>
+            <div class="tech-essay-stat">
+              <span class="tech-essay-stat-num">50+</span>
+              <span class="tech-essay-stat-label">Year Design Life</span>
+            </div>
+          </div>
+
+          <div class="tech-essay-apps" data-reveal>
+            <h4>Applications</h4>
+            <div class="tech-essay-apps-grid">
+              <div class="tech-essay-app">
+                <div class="tech-essay-app-marker" style="background: #0369a1;"></div>
+                <div>
+                  <h5>Run-of-River Hydropower</h5>
+                  <p>Low-impact projects diverting a portion of river flow through turbines without significant storage, preserving ecological continuity and community access.</p>
+                </div>
+              </div>
+              <div class="tech-essay-app">
+                <div class="tech-essay-app-marker" style="background: #0369a1;"></div>
+                <div>
+                  <h5>Small &amp; Mini Hydropower (SHP)</h5>
+                  <p>Projects under 10 MW serving rural electrification, industrial off-take, or mini-grid anchor loads with standardised turbine packages for rapid deployment.</p>
+                </div>
+              </div>
+              <div class="tech-essay-app">
+                <div class="tech-essay-app-marker" style="background: #0369a1;"></div>
+                <div>
+                  <h5>Feasibility &amp; Hydrological Studies</h5>
+                  <p>Catchment-scale assessments with flow gauging, rainfall analysis, climate scenario modelling, and preliminary design to bankable feasibility level.</p>
+                </div>
+              </div>
+              <div class="tech-essay-app">
+                <div class="tech-essay-app-marker" style="background: #0369a1;"></div>
+                <div>
+                  <h5>Plant Refurbishment &amp; Modernisation</h5>
+                  <p>Turbine runner replacement, control system upgrades, and electro-mechanical refurbishment to restore capacity and extend asset life by 20-30 years.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="hydro.html" class="btn btn-primary" data-reveal>Explore Hydropower <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
       </div>
     </div>
   </section>
