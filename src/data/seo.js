@@ -88,6 +88,38 @@ export const seoMap = [
       'solar equipment suppliers Kenya, renewable energy procurement, solar PV modules supply Kenya, electrical equipment supply, KEBS compliant engineering materials',
   },
   {
+    path: '/services',
+    title: 'Renewable Energy Services Kenya | Development, Engineering, Consultancy | Ecotrunk',
+    description:
+      'Ecotrunk delivers integrated renewable energy services across Kenya: project development & management, engineering systems, consultancy, and procurement & supply.',
+    keywords:
+      'renewable energy services Kenya, energy project development Kenya, engineering consultancy Nairobi, energy procurement Kenya',
+  },
+  {
+    path: '/investors',
+    title: 'Investor Relations | Ecotrunk International Ltd Kenya',
+    description:
+      'Investor relations for Ecotrunk International Ltd: business fundamentals, governance, and reports for partners, financiers, and prospective investors in Kenya\u2019s renewable energy sector.',
+    keywords:
+      'Ecotrunk investor relations, renewable energy investment Kenya, energy project financing, private company Kenya energy',
+  },
+  {
+    path: '/investors/governance',
+    title: 'Corporate Governance | Ecotrunk International Ltd',
+    description:
+      'Ecotrunk\u2019s corporate governance framework: integrity, transparency, compliance, and accountability across renewable energy projects in Kenya.',
+    keywords:
+      'Ecotrunk governance, corporate governance Kenya, energy compliance NEMA EPRA, business ethics Kenya',
+  },
+  {
+    path: '/investors/reports',
+    title: 'Reports & Publications | Ecotrunk International Ltd Kenya',
+    description:
+      'Corporate reports, project case studies, ESG reporting and publications from Ecotrunk International Ltd, available to partners and financiers on request.',
+    keywords:
+      'Ecotrunk reports, renewable energy publications Kenya, ESG report Kenya, energy company profile Kenya',
+  },
+  {
     path: '/blog',
     title: 'Blog | Kenya Renewable Energy Insights & Market Trends | Ecotrunk',
     description:

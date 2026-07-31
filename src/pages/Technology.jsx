@@ -1,7 +1,7 @@
-﻿import PageHero from '../components/PageHero';
+﻿import { Link } from 'react-router-dom';
+import PageHero from '../components/PageHero';
 import TechExplorer from '../components/TechExplorer';
 import Reveal from '../components/Reveal';
-import { Link } from 'react-router-dom';
 import { technologies } from '../data/technologies';
 
 const accent = { color: 'var(--volt-teal-light)' };
@@ -10,7 +10,7 @@ const OVERVIEWS = [
   {
     id: 'solar',
     icon: 'sun',
-    bg: 'var(--green-500)',
+    image: '/assets/img/solar.jpg',
     title: 'Solar Energy',
     text: 'Photovoltaic systems converting Kenya\'s exceptional insolation into electricity - from commercial rooftops to utility-scale farms, with battery storage integration for firm, dispatchable power.',
     to: '/solar',
@@ -19,7 +19,7 @@ const OVERVIEWS = [
   {
     id: 'wind',
     icon: 'wind',
-    bg: 'var(--green-600)',
+    image: '/assets/img/windmill.jpg',
     title: 'Wind Energy',
     text: 'Capturing the power of Kenya\'s world-class wind corridors in Turkana, Ngong Hills, and beyond. Full lifecycle services from resource assessment to turbine selection and grid integration.',
     to: '/wind',
@@ -28,7 +28,7 @@ const OVERVIEWS = [
   {
     id: 'hydro',
     icon: 'water',
-    bg: 'var(--green-700)',
+    image: '/assets/img/hydro.jpg',
     title: 'Hydropower',
     text: 'Leveraging Kenya\'s rivers for clean, dispatchable baseload power. Run-of-river schemes, small hydro for rural electrification, and climate-resilient dam rehabilitation projects.',
     to: '/hydro',
@@ -58,32 +58,31 @@ export default function Technology() {
 
       <section className="section">
         <div className="container">
-          <div style={{ textAlign: 'center' }}>
-            <Reveal>
-              <span className="section-label">Our Approach</span>
-            </Reveal>
-            <Reveal delay={50}>
-              <h2 className="section-title" style={{ maxWidth: 600, margin: '0 auto 20px' }}>
-                Selecting the Right Technology for Every Context
-              </h2>
-            </Reveal>
-            <Reveal delay={100}>
-              <p className="section-subtitle" style={{ margin: '0 auto', textAlign: 'center' }}>
-                At Ecotrunk, we believe no single technology holds all the answers. Every site, community, and investment profile demands a tailored solution. Our team combines rigorous technical analysis with deep local knowledge to recommend, design, and deliver the optimal technology pathway - whether solar, wind, hydropower, or a hybrid combination.
-              </p>
-            </Reveal>
+          <div className="sec-head" style={{ textAlign: 'center', margin: '0 auto' }}>
+            <span className="section-label">Our Approach</span>
+            <h2 className="section-title">Selecting the Right Technology for Every Context</h2>
+            <p className="section-subtitle" style={{ margin: '0 auto' }}>
+              No single technology holds all the answers. Every site, community, and investment profile demands a tailored solution. We combine rigorous technical analysis with deep local knowledge to recommend, design, and deliver the optimal pathway - whether solar, wind, hydropower, or a hybrid combination.
+            </p>
           </div>
 
-          <div className="tech-overview-grid">
+          <div className="volt-tech-tabs volt-tech-tabs-overview">
             {OVERVIEWS.map((overview, i) => (
-              <Reveal key={overview.id} delay={i * 100} className="tech-overview-card">
-                <div className="tech-overview-icon" style={{ background: overview.bg, color: 'white' }}>
-                  <i className={`fas fa-${overview.icon}`} aria-hidden="true"></i>
-                </div>
-                <h3>{overview.title}</h3>
-                <p>{overview.text}</p>
-                <Link to={overview.to} className="tech-card-link">
-                  {overview.cta} <i className="fas fa-arrow-right" aria-hidden="true"></i>
+              <Reveal key={overview.id} delay={i * 100} className="volt-tech-tab">
+                <Link to={overview.to} className="volt-tech-tablink">
+                  <img src={overview.image} alt={overview.title} loading="lazy" />
+                  <div className="hovercontent gray">
+                    <div className="display-inner-content">
+                      <span className="tech-overview-tag">
+                        <i className={`fas fa-${overview.icon}`} aria-hidden="true"></i> {overview.title}
+                      </span>
+                      <p>{overview.text}</p>
+                      <span className="tech-card-link">
+                        {overview.cta} <i className="fas fa-arrow-right" aria-hidden="true"></i>
+                      </span>
+                    </div>
+                    <div className="hover-inner-content"><span>{overview.title.toUpperCase()}</span></div>
+                  </div>
                 </Link>
               </Reveal>
             ))}
@@ -91,9 +90,39 @@ export default function Technology() {
         </div>
       </section>
 
-      <section className="section" style={{ background: 'white', paddingBottom: 0 }}>
+      <section className="section bg-a">
         <div className="container">
-          <TechExplorer technologies={technologies} />
+          <TechExplorer technologies={technologies} dark />
+        </div>
+      </section>
+
+      <section className="section" style={{ background: 'white' }}>
+        <div className="container">
+          <div className="sec-head" style={{ textAlign: 'center', margin: '0 auto' }}>
+            <span className="section-label">Related</span>
+            <h2 className="section-title">How We Apply These Technologies</h2>
+            <p className="section-subtitle" style={{ margin: '0 auto' }}>
+              Our technologies are delivered through integrated services that span the full project lifecycle.
+            </p>
+          </div>
+          <div className="investor-pillar-grid">
+            <Reveal className="investor-pillar-card">
+              <div className="investor-pillar-icon"><i className="fas fa-map-marked-alt" aria-hidden="true"></i></div>
+              <h3>Project Development</h3>
+              <p>Taking solar, wind, and hydro projects from site identification to construction-ready status.</p>
+              <Link to="/services/project-development" className="tech-card-link">
+                Explore <i className="fas fa-arrow-right" aria-hidden="true"></i>
+              </Link>
+            </Reveal>
+            <Reveal delay={100} className="investor-pillar-card">
+              <div className="investor-pillar-icon"><i className="fas fa-cogs" aria-hidden="true"></i></div>
+              <h3>Engineering Systems</h3>
+              <p>Designing, deploying, and servicing the energy systems that make these technologies work.</p>
+              <Link to="/services/engineering-systems" className="tech-card-link">
+                Explore <i className="fas fa-arrow-right" aria-hidden="true"></i>
+              </Link>
+            </Reveal>
+          </div>
         </div>
       </section>
     </>

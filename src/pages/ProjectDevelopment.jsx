@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 
 const STEPS = [
@@ -77,50 +79,116 @@ const FURTHER = [
 
 export default function ProjectDevelopment() {
   return (
-    <section className="section" style={{ paddingTop: 140 }}>
-      <div className="container">
-        <Reveal>
-          <span className="section-label">Our Service</span>
-          <h2 className="section-title">Project Development &amp; Management</h2>
-          <p className="section-subtitle" style={{ maxWidth: 800 }}>
-            Ecotrunk&apos;s dedicated in-house team manages every stage of project development - from evaluating site potential and securing prime locations to initiating construction after obtaining all necessary permits and authorizations. With over a decade of experience across East Africa, we deliver bankable renewable energy projects on time and on budget.
-          </p>
-        </Reveal>
+    <>
+      <PageHero
+        image="/assets/img/Site_Identification.jpg"
+        badge={{ icon: 'map-marked-alt', label: 'Our Service' }}
+        title={
+          <>
+            Project Development <span style={{ color: 'var(--volt-teal-light)' }}>&amp; Management</span>
+          </>
+        }
+        subtitle="Ecotrunk's dedicated in-house team manages every stage of project development - from evaluating site potential and securing prime locations to initiating construction after obtaining all necessary permits and authorizations."
+        stats={[
+          { number: '6', label: 'Core Development Stages' },
+          { number: '10+', label: 'Years Experience' },
+          { number: '3', label: 'Technologies Delivered' },
+          { number: '100%', label: 'NEMA-Aligned ESIA' },
+        ]}
+      />
 
-        <div style={{ marginTop: 64 }}>
-          {STEPS.map((step) => (
-            <div className={`step-card${step.reverse ? ' reverse' : ''}`} key={step.number}>
-              <div>
-                <div className="step-number">{step.number}</div>
-                <h3>{step.title}</h3>
-                {step.paras.map((para) => (
-                  <p key={para.slice(0, 24)}>{para}</p>
-                ))}
-              </div>
-              <div className="step-image">
-                <img src={step.image} alt={step.alt} loading="lazy" />
-              </div>
-            </div>
-          ))}
-        </div>
+      <section className="section">
+        <div className="container">
+          <div className="sec-head">
+            <span className="section-label">Our Process</span>
+            <h2 className="section-title">From Concept to Construction-Ready</h2>
+            <p className="section-subtitle">
+              With over a decade of experience across East Africa, we deliver bankable renewable energy projects on time and on budget - one rigorously managed stage at a time.
+            </p>
+          </div>
 
-        <div style={{ marginTop: 72 }}>
-          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 700, marginBottom: 8, color: 'var(--neutral-800)' }}>
-            Further Steps
-          </h3>
-          <p style={{ color: 'var(--neutral-500)', marginBottom: 8, maxWidth: 600 }}>
-            Beyond the core development phases, Ecotrunk also manages the critical commercial and financial processes that transform a consented project into a construction-ready asset:
-          </p>
-          <div className="further-list">
-            {FURTHER.map((item) => (
-              <div className="further-item" key={item.label}>
-                <i className={`fas fa-${item.icon}`} aria-hidden="true"></i>
-                {item.label}
+          <div style={{ marginTop: 16 }}>
+            {STEPS.map((step) => (
+              <div className={`step-card${step.reverse ? ' reverse' : ''}`} key={step.number}>
+                <div>
+                  <div className="step-number">{step.number}</div>
+                  <h3>{step.title}</h3>
+                  {step.paras.map((para) => (
+                    <p key={para.slice(0, 24)}>{para}</p>
+                  ))}
+                </div>
+                <div className="step-image">
+                  <img src={step.image} alt={step.alt} loading="lazy" />
+                </div>
               </div>
             ))}
           </div>
+
+          <div className="volt-callout">
+            <div className="volt-callout-icon"><i className="fas fa-clipboard-check" aria-hidden="true"></i></div>
+            <div>
+              <h4>Bankable from day one</h4>
+              <p>
+                Every stage is documented for lender and regulator scrutiny - resource data, ESIA
+                records, grid studies, and permitting calendars are maintained to institutional
+                standards from concept to commissioning.
+              </p>
+            </div>
+          </div>
+
+          <div style={{ marginTop: 72 }}>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 700, marginBottom: 8, color: 'var(--neutral-800)' }}>
+              Further Steps
+            </h3>
+            <p style={{ color: 'var(--neutral-500)', marginBottom: 8, maxWidth: 600 }}>
+              Beyond the core development phases, Ecotrunk also manages the critical commercial and financial processes that transform a consented project into a construction-ready asset:
+            </p>
+            <div className="further-list">
+              {FURTHER.map((item) => (
+                <div className="further-item" key={item.label}>
+                  <i className={`fas fa-${item.icon}`} aria-hidden="true"></i>
+                  {item.label}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="section" style={{ background: 'white' }}>
+        <div className="container">
+          <div className="sec-head" style={{ textAlign: 'center', margin: '0 auto' }}>
+            <span className="section-label">Related Services</span>
+            <h2 className="section-title">Continue Exploring</h2>
+          </div>
+          <div className="investor-pillar-grid">
+            <Reveal className="investor-pillar-card">
+              <div className="investor-pillar-icon"><i className="fas fa-cogs" aria-hidden="true"></i></div>
+              <h3>Engineering Systems</h3>
+              <p>Technical depth across review, analysis, and implementation of energy technologies.</p>
+              <Link to="/services/engineering-systems" className="tech-card-link">
+                Explore <i className="fas fa-arrow-right" aria-hidden="true"></i>
+              </Link>
+            </Reveal>
+            <Reveal delay={100} className="investor-pillar-card">
+              <div className="investor-pillar-icon"><i className="fas fa-handshake" aria-hidden="true"></i></div>
+              <h3>Consultancy</h3>
+              <p>Independent feasibility, ESIA, and monitoring services for developers and financiers.</p>
+              <Link to="/services/consultancy" className="tech-card-link">
+                Explore <i className="fas fa-arrow-right" aria-hidden="true"></i>
+              </Link>
+            </Reveal>
+            <Reveal delay={200} className="investor-pillar-card">
+              <div className="investor-pillar-icon"><i className="fas fa-truck" aria-hidden="true"></i></div>
+              <h3>Procurement &amp; Supply</h3>
+              <p>Quality-assured materials and equipment for renewable energy projects across Kenya.</p>
+              <Link to="/services/procurement" className="tech-card-link">
+                Explore <i className="fas fa-arrow-right" aria-hidden="true"></i>
+              </Link>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

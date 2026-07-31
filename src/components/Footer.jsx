@@ -60,10 +60,19 @@ export default function Footer() {
           <div>
             <h4 className="footer-heading">Services</h4>
             <div className="footer-links">
+              <Link to="/services">All Services</Link>
               <Link to="/services/project-development">Project Development</Link>
               <Link to="/services/engineering-systems">Engineering Systems</Link>
               <Link to="/services/consultancy">Consultancy</Link>
               <Link to="/services/procurement">Procurement &amp; Supply</Link>
+            </div>
+          </div>
+          <div>
+            <h4 className="footer-heading">Investors</h4>
+            <div className="footer-links">
+              <Link to="/investors">Investor Relations</Link>
+              <Link to="/investors/governance">Governance</Link>
+              <Link to="/investors/reports">Reports &amp; Publications</Link>
             </div>
           </div>
           <div className="footer-contact">

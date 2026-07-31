@@ -1615,7 +1615,7 @@ ul { list-style: none; }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.8fr 1fr 1.2fr 1.2fr 1.4fr;
+  grid-template-columns: 1.8fr 1fr 1.2fr 1.2fr 1fr 1.4fr;
   gap: 44px;
   padding-bottom: 60px;
   border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -1930,6 +1930,223 @@ ul { list-style: none; }
   line-height: 1.7;
   margin-bottom: 24px;
   flex: 1;
+}
+
+/* === Investor & pillar cards === */
+.investor-pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.investor-pillar-card {
+  background: white;
+  border: 1px solid var(--neutral-200);
+  padding: 40px 32px;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.investor-pillar-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border-color: var(--green-200);
+}
+
+.investor-pillar-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--green-50);
+  color: var(--green-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.investor-pillar-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--neutral-900);
+}
+
+.investor-pillar-card p {
+  font-size: 0.95rem;
+  color: var(--neutral-600);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+/* === Reports page === */
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.report-card {
+  background: white;
+  border: 1px solid var(--neutral-200);
+  border-top: 3px solid var(--volt-teal);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.report-card-type {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--volt-teal);
+  margin-bottom: 20px;
+}
+
+.report-card-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--green-50);
+  color: var(--green-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.report-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--neutral-900);
+}
+
+.report-card p {
+  font-size: 0.95rem;
+  color: var(--neutral-600);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.report-card-request {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--green-600);
+}
+
+/* === Services hub === */
+.service-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 60px;
+}
+
+.service-hub-card {
+  background: white;
+  border: 1px solid var(--neutral-200);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.service-hub-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border-color: var(--green-200);
+}
+
+.service-hub-image {
+  height: 220px;
+  overflow: hidden;
+}
+
+.service-hub-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-hub-card:hover .service-hub-image img {
+  transform: scale(1.06);
+}
+
+.service-hub-body {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.service-hub-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--green-50);
+  color: var(--green-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.service-hub-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--neutral-900);
+}
+
+.service-hub-body > p {
+  font-size: 0.95rem;
+  color: var(--neutral-600);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.service-hub-points {
+  list-style: none;
+  margin-bottom: 28px;
+  flex: 1;
+}
+
+.service-hub-points li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--neutral-700);
+  margin-bottom: 10px;
+}
+
+.service-hub-points li i {
+  color: var(--volt-teal);
+  font-size: 0.8rem;
+}
+
+.service-hub-body .btn {
+  align-self: flex-start;
 }
 
 .tech-explorer {
@@ -2268,7 +2485,10 @@ ul { list-style: none; }
   .tech-overview-grid { grid-template-columns: repeat(2, 1fr); }
   .tech-feature { gap: 40px; padding: 60px 0; }
   .offer-grid,
-  .mat-grid { grid-template-columns: repeat(2, 1fr); }
+  .mat-grid,
+  .investor-pillar-grid,
+  .report-grid,
+  .service-hub-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -2278,7 +2498,10 @@ ul { list-style: none; }
   .tech-feature-content h2 { font-size: 1.4rem; }
   .tech-feature-list li { font-size: 0.85rem; }
   .offer-grid,
-  .mat-grid { grid-template-columns: 1fr; }
+  .mat-grid,
+  .investor-pillar-grid,
+  .report-grid,
+  .service-hub-grid { grid-template-columns: 1fr; }
 }
 
 /* === Technology Detail Pages === */
@@ -3302,6 +3525,121 @@ ul { list-style: none; }
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.volt-tech-tab:hover .hovercontent::before {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.volt-tech-tab:hover .display-inner-content {
+  display: flex;
+}
+
+.volt-tech-tab:hover .hover-inner-content {
+  display: none;
+}
+
+/* Technology overview page tabs */
+.volt-tech-tabs-overview .volt-tech-tablink img {
+  height: 320px;
+}
+
+.volt-tech-tabs-overview .tech-overview-tag {
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.volt-tech-tabs-overview .tech-overview-tag i {
+  color: var(--volt-teal-light);
+  font-size: 1.15rem;
+}
+
+.volt-tech-tabs-overview .tech-card-link {
+  color: var(--volt-teal-light);
+}
+
+.volt-tech-tabs-overview .display-inner-content {
+  justify-content: center;
+  gap: 14px;
+}
+
+/* TechExplorer dark variant on navy sections */
+.bg-a .tech-explorer .tech-explorer-head .section-title {
+  color: #fff;
+}
+
+.bg-a .tech-explorer .tech-explorer-head .section-label {
+  color: var(--volt-teal-light);
+}
+
+.bg-a .tech-explorer .tech-explorer-head .section-subtitle {
+  color: var(--volt-link);
+}
+
+.bg-a .tech-explorer .tech-tabs {
+  border-bottom-color: var(--volt-link);
+}
+
+.bg-a .tech-tab + .tech-tab {
+  border-left-color: rgba(176, 189, 208, 0.25);
+}
+
+.bg-a .tech-tab-label {
+  color: var(--volt-link);
+}
+
+.bg-a .tech-tab:hover .tech-tab-label,
+.bg-a .tech-tab.active .tech-tab-label {
+  color: #fff;
+}
+
+.bg-a .tech-tab.active {
+  border-bottom-color: var(--volt-teal);
+}
+
+.bg-a .tech-tab.active .tech-tab-num,
+.bg-a .tech-tab:hover .tech-tab-num {
+  color: var(--volt-teal-light);
+}
+
+.bg-a .tech-panel-header h3,
+.bg-a .tech-essay-apps h4,
+.bg-a .tech-essay-stat-num,
+.bg-a .tech-essay-app h5 {
+  color: #fff;
+}
+
+.bg-a .tech-panel-header .tech-panel-sub,
+.bg-a .tech-panel-grid p,
+.bg-a .tech-essay-stat-label,
+.bg-a .tech-essay-app p {
+  color: var(--volt-link);
+}
+
+.bg-a .tech-panel-grid p:first-child {
+  border-left-color: var(--volt-teal);
+  color: #fff;
+}
+
+.bg-a .tech-essay-stat-row {
+  border-top-color: var(--volt-link);
+  border-bottom-color: var(--volt-link);
+}
+
+.bg-a .tech-essay-app {
+  border-bottom-color: rgba(176, 189, 208, 0.2);
+}
+
+.bg-a .tech-tab.active .tech-tab-label {
+  color: #fff;
 }
 
 .volt-split {

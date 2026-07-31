@@ -23,12 +23,22 @@ const NAV = [
   },
   {
     label: 'Services',
-    to: '/services/project-development',
+    to: '/services',
     children: [
+      { to: '/services', label: 'Overview' },
       { to: '/services/project-development', label: 'Project Development' },
       { to: '/services/engineering-systems', label: 'Engineering Systems' },
       { to: '/services/consultancy', label: 'Consultancy' },
       { to: '/services/procurement', label: 'Procurement & Supply' },
+    ],
+  },
+  {
+    label: 'Investors',
+    to: '/investors',
+    children: [
+      { to: '/investors', label: 'Investor Relations' },
+      { to: '/investors/governance', label: 'Governance' },
+      { to: '/investors/reports', label: 'Reports & Publications' },
     ],
   },
   {

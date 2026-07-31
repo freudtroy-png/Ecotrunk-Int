@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 
 const SERVICES = [
@@ -44,31 +46,37 @@ const APPROACH = [
 export default function EngineeringSystems() {
   return (
     <>
-      <section className="section" style={{ paddingTop: 140 }}>
-        <div className="container">
-          <Reveal>
-            <span className="section-label">Engineering Systems</span>
-            <h2 className="section-title">Engineering Systems Development</h2>
-            <p className="intro-text">
-              Ecotrunk International Ltd brings deep technical expertise to every phase of engineering systems development. From initial system review and complex analysis through to energy technology deployment and service system refinement, our team delivers robust, efficient, and future-ready solutions tailored to the renewable energy sector across Kenya and East Africa.
-            </p>
-          </Reveal>
+      <PageHero
+        image="/assets/img/eng.jpg"
+        badge={{ icon: 'cogs', label: 'Our Service' }}
+        title={
+          <>
+            Engineering Systems <span style={{ color: 'var(--volt-teal-light)' }}>Development</span>
+          </>
+        }
+        subtitle="From initial system review and complex analysis through to energy technology deployment and service system refinement, our team delivers robust, efficient, and future-ready solutions across the renewable energy sector."
+        stats={[
+          { number: '4', label: 'Core Service Lines' },
+          { number: '10+', label: 'Years Experience' },
+          { number: '3', label: 'Technologies Deployed' },
+          { number: '100%', label: 'QA Reviewed Deliverables' },
+        ]}
+      />
 
-          <div className="hero-banner">
-            <img src="/assets/img/eng.jpg" alt="Engineering team reviewing technical drawings and system schematics" loading="lazy" />
-            <div className="hero-banner-overlay">
-              <h2>Integrated Engineering for a Sustainable Energy Future</h2>
-              <p>Our multidisciplinary team combines systems thinking with hands-on renewable energy expertise to deliver solutions that perform.</p>
-            </div>
+      <section className="section">
+        <div className="container">
+          <div className="sec-head">
+            <span className="section-label">What We Deliver</span>
+            <h2 className="section-title">Integrated Engineering Services</h2>
+            <p className="section-subtitle">
+              Ecotrunk International Ltd brings deep technical expertise to every phase of engineering systems development - combining systems thinking with hands-on renewable energy experience to deliver solutions that perform.
+            </p>
           </div>
 
-          <div className="services-grid">
+          <div className="benefit-grid">
             {SERVICES.map((service, i) => (
-              <Reveal key={service.title} delay={i * 100} className="service-card">
-                <div className="service-card-icon">
-                  <i className={`fas fa-${service.icon}`} aria-hidden="true"></i>
-                </div>
-                <h3>{service.title}</h3>
+              <Reveal key={service.title} delay={i * 50} className="benefit-item">
+                <h3><i className={`fas fa-${service.icon}`} aria-hidden="true" style={{ color: 'var(--volt-teal)', marginRight: 10 }}></i>{service.title}</h3>
                 <p>{service.text}</p>
               </Reveal>
             ))}
@@ -76,15 +84,15 @@ export default function EngineeringSystems() {
         </div>
       </section>
 
-      <section className="section" style={{ background: 'white' }}>
+      <section className="section" style={{ background: 'var(--neutral-50)' }}>
         <div className="container">
-          <Reveal>
+          <div className="sec-head">
             <span className="section-label">Our Approach</span>
-            <h2 className="section-title">Our Engineering Approach</h2>
-            <p className="intro-text">
+            <h2 className="section-title">Three Pillars of Engineering Excellence</h2>
+            <p className="section-subtitle">
               Every engineering engagement at Ecotrunk is underpinned by three core pillars that ensure technical excellence, enduring value, and strong client relationships.
             </p>
-          </Reveal>
+          </div>
 
           <div className="approach-grid">
             {APPROACH.map((item, i) => (
@@ -96,6 +104,41 @@ export default function EngineeringSystems() {
                 <p>{item.text}</p>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-a">
+        <div className="container">
+          <div className="sec-head">
+            <span className="section-label" style={{ color: 'var(--volt-teal-light)' }}>Related Services</span>
+            <h2 className="section-title" style={{ color: 'white' }}>Complete the Project Lifecycle</h2>
+          </div>
+          <div className="investor-pillar-grid">
+            <Reveal className="investor-pillar-card">
+              <div className="investor-pillar-icon"><i className="fas fa-map-marked-alt" aria-hidden="true"></i></div>
+              <h3>Project Development</h3>
+              <p>Site identification, feasibility, ESIA, and permitting for bankable renewable projects.</p>
+              <Link to="/services/project-development" className="tech-card-link">
+                Explore <i className="fas fa-arrow-right" aria-hidden="true"></i>
+              </Link>
+            </Reveal>
+            <Reveal delay={100} className="investor-pillar-card">
+              <div className="investor-pillar-icon"><i className="fas fa-handshake" aria-hidden="true"></i></div>
+              <h3>Consultancy</h3>
+              <p>Independent technical assessments, monitoring, and training for project stakeholders.</p>
+              <Link to="/services/consultancy" className="tech-card-link">
+                Explore <i className="fas fa-arrow-right" aria-hidden="true"></i>
+              </Link>
+            </Reveal>
+            <Reveal delay={200} className="investor-pillar-card">
+              <div className="investor-pillar-icon"><i className="fas fa-truck" aria-hidden="true"></i></div>
+              <h3>Procurement &amp; Supply</h3>
+              <p>Verified components and equipment sourced to specification for every deployment.</p>
+              <Link to="/services/procurement" className="tech-card-link">
+                Explore <i className="fas fa-arrow-right" aria-hidden="true"></i>
+              </Link>
+            </Reveal>
           </div>
         </div>
       </section>
