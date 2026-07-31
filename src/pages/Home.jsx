@@ -258,7 +258,7 @@ export default function Home() {
           <div className="climate-content">
             <div className="climate-text">
               <Reveal>
-                <span className="section-label" style={{ color: 'var(--green-400)', paddingLeft: 48 }}>Why Green Energy</span>
+                <span className="section-label" style={{ color: 'var(--green-300)' }}>Why Green Energy</span>
                 <h2>The Urgency of Kenya&apos;s Energy Transition</h2>
                 <p>
                   The energy supply sector is the largest contributor to global greenhouse gas emissions. In Kenya, rapid economic growth and increasing energy demand make the transition to renewable sources both an environmental imperative and an economic opportunity. Renewable energy solutions constitute the safe, reliable, and affordable pathway capable of meeting Kenya&apos;s nationally determined contributions under the Paris Agreement while powering sustainable development.
@@ -281,10 +281,22 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section impact-section">
+        <div className="container">
+          <Reveal className="impact-inner">
+            <span className="impact-mark"><i className="fas fa-quote-right" aria-hidden="true"></i></span>
+            <h2 className="impact-quote">
+              &ldquo;Renewable energy is where human progress and climate protection converge. Every project we deliver reflects that conviction&rdquo;
+            </h2>
+            <p className="impact-by">— The Ecotrunk Team, Nairobi</p>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="section" id="gallery">
         <div className="container">
           <Reveal style={{ textAlign: 'center' }}>
-            <span className="section-label" style={{ paddingLeft: 0 }}>Gallery</span>
+            <span className="section-label section-label-center">Gallery</span>
             <h2 className="section-title">Our Projects in Action</h2>
             <p className="section-subtitle" style={{ margin: '0 auto' }}>
               A selection of renewable energy installations and engineering work delivered by the Ecotrunk team across Kenya.

@@ -3,7 +3,7 @@ import TechCta from '../components/TechCta';
 import Reveal from '../components/Reveal';
 
 const gradient = {
-  background: 'linear-gradient(135deg, var(--green-400), var(--sun-400))',
+  background: 'linear-gradient(135deg, var(--green-300), var(--green-500))',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',

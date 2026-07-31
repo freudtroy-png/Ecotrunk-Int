@@ -1,35 +1,47 @@
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
-import Home from './pages/Home';
-import About from './pages/About';
-import Technology from './pages/Technology';
-import Solar from './pages/Solar';
-import Wind from './pages/Wind';
-import Hydro from './pages/Hydro';
-import ProjectDevelopment from './pages/ProjectDevelopment';
-import EngineeringSystems from './pages/EngineeringSystems';
-import Consultancy from './pages/Consultancy';
-import Procurement from './pages/Procurement';
-import Blog from './pages/Blog';
-import BlogPost from './pages/BlogPost';
+
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Technology = lazy(() => import('./pages/Technology'));
+const Solar = lazy(() => import('./pages/Solar'));
+const Wind = lazy(() => import('./pages/Wind'));
+const Hydro = lazy(() => import('./pages/Hydro'));
+const ProjectDevelopment = lazy(() => import('./pages/ProjectDevelopment'));
+const EngineeringSystems = lazy(() => import('./pages/EngineeringSystems'));
+const Consultancy = lazy(() => import('./pages/Consultancy'));
+const Procurement = lazy(() => import('./pages/Procurement'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
+
+function PageFallback() {
+  return (
+    <section className="section" style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div className="container" style={{ textAlign: 'center' }}>
+        <i className="fas fa-spinner fa-spin" style={{ fontSize: '2rem', color: 'var(--green-600)' }} aria-hidden="true"></i>
+      </div>
+    </section>
+  );
+}
 
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="technology" element={<Technology />} />
-        <Route path="solar" element={<Solar />} />
-        <Route path="wind" element={<Wind />} />
-        <Route path="hydro" element={<Hydro />} />
-        <Route path="services/project-development" element={<ProjectDevelopment />} />
-        <Route path="services/engineering-systems" element={<EngineeringSystems />} />
-        <Route path="services/consultancy" element={<Consultancy />} />
-        <Route path="services/procurement" element={<Procurement />} />
-        <Route path="blog" element={<Blog />} />
-        <Route path="blog/:slug" element={<BlogPost />} />
-        <Route path="*" element={<Home />} />
+        <Route index element={<Suspense fallback={<PageFallback />}><Home /></Suspense>} />
+        <Route path="about" element={<Suspense fallback={<PageFallback />}><About /></Suspense>} />
+        <Route path="technology" element={<Suspense fallback={<PageFallback />}><Technology /></Suspense>} />
+        <Route path="solar" element={<Suspense fallback={<PageFallback />}><Solar /></Suspense>} />
+        <Route path="wind" element={<Suspense fallback={<PageFallback />}><Wind /></Suspense>} />
+        <Route path="hydro" element={<Suspense fallback={<PageFallback />}><Hydro /></Suspense>} />
+        <Route path="services/project-development" element={<Suspense fallback={<PageFallback />}><ProjectDevelopment /></Suspense>} />
+        <Route path="services/engineering-systems" element={<Suspense fallback={<PageFallback />}><EngineeringSystems /></Suspense>} />
+        <Route path="services/consultancy" element={<Suspense fallback={<PageFallback />}><Consultancy /></Suspense>} />
+        <Route path="services/procurement" element={<Suspense fallback={<PageFallback />}><Procurement /></Suspense>} />
+        <Route path="blog" element={<Suspense fallback={<PageFallback />}><Blog /></Suspense>} />
+        <Route path="blog/:slug" element={<Suspense fallback={<PageFallback />}><BlogPost /></Suspense>} />
+        <Route path="*" element={<Suspense fallback={<PageFallback />}><Home /></Suspense>} />
       </Route>
     </Routes>
   );

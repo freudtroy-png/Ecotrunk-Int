@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ecotrunk-int.vercel.app/sitemap.xml

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { technologies } from '../data/technologies';
 
 const gradient = {
-  background: 'linear-gradient(135deg, var(--green-400), var(--sun-400))',
+  background: 'linear-gradient(135deg, var(--green-300), var(--green-500))',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -15,7 +15,7 @@ const OVERVIEWS = [
   {
     id: 'solar',
     icon: 'sun',
-    bg: 'var(--sun-400)',
+    bg: 'var(--green-500)',
     title: 'Solar Energy',
     text: 'Photovoltaic systems converting Kenya\'s exceptional insolation into electricity - from commercial rooftops to utility-scale farms, with battery storage integration for firm, dispatchable power.',
     to: '/solar',
@@ -24,7 +24,7 @@ const OVERVIEWS = [
   {
     id: 'wind',
     icon: 'wind',
-    bg: '#2563eb',
+    bg: 'var(--green-600)',
     title: 'Wind Energy',
     text: 'Capturing the power of Kenya\'s world-class wind corridors in Turkana, Ngong Hills, and beyond. Full lifecycle services from resource assessment to turbine selection and grid integration.',
     to: '/wind',
@@ -33,7 +33,7 @@ const OVERVIEWS = [
   {
     id: 'hydro',
     icon: 'water',
-    bg: '#065fd4',
+    bg: 'var(--green-700)',
     title: 'Hydropower',
     text: 'Leveraging Kenya\'s rivers for clean, dispatchable baseload power. Run-of-river schemes, small hydro for rural electrification, and climate-resilient dam rehabilitation projects.',
     to: '/hydro',

@@ -75,11 +75,25 @@ export default function Header() {
   return (
     <>
       <header className={`header${scrolled ? ' scrolled' : ''}`} role="banner">
+        <div className="utility-bar">
+          <div className="container utility-bar-inner">
+            <div className="utility-bar-left">
+              <a href="mailto:info@ecotrunk.co.ke"><i className="fas fa-envelope" aria-hidden="true"></i> info@ecotrunk.co.ke</a>
+              <a href="tel:+254728367885"><i className="fas fa-phone-alt" aria-hidden="true"></i> +254 728 367 885</a>
+            </div>
+            <div className="utility-bar-right">
+              <span><i className="fas fa-map-marker-alt" aria-hidden="true"></i> Professional Centre, Ngong Road, Nairobi</span>
+            </div>
+          </div>
+        </div>
         <div className="header-inner">
           <Link to="/" className="header-logo" aria-label="Ecotrunk Home" onClick={(e) => handleNavClick(e, '/')}>
             <div className="header-logo-icon">
               <img src="/assets/logo.png" alt="Ecotrunk International Ltd" />
             </div>
+            <span className="header-logo-text">
+              Ecotrunk<small>International Ltd</small>
+            </span>
           </Link>
           <nav className="nav" role="navigation" aria-label="Main navigation">
             <Link to="/" className={navLinkClass(path === '/')} onClick={(e) => handleNavClick(e, '/')}>
@@ -95,7 +109,7 @@ export default function Header() {
               Technologies
             </Link>
             <Link to="/blog" className={navLinkClass(isActive('/blog'))} onClick={(e) => handleNavClick(e, '/blog')}>
-              Blog
+              Insights
             </Link>
             <div className="nav-dropdown">
               <a className={`nav-link nav-dropdown-trigger${servicesActive ? ' active' : ''}`}>

@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import CookieBanner from './CookieBanner';
+import Seo from './Seo';
 
 export default function Layout() {
   const { pathname, hash } = useLocation();
@@ -14,6 +15,7 @@ export default function Layout() {
 
   return (
     <>
+      <Seo path={pathname} />
       <Header />
       <main>
         <Outlet />

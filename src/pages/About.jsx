@@ -211,7 +211,7 @@ export default function About() {
       <section className="section" style={{ background: '#fff' }}>
         <div className="container">
           <Reveal style={{ textAlign: 'center' }}>
-            <span className="section-label" style={{ paddingLeft: 0 }}>Why Choose Ecotrunk</span>
+            <span className="section-label section-label-center">Why Choose Ecotrunk</span>
             <h2 className="section-title">What Sets Us Apart</h2>
           </Reveal>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32, marginTop: 48 }}>

@@ -3,7 +3,7 @@ export const technologies = [
     id: 'solar',
     title: 'Solar Energy',
     subtitle: 'Harnessing Kenya\'s Abundant Sunshine',
-    marker: '#d97706',
+    marker: 'var(--green-500)',
     to: '/solar',
     cta: 'Explore Solar Energy',
     paragraphs: [
@@ -27,7 +27,7 @@ export const technologies = [
     id: 'wind',
     title: 'Wind Energy',
     subtitle: 'Capturing the Power of Kenya\'s Wind Corridors',
-    marker: '#2563eb',
+    marker: 'var(--green-400)',
     to: '/wind',
     cta: 'Explore Wind Energy',
     paragraphs: [
@@ -51,7 +51,7 @@ export const technologies = [
     id: 'hydro',
     title: 'Hydropower',
     subtitle: 'Leveraging Kenya\'s Rivers for Clean Baseload Power',
-    marker: '#0369a1',
+    marker: 'var(--green-300)',
     to: '/hydro',
     cta: 'Explore Hydropower',
     paragraphs: [

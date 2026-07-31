@@ -3,7 +3,7 @@ import TechCta from '../components/TechCta';
 import Reveal from '../components/Reveal';
 
 const gradient = {
-  background: 'linear-gradient(135deg, var(--green-400), var(--sun-400))',
+  background: 'linear-gradient(135deg, var(--green-300), var(--green-500))',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
@@ -156,7 +156,7 @@ export default function Solar() {
         </div>
       </section>
 
-      <section className="section" style={{ background: '#111' }}>
+      <section className="section" style={{ background: 'var(--neutral-950)' }}>
         <div className="container">
           <div style={{ maxWidth: 900 }}>
             <span className="section-label" style={{ color: 'var(--green-400)' }}>Impact</span>

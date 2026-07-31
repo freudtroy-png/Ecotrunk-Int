@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { blogPosts } from '../data/blogPosts';
+import Seo from '../components/Seo';
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -23,6 +24,11 @@ export default function BlogPost() {
 
   return (
     <section className="section">
+      <Seo
+        path={`/blog/${post.slug}`}
+        title={`${post.title} | Ecotrunk Blog`}
+        description={post.excerpt}
+      />
       <div className="container">
         <article className="blog-article">
           <Link to="/blog" className="blog-back">

@@ -66,6 +66,15 @@ export default function Footer() {
               <Link to="/services/procurement">Procurement &amp; Supply</Link>
             </div>
           </div>
+          <div className="footer-contact">
+            <h4 className="footer-heading">Contact</h4>
+            <ul className="footer-contact-list">
+              <li><i className="fas fa-map-marker-alt" aria-hidden="true"></i> Professional Centre, Ngong Road, P.O. Box 7252-00200, Nairobi, Kenya</li>
+              <li><i className="fas fa-phone-alt" aria-hidden="true"></i> <a href="tel:+254728367885">+254 728 367 885</a></li>
+              <li><i className="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@ecotrunk.co.ke">info@ecotrunk.co.ke</a></li>
+              <li><i className="fas fa-clock" aria-hidden="true"></i> Mon – Fri, 8:00 AM – 5:00 PM (EAT)</li>
+            </ul>
+          </div>
           <div className="footer-newsletter">
             <h4 className="footer-heading">Stay Updated</h4>
             <p>Subscribe to receive updates on our projects and the latest in Kenya's renewable energy sector.</p>
