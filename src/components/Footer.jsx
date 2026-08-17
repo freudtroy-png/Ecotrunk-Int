@@ -4,11 +4,10 @@ import { Link } from 'react-router-dom';
 const FORM_ENDPOINT = '';
 
 const QUICK_LINKS = [
-  { to: '/about', label: 'About Us' },
-  { to: '/about#values', label: 'Our Values' },
-  { to: '/technology', label: 'Technologies' },
+  { to: '/about', label: 'About us' },
+  { to: '/about#values', label: 'Our values' },
+  { to: '/about#journey', label: 'Our history' },
   { to: '/blog', label: 'Blog & News' },
-  { to: '/#contact', label: 'Contact' },
 ];
 
 const SERVICE_LINKS = [
@@ -93,13 +92,13 @@ export default function Footer() {
             </div>
 
             <div className="footer-col">
-              <h4 className="footer-heading">Services</h4>
-              {renderLinks(SERVICE_LINKS)}
+              <h4 className="footer-heading">Technologies</h4>
+              {renderLinks(TECHNOLOGY_LINKS)}
             </div>
 
             <div className="footer-col">
-              <h4 className="footer-heading">Technologies</h4>
-              {renderLinks(TECHNOLOGY_LINKS)}
+              <h4 className="footer-heading">Services</h4>
+              {renderLinks(SERVICE_LINKS)}
             </div>
 
             <div className="footer-col">
@@ -125,9 +124,16 @@ export default function Footer() {
               </ul>
             </div>
           </div>
+        </div>
+      </div>
 
+      <div className="footer-newsletter">
+        <div className="container footer-newsletter-inner">
+          <div className="footer-newsletter-text">
+            <span className="footer-newsletter-label">Stay informed</span>
+            <p>Energy insights and company updates, delivered to your inbox.</p>
+          </div>
           <form className="footer-newsletter-form" onSubmit={handleSubmit}>
-            <span className="footer-newsletter-label">Newsletter</span>
             <input
               type="email"
               name="email"

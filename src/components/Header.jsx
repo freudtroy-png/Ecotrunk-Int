@@ -151,25 +151,27 @@ export default function Header() {
       <nav className={`volt-mobile${menuOpen ? ' open' : ''}`} role="navigation" aria-label="Mobile navigation">
         {NAV.map((item) => {
           const expanded = openGroup === item.label;
+          const active = isActive(item.to) || item.children?.some((c) => isActive(c.to));
           return (
             <div className="volt-mobile-group" key={item.label}>
               <div className="volt-mobile-row">
-                <Link
-                  to={item.to}
-                  className={`volt-mobile-link${isActive(item.to) ? ' active' : ''}`}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-                {item.children && (
+                {item.children ? (
                   <button
-                    className={`volt-mobile-toggle${expanded ? ' active' : ''}`}
-                    aria-label={`Toggle ${item.label} submenu`}
+                    className={`volt-mobile-link volt-mobile-link-btn${active ? ' active' : ''}`}
                     aria-expanded={expanded}
                     onClick={() => setOpenGroup(expanded ? null : item.label)}
                   >
-                    <i className="fas fa-chevron-down" aria-hidden="true"></i>
+                    {item.label}
+                    <i className="fas fa-chevron-down volt-mobile-caret" aria-hidden="true"></i>
                   </button>
+                ) : (
+                  <Link
+                    to={item.to}
+                    className={`volt-mobile-link${active ? ' active' : ''}`}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
                 )}
               </div>
               {item.children && (
