@@ -317,12 +317,31 @@ ul { list-style: none; }
   text-transform: uppercase;
   letter-spacing: 0.03em;
   color: var(--volt-navy);
+  position: relative;
   transition: color 0.2s ease;
 }
 
 .volt-nav-link i {
   font-size: 0.6rem;
   color: var(--volt-teal);
+}
+
+.volt-nav-link::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 0;
+  height: 3px;
+  background: var(--volt-teal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s var(--ease-out);
+}
+
+.volt-nav-link:hover::after,
+.volt-nav-link.active::after {
+  transform: scaleX(1);
 }
 
 .volt-nav-link:hover,
@@ -432,6 +451,10 @@ ul { list-style: none; }
   display: block;
 }
 
+.volt-mobile-link.active {
+  color: var(--volt-teal);
+}
+
 .volt-mobile-links {
   display: flex;
   flex-direction: column;
@@ -446,7 +469,8 @@ ul { list-style: none; }
   color: var(--neutral-600);
 }
 
-.volt-mobile-sub:hover {
+.volt-mobile-sub:hover,
+.volt-mobile-sub.active {
   color: var(--volt-teal);
 }
 

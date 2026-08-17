@@ -149,7 +149,11 @@ export default function Header() {
       <nav className={`volt-mobile${menuOpen ? ' open' : ''}`} role="navigation" aria-label="Mobile navigation">
         {NAV.map((item) => (
           <div className="volt-mobile-group" key={item.label}>
-            <Link to={item.to} className="volt-mobile-link" onClick={() => setMenuOpen(false)}>
+            <Link
+              to={item.to}
+              className={`volt-mobile-link${isActive(item.to) ? ' active' : ''}`}
+              onClick={() => setMenuOpen(false)}
+            >
               {item.label}
             </Link>
             {item.children && (
@@ -158,7 +162,7 @@ export default function Header() {
                   <Link
                     key={c.to}
                     to={c.to}
-                    className="volt-mobile-sub"
+                    className={`volt-mobile-sub${isActive(c.to) ? ' active' : ''}`}
                     onClick={() => setMenuOpen(false)}
                   >
                     {c.label}
