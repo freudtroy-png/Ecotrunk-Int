@@ -83,7 +83,7 @@ export default function Home() {
             environment and foster local development.
           </p>
           <Link to="/about" className="btn">
-            About Us
+            About Us <i className="fas fa-arrow-right btn-icon" aria-hidden="true"></i>
           </Link>
         </div>
       </section>
@@ -220,14 +220,14 @@ export default function Home() {
       {/* ===== Sustainability ===== */}
       <section className="bg-white volt-split">
         <div className="volt-split-media">
-          <img src="/assets/img/solar-pic.jpg" alt="Sustainability at Ecotrunk" loading="lazy" />
+          <img src="/assets/img/sustainability.jpg" alt="Sustainability at Ecotrunk" loading="lazy" />
         </div>
         <div className="volt-split-body">
           <h2 className="text-b">Sustainability</h2>
           <p className="lead">
             Since its incorporation in 2014, Ecotrunk has been fully committed to improving the global environment while fostering local development across Kenya. With the conviction that renewables are where human development and climate preservation meet, our teams deliver the most innovative and tailored solutions for a sustainable future.
           </p>
-          <Link to="/about#values" className="btn btn-secondary">Learn More</Link>
+          <Link to="/about#values" className="btn btn-secondary">Learn More <i className="fas fa-arrow-right btn-icon" aria-hidden="true"></i></Link>
         </div>
       </section>
 
@@ -241,7 +241,7 @@ export default function Home() {
           <p className="lead">
             In this regard, Ecotrunk intends to be exemplary and to pursue the growth of its activities while remaining faithful to one of its core values: <strong>integrity</strong>.
           </p>
-          <Link to="/about#values" className="btn btn-secondary mt-3">Know more</Link>
+          <Link to="/about#values" className="btn btn-secondary mt-3">Know more <i className="fas fa-arrow-right btn-icon" aria-hidden="true"></i></Link>
         </div>
         <div className="volt-split-media">
           <img src="/assets/img/hydro.jpg" alt="Ethics and responsible development" loading="lazy" />
@@ -258,7 +258,7 @@ export default function Home() {
           <p className="lead">
             Ecotrunk covers the entire life cycle of renewable energy plants, from development to operation. A strong quality mindset is a key factor for our clients, suppliers, partners, employees, and ultimately for our overall success.
           </p>
-          <Link to="/services/engineering-systems" className="btn btn-secondary">Learn More</Link>
+          <Link to="/services/engineering-systems" className="btn btn-secondary">Learn More <i className="fas fa-arrow-right btn-icon" aria-hidden="true"></i></Link>
         </div>
       </section>
 

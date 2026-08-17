@@ -176,16 +176,18 @@ export default function Header() {
               </div>
               {item.children && (
                 <div className={`volt-mobile-links${expanded ? ' open' : ''}`}>
-                  {item.children.map((c) => (
-                    <Link
-                      key={c.to}
-                      to={c.to}
-                      className={`volt-mobile-sub${isActive(c.to) ? ' active' : ''}`}
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      {c.label}
-                    </Link>
-                  ))}
+                  <div className="volt-mobile-links-inner">
+                    {item.children.map((c) => (
+                      <Link
+                        key={c.to}
+                        to={c.to}
+                        className={`volt-mobile-sub${isActive(c.to) ? ' active' : ''}`}
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        {c.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>

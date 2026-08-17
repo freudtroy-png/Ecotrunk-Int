@@ -37,7 +37,7 @@ export default function TechCta({ title, text, buttonLabel }) {
               className="btn btn-primary"
               style={{ fontSize: '1.1rem', padding: '16px 40px' }}
             >
-              {buttonLabel} <i className="fas fa-arrow-right" aria-hidden="true"></i>
+              {buttonLabel} <i className="fas fa-arrow-right btn-icon" aria-hidden="true"></i>
             </Link>
           </Reveal>
         </div>

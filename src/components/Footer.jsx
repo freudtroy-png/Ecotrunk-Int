@@ -73,10 +73,8 @@ export default function Footer() {
                 </div>
               </Link>
               <p className="footer-company">
-                Ecotrunk International Ltd (ETL)<br />
-                Professional Centre, Ngong Road<br />
-                P.O. Box 7252-00200, Nairobi, Kenya<br />
-                Registered in the Republic of Kenya
+                Renewable energy development, engineering, and consultancy
+                across East Africa.
               </p>
               <div className="footer-social">
                 <a href="#" aria-label="LinkedIn" onClick={(e) => e.preventDefault()}><i className="fab fa-linkedin-in" aria-hidden="true"></i></a>

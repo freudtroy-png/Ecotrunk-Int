@@ -69,7 +69,7 @@ export default function TechExplorer({ technologies }) {
         </Reveal>
 
         <Link to={current.to} className="btn btn-primary">
-          {current.cta} <i className="fas fa-arrow-right" aria-hidden="true"></i>
+          {current.cta} <i className="fas fa-arrow-right btn-icon" aria-hidden="true"></i>
         </Link>
       </div>
     </div>
