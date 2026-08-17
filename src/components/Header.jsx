@@ -52,9 +52,11 @@ export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openGroup, setOpenGroup] = useState(null);
 
   useEffect(() => {
     setMenuOpen(false);
+    setOpenGroup(null);
   }, [location]);
 
   const path = location.pathname;
@@ -147,31 +149,46 @@ export default function Header() {
       </header>
 
       <nav className={`volt-mobile${menuOpen ? ' open' : ''}`} role="navigation" aria-label="Mobile navigation">
-        {NAV.map((item) => (
-          <div className="volt-mobile-group" key={item.label}>
-            <Link
-              to={item.to}
-              className={`volt-mobile-link${isActive(item.to) ? ' active' : ''}`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-            {item.children && (
-              <div className="volt-mobile-links">
-                {item.children.map((c) => (
-                  <Link
-                    key={c.to}
-                    to={c.to}
-                    className={`volt-mobile-sub${isActive(c.to) ? ' active' : ''}`}
-                    onClick={() => setMenuOpen(false)}
+        {NAV.map((item) => {
+          const expanded = openGroup === item.label;
+          return (
+            <div className="volt-mobile-group" key={item.label}>
+              <div className="volt-mobile-row">
+                <Link
+                  to={item.to}
+                  className={`volt-mobile-link${isActive(item.to) ? ' active' : ''}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+                {item.children && (
+                  <button
+                    className={`volt-mobile-toggle${expanded ? ' active' : ''}`}
+                    aria-label={`Toggle ${item.label} submenu`}
+                    aria-expanded={expanded}
+                    onClick={() => setOpenGroup(expanded ? null : item.label)}
                   >
-                    {c.label}
-                  </Link>
-                ))}
+                    <i className="fas fa-chevron-down" aria-hidden="true"></i>
+                  </button>
+                )}
               </div>
-            )}
-          </div>
-        ))}
+              {item.children && (
+                <div className={`volt-mobile-links${expanded ? ' open' : ''}`}>
+                  {item.children.map((c) => (
+                    <Link
+                      key={c.to}
+                      to={c.to}
+                      className={`volt-mobile-sub${isActive(c.to) ? ' active' : ''}`}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {c.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
         <Link to="/#contact" className="btn btn-primary" onClick={() => setMenuOpen(false)} style={{ marginTop: 16 }}>
           Contact Us
         </Link>
