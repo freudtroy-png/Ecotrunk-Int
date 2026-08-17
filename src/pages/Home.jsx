@@ -144,30 +144,37 @@ export default function Home() {
       </section>
 
       {/* ===== Business model ===== */}
-      <section className="bg-white">
+      <section className="bg-white volt-model-section">
         <div className="container py-5">
           <Reveal>
             <h2 className="text-a text-center volt-block-title">Ecotrunk&apos;s model</h2>
-            <div className="volt-model-figure">
+            <p className="text-center volt-model-intro">
+              A complete, in-house approach from site assessment through long-term operation.
+            </p>
+            <div className="volt-model">
               <div className="volt-model-step">
+                <span className="volt-model-num">01</span>
                 <div className="volt-model-icon"><i className="fas fa-map-marked-alt" aria-hidden="true"></i></div>
                 <h5>Identify</h5>
                 <p>Site identification, feasibility, and resource assessment.</p>
               </div>
               <div className="volt-model-arrow"><i className="fas fa-arrow-right" aria-hidden="true"></i></div>
               <div className="volt-model-step">
+                <span className="volt-model-num">02</span>
                 <div className="volt-model-icon"><i className="fas fa-drafting-compass" aria-hidden="true"></i></div>
                 <h5>Develop</h5>
                 <p>Design, permitting, engineering systems, and financing.</p>
               </div>
               <div className="volt-model-arrow"><i className="fas fa-arrow-right" aria-hidden="true"></i></div>
               <div className="volt-model-step">
+                <span className="volt-model-num">03</span>
                 <div className="volt-model-icon"><i className="fas fa-hard-hat" aria-hidden="true"></i></div>
                 <h5>Build</h5>
                 <p>Procurement, construction, supervision, and commissioning.</p>
               </div>
               <div className="volt-model-arrow"><i className="fas fa-arrow-right" aria-hidden="true"></i></div>
               <div className="volt-model-step">
+                <span className="volt-model-num">04</span>
                 <div className="volt-model-icon"><i className="fas fa-chart-line" aria-hidden="true"></i></div>
                 <h5>Operate</h5>
                 <p>Monitoring, maintenance, and performance optimisation.</p>

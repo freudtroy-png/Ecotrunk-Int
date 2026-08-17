@@ -38,25 +38,6 @@ const DISTINCTS = [
   },
 ];
 
-const timelineCard = {
-  padding: 32,
-  borderLeft: '3px solid var(--green-500)',
-  background: 'var(--neutral-50)',
-  borderRadius: '0 var(--radius-md) var(--radius-md) 0',
-};
-
-const yearStyle = {
-  fontSize: '0.75rem',
-  fontWeight: 700,
-  color: 'var(--green-600)',
-  letterSpacing: '0.1em',
-  textTransform: 'uppercase',
-};
-
-const h3Style = { fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 700, margin: '8px 0' };
-
-const timelineText = { color: 'var(--neutral-500)', fontSize: '0.9rem', lineHeight: 1.7 };
-
 export default function About() {
   return (
     <>
@@ -141,16 +122,19 @@ export default function About() {
             <span className="section-label">Our Journey</span>
             <h2 className="section-title">Company Timeline</h2>
           </Reveal>
-          <div style={{ marginTop: 48 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40 }}>
-              {TIMELINE.map((item, i) => (
-                <Reveal key={item.year} delay={(i % 2) * 100} style={timelineCard}>
-                  <span style={yearStyle}>{item.year}</span>
-                  <h3 style={h3Style}>{item.title}</h3>
-                  <p style={timelineText}>{item.text}</p>
-                </Reveal>
-              ))}
-            </div>
+          <div className="timeline" style={{ marginTop: 48 }}>
+            {TIMELINE.map((item, i) => (
+              <Reveal key={item.year} delay={(i % 2) * 100} className={`timeline-item${i % 2 ? ' timeline-item-alt' : ''}`}>
+                <div className="timeline-marker">
+                  <i className="fas fa-bolt" aria-hidden="true"></i>
+                </div>
+                <div className="timeline-card">
+                  <span className="timeline-year">{item.year}</span>
+                  <h3 className="timeline-title">{item.title}</h3>
+                  <p className="timeline-text">{item.text}</p>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -214,14 +198,14 @@ export default function About() {
             <span className="section-label section-label-center">Why Choose Ecotrunk</span>
             <h2 className="section-title">What Sets Us Apart</h2>
           </Reveal>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32, marginTop: 48 }}>
+          <div className="distinct-grid" style={{ marginTop: 48 }}>
             {DISTINCTS.map((item, i) => (
-              <Reveal key={item.title} delay={i * 100} style={{ textAlign: 'center', padding: '32px 24px' }}>
-                <div style={{ width: 64, height: 64, borderRadius: 0, background: 'var(--green-50)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', fontSize: '1.5rem', color: 'var(--green-600)' }}>
+              <Reveal key={item.title} delay={i * 100} className="distinct-card">
+                <div className="distinct-icon">
                   <i className={`fas fa-${item.icon}`} aria-hidden="true"></i>
                 </div>
-                <h3 style={h3Style}>{item.title}</h3>
-                <p style={timelineText}>{item.text}</p>
+                <h3 className="distinct-title">{item.title}</h3>
+                <p className="distinct-text">{item.text}</p>
               </Reveal>
             ))}
           </div>

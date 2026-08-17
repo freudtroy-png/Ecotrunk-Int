@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import CookieBanner from './CookieBanner';
+import MobileActions from './MobileActions';
 import Seo from './Seo';
 
 export default function Layout() {
@@ -21,6 +22,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <MobileActions />
       <CookieBanner />
     </>
   );
