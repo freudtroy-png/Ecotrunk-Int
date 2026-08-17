@@ -124,10 +124,8 @@ export default function About() {
           </Reveal>
           <div className="timeline" style={{ marginTop: 48 }}>
             {TIMELINE.map((item, i) => (
-              <Reveal key={item.year} delay={(i % 2) * 100} className={`timeline-item${i % 2 ? ' timeline-item-alt' : ''}`}>
-                <div className="timeline-marker">
-                  <i className="fas fa-bolt" aria-hidden="true"></i>
-                </div>
+              <Reveal key={item.year} delay={(i % 2) * 100} className="timeline-item">
+                <div className="timeline-marker"></div>
                 <div className="timeline-card">
                   <span className="timeline-year">{item.year}</span>
                   <h3 className="timeline-title">{item.title}</h3>
