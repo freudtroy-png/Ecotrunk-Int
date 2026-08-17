@@ -63,6 +63,32 @@ export default function Footer() {
 
   return (
     <footer className="footer" role="contentinfo">
+      <div className="footer-newsletter">
+        <div className="container footer-newsletter-inner">
+          <div className="footer-newsletter-text">
+            <span className="footer-newsletter-label">Stay informed</span>
+            <p>Energy insights and company updates, delivered to your inbox.</p>
+          </div>
+          <form className="footer-newsletter-form" onSubmit={handleSubmit}>
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email address"
+              aria-label="Email for newsletter"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <button type="submit">Subscribe</button>
+            {status && (
+              <span className={`form-status ${status}`}>
+                {status === 'success' ? 'Subscribed. Thank you.' : 'Something went wrong. Please try again.'}
+              </span>
+            )}
+          </form>
+        </div>
+      </div>
+
       <div className="footer-main">
         <div className="container">
           <div className="footer-grid">
@@ -122,32 +148,6 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="footer-newsletter">
-        <div className="container footer-newsletter-inner">
-          <div className="footer-newsletter-text">
-            <span className="footer-newsletter-label">Stay informed</span>
-            <p>Energy insights and company updates, delivered to your inbox.</p>
-          </div>
-          <form className="footer-newsletter-form" onSubmit={handleSubmit}>
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email address"
-              aria-label="Email for newsletter"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <button type="submit">Subscribe</button>
-            {status && (
-              <span className={`form-status ${status}`}>
-                {status === 'success' ? 'Subscribed. Thank you.' : 'Something went wrong. Please try again.'}
-              </span>
-            )}
-          </form>
         </div>
       </div>
 
